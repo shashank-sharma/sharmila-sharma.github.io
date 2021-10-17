@@ -33,9 +33,9 @@ comments :
 
 # Internal nav
 nav:
-  - GALLERY: "https://sharmila.me/photorama/gallery/"  
-  - JOURNAL: "https://sharmila.me/photorama/journal/"
-  - ABOUT: "https://sharmila.me/photorama/about/"
+  - GALLERY: "https://sharmila.me/gallery/"
+  - JOURNAL: "https://sharmila.me/journal/"
+  - ABOUT: "https://sharmila.me/about/"
 
 # All translation keys
 translations:

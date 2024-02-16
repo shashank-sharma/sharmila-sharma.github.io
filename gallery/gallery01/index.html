@@ -210,6 +210,99 @@ images:
  - image_path: /gallery/archive/g01/gal67.jpeg
    caption: q
    copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal81.jpg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal82.jpg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal83.jpg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal84.jpg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal85.jpg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal86.jpg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal87.jpg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal88.jpg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal89.jpg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal90.jpg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal91.jpg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal92.jpg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal93.jpg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal94.jpg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal95.jpg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal96.jpg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal97.jpg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal98.jpeg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal99.jpeg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal100.jpeg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal101.jpeg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal102.jpeg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal103.jpeg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal104.jpeg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal105.jpeg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal106.jpeg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal107.jpeg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal108.jpeg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal109.jpeg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal110.jpeg
+   caption: q
+   copyright: © sharmilasharma
+ - image_path: /gallery/archive/g01/gal111.jpeg
+   caption: q
+   copyright: © sharmilasharma
 ---
 
 <html class="no-js" lang="en">
@@ -218,7 +311,7 @@ images:
 </head>
 
     <body>
- 
+
 	<section id="content" role="main">
 		<div class="wrapper">
 	<br><br>
@@ -227,16 +320,16 @@ images:
 
 			<!-- Gallery __-->
 			<div class="gallery masonry-gallery">
-		
-{% for image in page.images %}  		
+
+{% for image in page.images %}
 
 				<figure class="gallery-item">
 					<header class='gallery-icon'>
 
 <a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup"  title="{{ image.caption }}" data-caption="{{ image.copyright }}">
 <img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>
-						
-					</header>	
+
+					</header>
 					<figcaption class='gallery-caption'>
 						<div class="entry-summary" id="{{ image.caption }}">
 							<h3>{{image.caption}}</h3>
@@ -244,7 +337,7 @@ images:
 						</div>
 					</figcaption>
 				</figure>
-				
+
 {% endfor %}
 
 			</div>
@@ -252,7 +345,7 @@ images:
 		</div><!-- END .wrapper -->
 	</section>
 
-<!-- jQuery -->    
+<!-- jQuery -->
 
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <!-- include image popups -->
@@ -279,7 +372,7 @@ image: {
 
 <script src="{{ site.baseurl }}/js/retina.min.js"></script>
 <!-- include Masonry -->
-<script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script> 
+<script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script>
 <!-- include mousewheel plugins -->
 <script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
 <!-- include carousel plugins -->
@@ -291,5 +384,5 @@ image: {
 <!-- Modernizr -->
  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
 
-    
+
 </body></html>

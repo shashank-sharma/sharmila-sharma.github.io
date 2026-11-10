@@ -1,168 +1,87 @@
-The redesigned Sharmila Sharma catalogue uses GitHub Pages for public pages and a private phone-friendly Studio for inventory. See [phone setup, inventory management and development](CATALOGUE.md). The new build does not use Jekyll; the original theme documentation below is retained for reference only.
+# Sharmila Sharma
 
-p h o t o r a m a 
-====================
+A painting catalogue for Sharmila Sharma, a Delhi-based contemporary artist. Visitors can explore standalone paintings and series, open a painting for its description, dimensions, availability and price, and enquire directly with the artist.
 
-![photorama](https://raw.githubusercontent.com/sunbliss/photorama/gh-pages/photorama_thumb.gif)
+- **Website:** [sharmila.me](https://sharmila.me)
+- **Private inventory:** [Sharmila Studio](https://studio-sharmila.vipul.xyz/studio)
+- **Operating guide and session record:** [CATALOGUE.md](CATALOGUE.md)
 
-----------
+## How it works
 
----> [DEMO](https://sunbliss.github.io/photorama/ "DEMO")  <---
+The public website is static HTML generated from published inventory and deployed through **GitHub Actions to GitHub Pages**. It does not use Jekyll or query the inventory API in visitors' browsers.
 
-----------
+The private, phone-friendly Studio runs on a **Cloudflare Worker**, with **D1** for painting metadata and **R2** for images. Cloudflare Access restricts editing to approved artist/owner emails. Studio can be added to the phone's home screen; no GitHub, Cloudflare or Amp account is needed for day-to-day inventory management. Public navigation does not link to Studio.
 
-A theme for **jekyll**. 
+### Inventory
 
-Created for gh-pages (project page).
+- Create a painting with title, one description, photographs, price, availability, medium, dimensions and year.
+- Assign a series, create one through **Manage series**, or keep a painting standalone.
+- Multiple uploaded photographs belong to **one painting**. Batch creation of separate paintings is not implemented.
+- **Save draft** is private. **Publish painting** saves the public snapshot and requests a website rebuild. The site changes only after that build deploys successfully.
+- **Unpublish** keeps the painting as a draft. **Delete permanently** has no Trash or revision history. Unused photos can be deleted separately from **Image library**.
+- Homepage selection displays the first featured painting as a hero and up to five more below it, not a carousel. Catalogue order controls selection order; all published paintings remain in Works.
 
-This template was crafted having in mind the photobloggers.
+Studio prepares uploads in the browser: orientation-aware resize to a maximum of 1920px and a single WebP at quality 0.88. This is not the separate Hermes image-optimization workflow.
 
-It uses [Clean Blog](https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll "Clean Blog") as its basis.
+## Local development
 
-----------
-## Change Log
+Requires Node.js 22+ and Python 3 for the static preview server.
 
-### Version 2.2 (4/23/2018)
+```sh
+npm ci
+node scripts/prepare-dev.mjs
+npm run db:migrate
+npm run dev
+```
 
-<a href="https://github.com/sunbliss/photorama/wiki/How-to-get-SSL-on-Jekyll%3F"> How to get SSL Certificate (Https) For Jekyll</a>
+Local credentials are generated in ignored `.dev.vars`; existing values are not overwritten. The local inventory starts empty. Do not put production credentials in this file or commit them.
 
-### Version 2.1 (3/22/2017)
+For an empty static preview:
 
-* Fixed script loading. 
-* Fixed padding bottom for the navbar toggle menu.
+```sh
+npm run build:preview
+npm run preview:pages
+```
 
+Production builds read only the public, published catalogue:
 
-### Version 2.0 (2/4/2017)
+```sh
+CATALOGUE_URL=https://studio-sharmila.vipul.xyz/api/catalogue \
+STUDIO_URL=https://studio-sharmila.vipul.xyz/studio \
+npm run build
+```
 
-* HTTPS is now enforced. 
+Output is `dist/pages`. Original Jekyll files and archive photos remain in Git for reference but are not imported or included in the generated site.
 
-~~**Custom Domains are not supported.**~~
+## Verification
 
-~~For the time being, the only way to apply a custom domain name is by removing HTTPS as of the previous version. 
-Hoping Github developers will give its users the ability to add a custom domain served under security.~~
+```sh
+npm run check
+npm test
+npm run build:studio
+```
 
-### Version 1.2 (1/31/2017)
+`build:studio` is a Worker dry run, not a deployment. A local, not-yet-committed recovery update adds browser regression tests using the real Studio HTML/JavaScript with a mocked API, without changing live paintings. Once that update lands, run:
 
-* Fixed footer code so that the twitter icon links to the twitter_username instead of instagram_username.
+```sh
+npx playwright install chromium
+npx playwright test tests/studio.spec.ts --workers=1
+```
 
-### Version 1.1 (7/15/2016)
+When Chrome is already installed, set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` to its executable instead of downloading another browser. The recovery tests cover renderer termination, session expiry, account isolation, save/discard cleanup and newer server edits.
 
-* Improved galleries and search section.
-* Better rendering of the header text.
+## Publishing configuration
 
-### Version 1.0 (6/19/2016)
-* Initial Template
+GitHub **Settings → Pages → Source** must be **GitHub Actions**, not the legacy branch publisher. The workflow is [`.github/workflows/pages.yml`](.github/workflows/pages.yml).
 
-----------
+Automatic Studio publishing also requires an **encrypted, deployed Cloudflare Worker secret** named `GITHUB_PAGES_TOKEN`. Use a fine-grained token owned by the repository owner, restricted to this repository, with **Actions: read and write**. An Amp secret named `GH_KEY` does not automatically create the Cloudflare secret. A pending Text variable is not a deployed Secret.
 
- **IMPORTANT!!!**
-================
+Install it through **Cloudflare → Workers & Pages → sharmila-catalogue → Settings → Variables and Secrets**, choose type **Secret**, and **Save and deploy**. Keep credentials out of Git, screenshots, logs and chat. After setup, **Update website** retries a rebuild without modifying inventory. Confirm the workflow and actual public pages; a queued rebuild is not a completed deployment.
 
-### Before you begin: Change the URL and the BASEURL as well as the internal nav links in the _config.yml
+See [CATALOGUE.md](CATALOGUE.md) for Access configuration, deployment boundaries, recovery behavior and the dated implementation/deployment record.
 
-The **URL** should say `https://yourusername.github.io`
+## Attribution
 
-The **BASEURL** should say `/repositoryname`
+The original site was based on [Photorama](https://github.com/sunbliss/photorama) by Anna Prigkipaki, using Clean Blog. Legacy theme materials retain their original attribution. See [LICENSE](LICENSE) for the MIT license.
 
-**Internal nav** should say
-
-  nav:
-
-  - GALLERY: `"https://yourusername.github.io/repositoryname/gallery/"`
-  - JOURNAL: `"https://yourusername.github.io/repositoryname/journal/"`
-  - ABOUT: `"https://yourusername.github.io/repositoryname/about/`"
-
-If there are problems with loading assets like CSS files and images, make sure that both **URL** and **BASEURL** are set correctly!!! 
-
-----------
-
-~~**NOT FOR HTTPS served repos!!!**~~
-==================================
-
-~~* Applies for v1.2!~~
-
-If you want to use your **own domain** go to the root of your project's repository, create a CNAME file and add a line with your domain name, e.g. `www.yourdomain.com`.
-
-Go to your domain name registrar and add a CNAME record pointing your domain to GitHub Pages:
-- type: CNAME
-- host: www.yourdomainname.com
-- answer: yourusername.github.io/repositoryname
-- TTL: 300
-
-----------
-
-Usage
-============ 
-
-###Quick Start
-
-1. [Fork this repository](https://github.com/sunbliss/photorama/fork) to get started. 
-2. Go to `https://github.com/yourusername/photorama/settings`
-3. Rename the repository to your new project, e.g. *myphotoblog*
-2. Create a new branch called `gh-pages` in your repository. 
-3. Go to the branches directory at `https://github.com/yourusername/repositoryname/branches` and *change* **default branch** to **gh-pages**.
-4. Delete **master** branch. 
-3. GitHub will build your site automatically and publish it at `https://yourusername.github.io/repositoryname/`.  
-
-----------
-
-- The homepage welcomes the visitors with 3 animated photos of your choice. It is recommended that all three are landscape orientated for best view.
-
-To change the welcome content at the far left of the Home page go here: `/index.html` and fill the responding lines of the YAML with your desired text.
-
-----------
-
-- To enable **disqus** comments in the posts, change their front matter for comments to 'true'.
-
-You must have a registered account in disqus, where you will also register a forum for your website.
-
-Find the line `s.src = '//yourproject.disqus.com/embed.js';  // ` in the disqus_comments.html and REPLACE 'yourproject' with your forum shortname.
-
-----------
-
-- In order to send **newsletters** about your posts to your subscribers, you should register an account in [tinyletter](http://www.tinyletter.com " tinyletter").
-
-Find the line `'https://tinyletter.com/yourproject', ` in the *newsletter.html* and replace 'yourproject' with your registered website.
-
-You can always ommit the newsletter rendering by deleting the line `{% include newsletter.html %}
-` in the *default.html* layout.
-
-----------
-
-If you want to use the matching **NEWSLETTER** template, you must always create a new file  by copying its respective index.html and renaming it to e.g. 2016-March-newsletter.html and then save it inside the folder and the accompanying images inside the 'images folder', so it can be accessed to your viewers through their browser. In this case the root url for the above newsletter will be ***http://yourgithubusername.github.io/yourproject/2016-March-newsletter.html***. Copy this link and replace this part of the code `http://www.yoursite.com/newsletter/year-month-newsletter` with it.
-
-----------
-
-**TAGS** and **CATEGORIES** of the posts 
-
-When you add a tag or a category name in the front matter of a post, don't forget to add the responding markdown files in /journal/tag/ folder and in /journal/category folder, so they can always render when browsing the journal or searching in the respective page.
-
-----------
-
-All the credits and the helpers can be found at **ABOUT** page.
-
-
-----------
-
-Read <a href="https://sunbliss.github.io/photorama/journal/images-size-for-better-performance/">**this**</a> post if you want to ensure your website always loads fast.
-
-
-----------
-
-I hope you will find it useful for your projects, photographic or not.
-
-
-----------
-
-
-##License
-
-The MIT License (MIT)
-
-Copyright (c) 2014 Filippo Oretti, Dario Andrei
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Original theme notice: Copyright (c) 2014 Filippo Oretti, Dario Andrei.

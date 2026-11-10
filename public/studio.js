@@ -20,7 +20,6 @@
     dirty: false,
     uploading: false,
     busy: false,
-    history: [],
     replaceIndex: null,
     library: [],
     email: null,
@@ -59,7 +58,7 @@
     return data;
   }
   function siteUpdateMessage(data) {
-    if (!data.siteUpdate) return "";
+    if (!data.siteUpdate || data.siteUpdate.status === "not-needed") return "";
     if (data.siteUpdate.status === "queued")
       return " Website rebuild queued. GitHub Pages will update after the build finishes, usually in a few minutes.";
     if (data.siteUpdate.status === "not-configured")
@@ -83,9 +82,7 @@
     const works = state.artworks.filter(
       (a) =>
         `${a.title} ${a.id}`.toLowerCase().includes(query) &&
-        (state.filter === "trash" ? a.trashed : !a.trashed) &&
         (state.filter === "all" ||
-          state.filter === "trash" ||
           (state.filter === "draft" && (!a.published || a.hasDraft)) ||
           (state.filter === "published" && a.published) ||
           (state.filter === "sold" && a.availability === "sold")),
@@ -94,7 +91,7 @@
       ? works
           .map(
             (a) =>
-              `<article class="inventory-row">${a.images[0] ? `<img src="${esc(a.images[0].url)}" alt="${esc(a.title)}" loading="lazy">` : '<div class="image-placeholder">No photo</div>'}<div class="inventory-meta"><h3>${esc(a.title || "Untitled painting")}</h3><p>${esc(a.id)}${a.seriesId ? " / " + esc(state.series.find((s) => s.id === a.seriesId)?.name || "") : ""}</p></div><span class="row-state">${a.trashed ? "In Trash" : a.published ? (a.hasDraft ? "Unpublished changes" : a.availability === "sold" ? "Sold · published" : "Published") : "Draft"}</span>${a.trashed ? `<button type="button" class="text-button" data-undelete="${esc(a.id)}">Restore</button>` : `<button type="button" class="text-button" data-edit="${esc(a.id)}">Edit <span class="sr-only">${esc(a.title)}</span> ↗</button>`}</article>`,
+              `<article class="inventory-row">${a.images[0] ? `<img src="${esc(a.images[0].url)}" alt="${esc(a.title)}" loading="lazy">` : '<div class="image-placeholder">No photo</div>'}<div class="inventory-meta"><h3>${esc(a.title || "Untitled painting")}</h3><p>${esc(a.id)}${a.seriesId ? " / " + esc(state.series.find((s) => s.id === a.seriesId)?.name || "") : ""}</p></div><span class="row-state">${a.published ? (a.hasDraft ? "Unpublished changes" : a.availability === "sold" ? "Sold · published" : "Published") : "Draft"}</span><button type="button" class="text-button" data-edit="${esc(a.id)}">Edit <span class="sr-only">${esc(a.title)}</span> ↗</button></article>`,
           )
           .join("")
       : '<section class="empty-state"><h2>No paintings here yet.</h2><p>Add your first painting or try another filter.</p></section>';
@@ -123,7 +120,6 @@
   }
   function populateEditor(a, data = {}) {
     state.current = a;
-    state.history = data.history || [];
     state.dirty = false;
     $("artwork-form").reset();
     $("art-series").innerHTML =
@@ -160,16 +156,10 @@
     $("publish-painting").textContent = data.published
       ? "Publish changes"
       : "Publish painting";
-    $("trash-painting").hidden = !a.id;
+    $("delete-painting").hidden = !a.id;
+    $("unpublish-painting").hidden = !data.published;
     $("view-published").hidden = !data.published;
     $("view-published").href = "/works/" + encodeURIComponent(a.slug);
-    $("revision-section").hidden = !state.history.length;
-    $("revision-list").innerHTML = state.history
-      .map(
-        (r) =>
-          `<div class="revision-row"><span>${esc(r.action || r.kind || "Saved version")} · ${esc(r.createdAt || r.created_at || "")}</span><button type="button" class="text-button" data-restore="${esc(r.id)}">Restore as draft</button></div>`,
-      )
-      .join("");
     renderImages();
     updatePrice();
     show("studio-editor");
@@ -429,27 +419,6 @@
   );
   $("inventory").addEventListener("click", async (event) => {
     const button = event.target.closest("[data-edit]");
-    const restore = event.target.closest("[data-undelete]");
-    if (restore) {
-      if (
-        !confirm(
-          "Restore this painting? Its previously published version, if any, will return to the website.",
-        )
-      )
-        return;
-      try {
-        const restored = await request(
-          "/studio/artworks/" +
-            encodeURIComponent(restore.dataset.undelete) +
-            "/undelete",
-          { method: "POST" },
-        );
-        await loadInventory();
-        message("Painting restored." + siteUpdateMessage(restored));
-      } catch (error) {
-        message(error.message, true);
-      }
-    }
     if (button)
       try {
         await editPainting(button.dataset.edit);
@@ -530,29 +499,37 @@
   $("close-preview").addEventListener("click", () =>
     $("painting-preview").close(),
   );
-  $("revision-list").addEventListener("click", async (event) => {
-    const b = event.target.closest("[data-restore]");
+  $("unpublish-painting").addEventListener("click", async (event) => {
+    if (state.uploading || state.busy) return;
     if (
-      !b ||
       !confirm(
-        "Restore this version as a draft? The published painting will stay unchanged.",
+        "Unpublish this painting? It will leave the website after a rebuild and remain in your inventory as a draft. Unsaved changes will be discarded.",
       )
     )
       return;
+    state.busy = true;
+    event.target.disabled = true;
     try {
-      await request(
-        "/studio/artworks/" + encodeURIComponent(state.current.id) + "/restore",
+      const unpublished = await request(
+        "/studio/artworks/" +
+          encodeURIComponent(state.current.id) +
+          "/unpublish",
         {
           method: "POST",
-          body: JSON.stringify({ revisionId: b.dataset.restore }),
+          body: JSON.stringify({ version: state.current.version }),
         },
       );
-      await editPainting(state.current.id);
+      populateEditor(unpublished.artwork, unpublished);
       message(
-        "Previous version restored as a draft. Review it before publishing.",
+        "Painting unpublished. Kept as a draft in your inventory." +
+          siteUpdateMessage(unpublished),
       );
+      window.scrollTo({ top: 0 });
     } catch (error) {
       message(error.message, true);
+    } finally {
+      state.busy = false;
+      event.target.disabled = false;
     }
   });
   function renderSeries() {
@@ -570,14 +547,16 @@
     $("series-dialog").showModal();
   });
   $("close-series").addEventListener("click", () => $("series-dialog").close());
-  $("trash-painting").addEventListener("click", async () => {
+  $("delete-painting").addEventListener("click", async (event) => {
     if (state.uploading || state.busy) return;
     if (
       !confirm(
-        "Move this painting to Trash? It will disappear from the public catalogue. Photographs and previous versions are kept so you can restore it. Unsaved changes will be discarded.",
+        "Permanently delete this painting? This cannot be undone. Its unused uploaded photographs can be deleted separately in Image library.",
       )
     )
       return;
+    state.busy = true;
+    event.target.disabled = true;
     try {
       const removed = await request(
         "/studio/artworks/" + encodeURIComponent(state.current.id),
@@ -588,12 +567,12 @@
       );
       state.dirty = false;
       await loadInventory();
-      message(
-        "Painting moved to Trash. You can restore it from the Trash tab." +
-          siteUpdateMessage(removed),
-      );
+      message("Painting permanently deleted." + siteUpdateMessage(removed));
     } catch (error) {
       message(error.message, true);
+    } finally {
+      state.busy = false;
+      event.target.disabled = false;
     }
   });
   async function loadLibrary() {
@@ -603,10 +582,10 @@
       ? state.library
           .map(
             (im, i) =>
-              `<div class="library-row"><a href="${esc(im.url)}" target="_blank" rel="noopener noreferrer"><img src="${esc(im.url)}" alt="Uploaded photograph ${i + 1}" loading="lazy"></a><div><p>${im.key.startsWith("sharmila/site/") ? "Website photo" : "Painting photograph"}</p><span class="secondary">${im.width} × ${im.height} pixels · ${im.used ? "In use / saved history" : "Unused"}</span></div><button class="text-button danger-text" data-delete-image="${i}" ${im.used ? "disabled" : ""}>Delete permanently</button></div>`,
+              `<div class="library-row"><a href="${esc(im.url)}" target="_blank" rel="noopener noreferrer"><img src="${esc(im.url)}" alt="Uploaded photograph ${i + 1}" loading="lazy"></a><div><p>${im.key.startsWith("sharmila/site/") ? "Website photo" : "Painting photograph"}</p><span class="secondary">${im.width} × ${im.height} pixels · ${im.used ? "In use" : "Unused"}</span></div><button class="text-button danger-text" data-delete-image="${i}" ${im.used ? "disabled" : ""}>Delete permanently</button></div>`,
           )
           .join("")
-      : "<p>No uploaded photographs yet. Legacy archive files are preserved separately.</p>";
+      : "<p>No uploaded photographs yet.</p>";
   }
   $("manage-images").addEventListener("click", async () => {
     try {

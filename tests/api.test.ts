@@ -93,17 +93,109 @@ beforeEach(async () => {
 
 afterEach(() => vi.restoreAllMocks());
 
-describe("authentication and request boundaries", () => {
-  it("advertises Studio installation only on the private Studio page", async () => {
-    const page = await website.request(
-      "https://catalogue.test/",
-      {},
-      {
-        CATALOGUE: { artworks: [], series: [], preview: false },
-        STUDIO_URL: "https://studio.test/studio",
-      },
+describe("inventory simplification upgrade on real D1", () => {
+  it("drops history and Trash metadata without changing current snapshots, image inventory or R2", async () => {
+    await reset();
+    await applyD1Migrations(bindings.DB, bindings.TEST_MIGRATIONS.slice(0, 2));
+    const artwork = await create({
+      title: "Keep current work",
+      images: [image],
+    });
+    await request(`/studio/artworks/${artwork.id}/publish`, json("POST"));
+    const published = (await catalogue()).artworks[0];
+    await save({ ...published, title: "Keep working draft" });
+    await bindings.DB.prepare(
+      "UPDATE artworks SET deleted_at = '2026-11-01' WHERE id = ?",
+    )
+      .bind(artwork.id)
+      .run();
+    await request(
+      "/studio/series",
+      json("POST", { name: "Keep series", coverArtworkId: artwork.id }),
     );
-    expect(await page.text()).not.toContain('rel="manifest"');
+    await bindings.DB.batch([
+      bindings.DB.prepare(
+        `INSERT INTO artwork_revisions (id, artwork_id, action, artwork_json, version)
+        VALUES ('old-revision', ?, 'create', ?, 1)`,
+      ).bind(artwork.id, JSON.stringify(artwork)),
+      bindings.DB.prepare(
+        "INSERT INTO images (key, content_type, width, height, byte_size) VALUES (?, 'image/webp', 1200, 900, 3)",
+      ).bind(image.key),
+      bindings.DB.prepare(
+        "INSERT INTO deleted_images (key) VALUES ('already-deleted.webp')",
+      ),
+    ]);
+    await bindings.IMAGES.put(image.key, new Uint8Array([1, 2, 3]));
+    const inventory = async () =>
+      Promise.all(
+        ["artworks", "series", "images", "deleted_images"].map(
+          async (table) => {
+            const { results } = await bindings.DB.prepare(
+              `SELECT * FROM ${table}`,
+            ).all();
+            return results.map(({ deleted_at, ...row }) => row);
+          },
+        ),
+      );
+    const before = await inventory();
+    expect(
+      await bindings.DB.prepare("SELECT id FROM artwork_revisions").first(),
+    ).toEqual({ id: "old-revision" });
+    await applyD1Migrations(bindings.DB, bindings.TEST_MIGRATIONS);
+    expect(await inventory()).toEqual(before);
+    expect(
+      (
+        await bindings.DB.prepare("PRAGMA table_info(artworks)").all()
+      ).results.map((column) => column.name),
+    ).not.toContain("deleted_at");
+    expect(
+      new Uint8Array(
+        await (await bindings.IMAGES.get(image.key))!.arrayBuffer(),
+      ),
+    ).toEqual(new Uint8Array([1, 2, 3]));
+    expect(
+      (
+        await bindings.DB.prepare(
+          `SELECT name FROM sqlite_master WHERE name IN
+          ('artwork_revisions', 'artwork_revisions_artwork', 'revisions_no_deleted_images')`,
+        ).all()
+      ).results,
+    ).toEqual([]);
+    expect(
+      (
+        await bindings.DB.prepare(
+          "SELECT name FROM sqlite_master WHERE type = 'trigger' ORDER BY name",
+        ).all()
+      ).results,
+    ).toEqual([
+      { name: "artworks_no_deleted_images_insert" },
+      { name: "artworks_no_deleted_images_update" },
+    ]);
+  });
+});
+
+describe("authentication and request boundaries", () => {
+  it("advertises Studio links and installation only on the private Studio page", async () => {
+    for (const path of [
+      "/",
+      "/works",
+      "/series",
+      "/about",
+      "/contact",
+      "/missing",
+    ]) {
+      const page = await website.request(
+        `https://catalogue.test${path}`,
+        {},
+        {
+          CATALOGUE: { artworks: [], series: [], preview: false },
+          STUDIO_URL: "https://studio.test/studio",
+        },
+      );
+      const html = await page.text();
+      expect(html).not.toContain('rel="manifest"');
+      expect(html).not.toContain('href="/studio"');
+    }
     const editor = await studio.request(
       "https://studio.test/studio",
       {},
@@ -122,13 +214,12 @@ describe("authentication and request boundaries", () => {
       ["/studio/artworks/missing", "GET"],
       ["/studio/artworks/missing", "PUT"],
       ["/studio/artworks/missing/publish", "POST"],
-      ["/studio/artworks/missing/restore", "POST"],
+      ["/studio/artworks/missing/unpublish", "POST"],
       ["/studio/series", "POST"],
       ["/studio/series/missing", "PUT"],
       ["/studio/images", "POST"],
       ["/studio/export", "GET"],
       ["/studio/artworks/missing", "DELETE"],
-      ["/studio/artworks/missing/undelete", "POST"],
       ["/studio/images", "GET"],
       ["/studio/images", "DELETE"],
       ["/studio/rebuild", "POST"],
@@ -202,8 +293,8 @@ describe("authentication and request boundaries", () => {
         ["/studio/artworks", "POST"],
         [`/studio/artworks/${artwork.id}`, "PUT"],
         [`/studio/artworks/${artwork.id}/publish`, "POST"],
+        [`/studio/artworks/${artwork.id}/unpublish`, "POST"],
         [`/studio/artworks/${artwork.id}`, "DELETE"],
-        [`/studio/artworks/${artwork.id}/undelete`, "POST"],
         ["/studio/images", "DELETE"],
         ["/studio/rebuild", "POST"],
       ]) {
@@ -334,8 +425,9 @@ describe("GitHub Pages rebuilds", () => {
       seriesResponse,
       await request(`/studio/series/${series.id}`, json("PUT", series)),
       await request(`/studio/artworks/${artwork.id}/publish`, json("POST")),
+      await request(`/studio/artworks/${artwork.id}/unpublish`, json("POST")),
+      await request(`/studio/artworks/${artwork.id}/publish`, json("POST")),
       await request(`/studio/artworks/${artwork.id}`, json("DELETE")),
-      await request(`/studio/artworks/${artwork.id}/undelete`, json("POST")),
       await request("/studio/rebuild", json("POST")),
     ];
     for (const response of responses) {
@@ -404,27 +496,24 @@ describe("GitHub Pages rebuilds", () => {
         )
       ).json(),
     ).toMatchObject({ siteUpdate: { status: "queued" } });
-    for (const [suffix, method] of [
-      ["", "DELETE"],
-      ["/undelete", "POST"],
-    ]) {
-      expect(
-        await (
-          await request(`/studio/artworks/${artwork.id}${suffix}`, json(method))
-        ).json(),
-      ).toMatchObject({ siteUpdate: { status: "queued" } });
-      const calls = fetcher.mock.calls.length;
-      expect(
-        await (
-          await request(`/studio/artworks/${artwork.id}${suffix}`, json(method))
-        ).json(),
-      ).not.toHaveProperty("siteUpdate");
-      expect(fetcher).toHaveBeenCalledTimes(calls);
-    }
-    expect(fetcher).toHaveBeenCalledTimes(5);
     expect(
-      (await request(`/studio/artworks/${artwork.id}/publish`, json("POST")))
-        .status,
+      await (
+        await request(`/studio/artworks/${artwork.id}/unpublish`, json("POST"))
+      ).json(),
+    ).toMatchObject({ siteUpdate: { status: "queued" } });
+    expect(
+      await (
+        await request(`/studio/artworks/${artwork.id}/unpublish`, json("POST"))
+      ).json(),
+    ).toMatchObject({ siteUpdate: { status: "not-needed" } });
+    expect(fetcher).toHaveBeenCalledTimes(4);
+    expect(
+      (
+        await request(
+          `/studio/artworks/${artwork.id}/unpublish`,
+          json("POST", { version: 1 }),
+        )
+      ).status,
     ).toBe(409);
     expect(
       (
@@ -437,39 +526,26 @@ describe("GitHub Pages rebuilds", () => {
     expect(
       (await request("/studio/series", json("POST", { name: "" }))).status,
     ).toBe(400);
-    expect(fetcher).toHaveBeenCalledTimes(5);
+    expect(fetcher).toHaveBeenCalledTimes(4);
   });
 
-  it("keeps drafts and revision restoration private without dispatching", async () => {
+  it("keeps draft changes and draft-only permanent deletion private without dispatching", async () => {
     local.GITHUB_PAGES_TOKEN = crypto.randomUUID();
     const fetcher = vi
       .spyOn(globalThis, "fetch")
       .mockResolvedValue(new Response(null, { status: 204 }));
     const initial = await create({ title: "Private work", images: [image] });
     const artwork = await save({ ...initial, title: "Edited privately" });
-    const detail = (await (
-      await request(`/studio/artworks/${artwork.id}`, {
-        headers: { Cookie: cookie },
-      })
-    ).json()) as { history: Array<{ id: string }> };
+    const privateWork = await create({ title: "Delete private work" });
     expect(
-      (
-        await request(
-          `/studio/artworks/${artwork.id}/restore`,
-          json("POST", { revisionId: detail.history[0].id }),
-        )
-      ).status,
-    ).toBe(200);
-    await request(`/studio/artworks/${artwork.id}`, json("DELETE"));
-    await request(`/studio/artworks/${artwork.id}/undelete`, json("POST"));
+      await (
+        await request(`/studio/artworks/${privateWork.id}`, json("DELETE"))
+      ).json(),
+    ).toEqual({ deleted: true, id: privateWork.id });
     expect(fetcher).not.toHaveBeenCalled();
     await request(`/studio/artworks/${artwork.id}/publish`, json("POST"));
     const snapshot = (await catalogue()).artworks[0];
     await save({ ...snapshot, title: "Not public" });
-    await request(
-      `/studio/artworks/${artwork.id}/restore`,
-      json("POST", { revisionId: detail.history[0].id }),
-    );
     expect(fetcher).toHaveBeenCalledTimes(1);
     expect((await catalogue()).artworks).toEqual([snapshot]);
   });
@@ -515,18 +591,35 @@ describe("GitHub Pages rebuilds", () => {
       ).json(),
     ).toMatchObject({ siteUpdate: { status: "failed" } });
     expect((await catalogue()).series[0].name).toBe("Updated despite outage");
+    const unpublished = await request(
+      `/studio/artworks/${artwork.id}/unpublish`,
+      json("POST"),
+    );
+    expect(unpublished.status).toBe(200);
+    expect(await unpublished.json()).toMatchObject({
+      published: false,
+      hasDraft: true,
+      siteUpdate: { status: "failed" },
+    });
+    expect((await catalogue()).artworks).toEqual([]);
+    const calls = fetcher.mock.calls.length;
+    expect(
+      await (
+        await request(`/studio/artworks/${artwork.id}/unpublish`, json("POST"))
+      ).json(),
+    ).toMatchObject({ siteUpdate: { status: "not-needed" } });
+    expect(fetcher).toHaveBeenCalledTimes(calls);
+    await request(`/studio/artworks/${artwork.id}/publish`, json("POST"));
     expect(
       await (
         await request(`/studio/artworks/${artwork.id}`, json("DELETE"))
       ).json(),
-    ).toMatchObject({ trashed: true, siteUpdate: { status: "failed" } });
+    ).toMatchObject({
+      deleted: true,
+      id: artwork.id,
+      siteUpdate: { status: "failed" },
+    });
     expect((await catalogue()).artworks).toEqual([]);
-    expect(
-      await (
-        await request(`/studio/artworks/${artwork.id}/undelete`, json("POST"))
-      ).json(),
-    ).toMatchObject({ trashed: false, siteUpdate: { status: "failed" } });
-    expect((await catalogue()).artworks).toHaveLength(1);
     const failed = await request("/studio/rebuild", json("POST"));
     expect(await failed.json()).toEqual({ siteUpdate: { status: "failed" } });
     fetcher.mockResolvedValue(new Response(null, { status: 204 }));
@@ -568,7 +661,278 @@ describe("GitHub Pages rebuilds", () => {
   });
 });
 
-describe("drafts, publication, revisions and optimistic updates on real D1", () => {
+describe("drafts, publication and optimistic updates on real D1", () => {
+  it("unpublishes without overwriting the working draft and removes public artwork and series cover", async () => {
+    const initial = await create({ title: "Published work", images: [image] });
+    await request(`/studio/artworks/${initial.id}/publish`, json("POST"));
+    const snapshot = (await catalogue()).artworks[0];
+    await request(
+      "/studio/series",
+      json("POST", { name: "Nature", coverArtworkId: initial.id }),
+    );
+    expect((await catalogue()).series[0].coverArtworkId).toBe(initial.id);
+    // An incomplete draft is still valid working state and must not be replaced by published work.
+    const draft = await save({
+      ...snapshot,
+      title: "",
+      images: [],
+      description: "Private edits",
+    });
+    const before = await bindings.DB.prepare(
+      "SELECT draft_json FROM artworks WHERE id = ?",
+    )
+      .bind(initial.id)
+      .first<{ draft_json: string }>();
+    const response = await request(
+      `/studio/artworks/${initial.id}/unpublish`,
+      json("POST", { version: draft.version }),
+    );
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({
+      artwork: { ...draft, version: draft.version + 1 },
+      published: false,
+      hasDraft: true,
+      siteUpdate: { status: "not-configured" },
+    });
+    expect(
+      await bindings.DB.prepare(
+        "SELECT draft_json, published_json, version FROM artworks WHERE id = ?",
+      )
+        .bind(initial.id)
+        .first(),
+    ).toEqual({
+      draft_json: before!.draft_json,
+      published_json: null,
+      version: draft.version + 1,
+    });
+    const publicData = await catalogue();
+    expect(publicData.artworks).toEqual([]);
+    expect(publicData.series[0].coverArtworkId).toBeNull();
+    const list = await request("/studio/artworks", {
+      headers: { Cookie: cookie },
+    });
+    expect(await list.json()).toMatchObject({
+      artworks: [{ id: initial.id, published: false, hasDraft: true }],
+      series: [{ coverArtworkId: initial.id }],
+    });
+    expect(
+      (
+        await website.request(
+          `https://catalogue.test/works/${initial.slug}`,
+          {},
+          {
+            CATALOGUE: { ...publicData, preview: false },
+            STUDIO_URL: "https://studio.test",
+          },
+        )
+      ).status,
+    ).toBe(404);
+  });
+
+  it("retains published work as a draft when needed and makes repeated unpublish a strict no-op", async () => {
+    const artwork = await create({ title: "Retain me", images: [image] });
+    await request(`/studio/artworks/${artwork.id}/publish`, json("POST"));
+    const snapshot = (await catalogue()).artworks[0];
+    const row = () =>
+      bindings.DB.prepare("SELECT * FROM artworks WHERE id = ?")
+        .bind(artwork.id)
+        .first();
+    const published = await row();
+    const response = await request(
+      `/studio/artworks/${artwork.id}/unpublish`,
+      json("POST"),
+    );
+    expect(response.status).toBe(200);
+    const body = (await response.json()) as { artwork: Artwork };
+    expect(body).toEqual({
+      artwork: { ...snapshot, version: snapshot.version + 1 },
+      published: false,
+      hasDraft: true,
+      siteUpdate: { status: "not-configured" },
+    });
+    const unpublished = await row();
+    expect(unpublished).toMatchObject({
+      draft_json: published!.published_json,
+      published_json: null,
+    });
+    for (const options of [
+      json("POST"),
+      json("POST", { version: body.artwork.version }),
+    ]) {
+      const repeated = await request(
+        `/studio/artworks/${artwork.id}/unpublish`,
+        options,
+      );
+      expect(repeated.status).toBe(200);
+      expect(await repeated.json()).toEqual({
+        ...body,
+        siteUpdate: { status: "not-needed" },
+      });
+      expect(await row()).toEqual(unpublished);
+    }
+    expect(
+      (
+        await request(
+          `/studio/artworks/${artwork.id}/unpublish`,
+          json("POST", {
+            version: snapshot.version,
+          }),
+        )
+      ).status,
+    ).toBe(409);
+    expect(await row()).toEqual(unpublished);
+    // Retained work can be published again; no revision restoration is needed.
+    expect(
+      (
+        await request(
+          `/studio/artworks/${artwork.id}/publish`,
+          json("POST", {
+            version: body.artwork.version,
+          }),
+        )
+      ).status,
+    ).toBe(200);
+    expect((await catalogue()).artworks[0]).toEqual({
+      ...snapshot,
+      version: snapshot.version + 2,
+    });
+  });
+
+  it("dispatches unpublish only for an actual publication, never for invalid, stale, private, or deleted requests", async () => {
+    const artwork = await create({
+      title: "Dispatch boundaries",
+      images: [image],
+    });
+    local.GITHUB_PAGES_TOKEN = crypto.randomUUID();
+    const fetcher = vi
+      .spyOn(globalThis, "fetch")
+      .mockResolvedValue(new Response(null, { status: 204 }));
+    const path = `/studio/artworks/${artwork.id}/unpublish`;
+    expect(
+      await (
+        await request(path, json("POST", { version: artwork.version }))
+      ).json(),
+    ).toMatchObject({
+      artwork,
+      siteUpdate: { status: "not-needed" },
+    });
+    for (const version of ["1", 0, -1, 1.5, null]) {
+      expect((await request(path, json("POST", { version }))).status).toBe(400);
+    }
+    expect((await request(path, { ...json("POST"), body: "{" })).status).toBe(
+      400,
+    );
+    expect(
+      (await request("/studio/artworks/missing/unpublish", json("POST")))
+        .status,
+    ).toBe(404);
+    expect(fetcher).not.toHaveBeenCalled();
+    await request(`/studio/artworks/${artwork.id}/publish`, json("POST"));
+    fetcher.mockClear();
+    expect(
+      (await request(path, json("POST", { version: artwork.version }))).status,
+    ).toBe(409);
+    expect((await request(path, json("POST", {}, false))).status).toBe(401);
+    expect(fetcher).not.toHaveBeenCalled();
+    const snapshot = (await catalogue()).artworks[0];
+    const response = await request(
+      path,
+      json("POST", { version: snapshot.version }),
+    );
+    expect(response.status).toBe(200);
+    expect(await response.json()).toMatchObject({
+      siteUpdate: { status: "queued" },
+    });
+    expect(fetcher).toHaveBeenCalledTimes(1);
+    expect(await (await request(path, json("POST"))).json()).toMatchObject({
+      siteUpdate: { status: "not-needed" },
+    });
+    await request(`/studio/artworks/${artwork.id}`, json("DELETE"));
+    expect((await request(path, json("POST"))).status).toBe(404);
+    expect(fetcher).toHaveBeenCalledTimes(1);
+    expect((await catalogue()).artworks).toEqual([]);
+    expect(fetcher).toHaveBeenCalledTimes(1);
+  });
+
+  it("does not lose simultaneous edits when unpublishing with an expected version", async () => {
+    const initial = await create({ title: "Public work", images: [image] });
+    await request(`/studio/artworks/${initial.id}/publish`, json("POST"));
+    const snapshot = (await catalogue()).artworks[0];
+    const draft = await save({ ...snapshot, title: "Existing draft" });
+    const [unpublishing, saving] = await Promise.all([
+      request(
+        `/studio/artworks/${initial.id}/unpublish`,
+        json("POST", { version: draft.version }),
+      ),
+      request(
+        `/studio/artworks/${initial.id}`,
+        json("PUT", { artwork: { ...draft, title: "Concurrent edit" } }),
+      ),
+    ]);
+    expect([unpublishing.status, saving.status].sort()).toEqual([200, 409]);
+    const detail = (await (
+      await request(`/studio/artworks/${initial.id}`, {
+        headers: { Cookie: cookie },
+      })
+    ).json()) as { artwork: Artwork; published: boolean };
+    expect(detail.artwork.version).toBe(draft.version + 1);
+    if (saving.status === 200) {
+      expect(detail.artwork.title).toBe("Concurrent edit");
+      expect(detail.published).toBe(true);
+      expect((await catalogue()).artworks).toEqual([snapshot]);
+      expect(
+        (
+          await request(
+            `/studio/artworks/${initial.id}/unpublish`,
+            json("POST", {
+              version: detail.artwork.version,
+            }),
+          )
+        ).status,
+      ).toBe(200);
+      expect(
+        await (
+          await request(`/studio/artworks/${initial.id}`, {
+            headers: { Cookie: cookie },
+          })
+        ).json(),
+      ).toMatchObject({
+        artwork: { title: "Concurrent edit", version: draft.version + 2 },
+        published: false,
+      });
+    } else {
+      expect(detail.artwork.title).toBe("Existing draft");
+      expect(detail.published).toBe(false);
+      expect((await catalogue()).artworks).toEqual([]);
+      await save({ ...detail.artwork, title: "Concurrent edit" });
+    }
+  });
+
+  it("allows only one competing versioned unpublish and dispatches once", async () => {
+    const initial = await create({ title: "One unpublish", images: [image] });
+    await request(`/studio/artworks/${initial.id}/publish`, json("POST"));
+    const snapshot = (await catalogue()).artworks[0];
+    local.GITHUB_PAGES_TOKEN = crypto.randomUUID();
+    const fetcher = vi
+      .spyOn(globalThis, "fetch")
+      .mockResolvedValue(new Response(null, { status: 204 }));
+    const responses = await Promise.all([
+      request(
+        `/studio/artworks/${initial.id}/unpublish`,
+        json("POST", { version: snapshot.version }),
+      ),
+      request(
+        `/studio/artworks/${initial.id}/unpublish`,
+        json("POST", { version: snapshot.version }),
+      ),
+    ]);
+    expect(responses.map((response) => response.status).sort()).toEqual([
+      200, 409,
+    ]);
+    expect(fetcher).toHaveBeenCalledTimes(1);
+    expect((await catalogue()).artworks).toEqual([]);
+  });
+
   it("checks the optional publish version without breaking body-less callers", async () => {
     const initial = await create({
       id: "",
@@ -605,9 +969,9 @@ describe("drafts, publication, revisions and optimistic updates on real D1", () 
     expect((await catalogue()).artworks[0].title).toBe("Newer draft");
   });
 
-  it("moves published paintings to recoverable Trash, guards writes, and preserves snapshots and history", async () => {
+  it("permanently deletes artwork with an optional version and clears catalogue, Studio, export and series cover", async () => {
     const initial = await create({
-      title: "Keep this painting",
+      title: "Delete this painting",
       images: [image],
     });
     const published = await request(
@@ -616,19 +980,10 @@ describe("drafts, publication, revisions and optimistic updates on real D1", () 
     );
     const snapshot = ((await published.json()) as { artwork: Artwork }).artwork;
     const artwork = await save({ ...snapshot, title: "Unsaved publicly" });
-    const getDetail = async () =>
-      (
-        await request(`/studio/artworks/${artwork.id}`, {
-          headers: { Cookie: cookie },
-        })
-      ).json() as Promise<{
-        artwork: Artwork;
-        trashed: boolean;
-        published: boolean;
-        hasDraft: boolean;
-        history: Array<{ id: string }>;
-      }>;
-    const before = await getDetail();
+    await request(
+      "/studio/series",
+      json("POST", { name: "Nature", coverArtworkId: artwork.id }),
+    );
     expect(
       (
         await request(
@@ -643,39 +998,47 @@ describe("drafts, publication, revisions and optimistic updates on real D1", () 
       json("DELETE", { version: artwork.version }),
     );
     expect(removed.status).toBe(200);
-    expect(await removed.json()).toMatchObject({
-      trashed: true,
-      published: true,
-      hasDraft: true,
-      artwork: { version: artwork.version + 1 },
+    expect(await removed.json()).toEqual({
+      deleted: true,
+      id: artwork.id,
+      siteUpdate: { status: "not-configured" },
     });
-    expect((await catalogue()).artworks).toEqual([]);
+    const publicData = await catalogue();
+    expect(publicData.artworks).toEqual([]);
+    expect(publicData.series[0].coverArtworkId).toBeNull();
     const list = (await (
       await request("/studio/artworks", { headers: { Cookie: cookie } })
-    ).json()) as { artworks: Array<Artwork & { trashed: boolean }> };
-    expect(list.artworks[0]).toMatchObject({ id: artwork.id, trashed: true });
-    const trashed = await getDetail();
-    expect(trashed.history).toEqual(before.history);
+    ).json()) as { artworks: Artwork[]; series: Series[] };
+    expect(list.artworks).toEqual([]);
+    expect(list.series[0].coverArtworkId).toBeNull();
+    expect(
+      await bindings.DB.prepare("SELECT id FROM artworks WHERE id = ?")
+        .bind(artwork.id)
+        .first(),
+    ).toBeNull();
+    expect(
+      (
+        await request(`/studio/artworks/${artwork.id}`, {
+          headers: { Cookie: cookie },
+        })
+      ).status,
+    ).toBe(404);
     expect(
       (
         await request(
           `/studio/artworks/${artwork.id}`,
-          json("PUT", { artwork: trashed.artwork }),
+          json("PUT", { artwork }),
         )
       ).status,
-    ).toBe(409);
+    ).toBe(404);
     expect(
       (await request(`/studio/artworks/${artwork.id}/publish`, json("POST")))
         .status,
-    ).toBe(409);
+    ).toBe(404);
     expect(
-      (
-        await request(
-          `/studio/artworks/${artwork.id}/restore`,
-          json("POST", { revisionId: before.history[0].id }),
-        )
-      ).status,
-    ).toBe(409);
+      (await request(`/studio/artworks/${artwork.id}/unpublish`, json("POST")))
+        .status,
+    ).toBe(404);
     expect(
       (
         await request(
@@ -683,38 +1046,67 @@ describe("drafts, publication, revisions and optimistic updates on real D1", () 
           json("POST", { version: artwork.version }),
         )
       ).status,
-    ).toBe(409);
+    ).toBe(404);
     const exported = (await (
       await request("/studio/export", { headers: { Cookie: cookie } })
     ).json()) as { artworks: unknown[] };
-    expect(exported.artworks[0]).toMatchObject({
-      trashed: true,
-      deletedAt: expect.any(String),
-      published: snapshot,
-    });
-    const restored = await request(
-      `/studio/artworks/${artwork.id}/undelete`,
-      json("POST"),
-    );
-    expect(restored.status).toBe(200);
-    expect(await restored.json()).toMatchObject({
-      trashed: false,
-      artwork: { title: artwork.title, version: artwork.version + 2 },
-    });
-    expect((await catalogue()).artworks).toEqual([snapshot]);
-    expect((await getDetail()).history).toEqual(before.history);
-    // Body-less deletion is supported; repeating the same action is idempotent.
-    expect(
-      (await request(`/studio/artworks/${artwork.id}`, json("DELETE"))).status,
-    ).toBe(200);
+    expect(exported.artworks).toEqual([]);
+    // Repeating deletion of a missing painting is 404 and never dispatches again.
     const repeated = await request(
       `/studio/artworks/${artwork.id}`,
       json("DELETE"),
     );
-    expect(await repeated.json()).toMatchObject({
-      artwork: { version: artwork.version + 3 },
-      trashed: true,
+    expect(repeated.status).toBe(404);
+  });
+
+  it("guards permanent deletion against concurrent edits and never resurrects deleted work", async () => {
+    const initial = await create({
+      title: "Concurrent deletion",
+      images: [image],
     });
+    await request(`/studio/artworks/${initial.id}/publish`, json("POST"));
+    const artwork = (await catalogue()).artworks[0];
+    local.GITHUB_PAGES_TOKEN = crypto.randomUUID();
+    const fetcher = vi
+      .spyOn(globalThis, "fetch")
+      .mockResolvedValue(new Response(null, { status: 204 }));
+    const path = `/studio/artworks/${artwork.id}`;
+    for (const version of [0, "2", null, -1]) {
+      expect((await request(path, json("DELETE", { version }))).status).toBe(
+        400,
+      );
+    }
+    expect(fetcher).not.toHaveBeenCalled();
+    const [deleting, saving] = await Promise.all([
+      request(path, json("DELETE", { version: artwork.version })),
+      request(
+        path,
+        json("PUT", { artwork: { ...artwork, title: "Concurrent edit" } }),
+      ),
+    ]);
+    if (deleting.status === 200) {
+      expect([404, 409]).toContain(saving.status);
+      expect(fetcher).toHaveBeenCalledTimes(1);
+      expect(
+        (await request(path, { headers: { Cookie: cookie } })).status,
+      ).toBe(404);
+      expect((await request(path, json("DELETE"))).status).toBe(404);
+      expect(fetcher).toHaveBeenCalledTimes(1);
+    } else {
+      expect(deleting.status).toBe(409);
+      expect(saving.status).toBe(200);
+      expect(fetcher).not.toHaveBeenCalled();
+      const detail = (await (
+        await request(path, { headers: { Cookie: cookie } })
+      ).json()) as { artwork: Artwork };
+      expect(detail.artwork).toMatchObject({
+        title: "Concurrent edit",
+        version: artwork.version + 1,
+      });
+      expect((await request(path, json("DELETE"))).status).toBe(200);
+      expect(fetcher).toHaveBeenCalledTimes(1);
+    }
+    expect((await catalogue()).artworks).toEqual([]);
   });
 
   it("keeps draft-only work private and leaves the published snapshot unchanged after edits", async () => {
@@ -755,11 +1147,8 @@ describe("drafts, publication, revisions and optimistic updates on real D1", () 
       published: true,
       hasDraft: true,
     });
-    expect(detail.history).toEqual([
-      expect.objectContaining({ action: "save", version: 3 }),
-      expect.objectContaining({ action: "publish", version: 2 }),
-      expect.objectContaining({ action: "create", version: 1 }),
-    ]);
+    expect(detail).not.toHaveProperty("history");
+    expect(detail).not.toHaveProperty("trashed");
     expect(
       (await request(`/studio/artworks/${artwork.id}/publish`, json("POST")))
         .status,
@@ -827,7 +1216,7 @@ describe("drafts, publication, revisions and optimistic updates on real D1", () 
     expect((await catalogue()).artworks[0].price).toBe(0);
   });
 
-  it("rejects stale and simultaneously competing updates without phantom revisions", async () => {
+  it("rejects stale and simultaneously competing updates", async () => {
     const artwork = await create({ title: "Original" });
     // Identical bodies exercise the SQL guard even if both requests read version 1.
     const body = { artwork: { ...artwork, title: "Changed" } };
@@ -846,12 +1235,12 @@ describe("drafts, publication, revisions and optimistic updates on real D1", () 
       await request(`/studio/artworks/${artwork.id}`, {
         headers: { Cookie: cookie },
       })
-    ).json()) as { artwork: Artwork; history: unknown[] };
+    ).json()) as { artwork: Artwork };
     expect(detail.artwork).toMatchObject({ version: 2, title: "Changed" });
-    expect(detail.history).toHaveLength(2);
+    expect(detail).not.toHaveProperty("history");
   });
 
-  it("restores history as a new draft only and exports independent snapshots with revisions", async () => {
+  it("exports only independent current snapshots and removes the revision restore route", async () => {
     let artwork = await create({ title: "First", images: [image] });
     await request(`/studio/artworks/${artwork.id}/publish`, json("POST"));
     const detail = (await (
@@ -860,32 +1249,22 @@ describe("drafts, publication, revisions and optimistic updates on real D1", () 
       })
     ).json()) as {
       artwork: Artwork;
-      history: Array<{ id: string; version: number }>;
     };
     artwork = await save({ ...detail.artwork, title: "Second draft" });
     const restore = await request(
       `/studio/artworks/${artwork.id}/restore`,
-      json("POST", { revisionId: detail.history.at(-1)!.id }),
+      json("POST", { revisionId: "obsolete-revision" }),
     );
-    expect(restore.status).toBe(200);
-    expect(await restore.json()).toMatchObject({
-      artwork: { title: "First", version: 4 },
-      published: true,
-      hasDraft: true,
-    });
+    expect(restore.status).toBe(404);
+    expect(
+      (await request(`/studio/artworks/${artwork.id}/undelete`, json("POST")))
+        .status,
+    ).toBe(404);
     expect((await catalogue()).artworks[0]).toMatchObject({
       title: "First",
       version: 2,
     });
-    const other = await create();
-    expect(
-      (
-        await request(
-          `/studio/artworks/${other.id}/restore`,
-          json("POST", { revisionId: detail.history[0].id }),
-        )
-      ).status,
-    ).toBe(404);
+    await create();
     const exported = await request("/studio/export", {
       headers: { Cookie: cookie },
     });
@@ -894,15 +1273,18 @@ describe("drafts, publication, revisions and optimistic updates on real D1", () 
     );
     const inventory = (await exported.json()) as {
       artworks: Array<{ id: string; draft: Artwork; published: Artwork }>;
-      revisions: unknown[];
     };
     expect(
       inventory.artworks.find((item) => item.id === artwork.id),
     ).toMatchObject({
-      draft: { version: 4 },
+      draft: { title: "Second draft", version: 3 },
       published: { version: 2 },
     });
-    expect(inventory.revisions).toHaveLength(5);
+    expect(inventory).not.toHaveProperty("revisions");
+    for (const item of inventory.artworks) {
+      expect(item).not.toHaveProperty("trashed");
+      expect(item).not.toHaveProperty("deletedAt");
+    }
     expect(JSON.stringify(inventory)).not.toContain(local.STUDIO_PASSWORD);
     expect(JSON.stringify(inventory)).not.toContain(local.SESSION_SECRET);
   });
@@ -1091,15 +1473,15 @@ describe("immutable public web derivatives in real R2", () => {
     expect(fetcher).not.toHaveBeenCalled();
   });
 
-  it("protects photos in drafts, published snapshots, Trash, and saved versions after replacement", async () => {
+  it("protects both current snapshots but allows deletion of obsolete photos after replacement", async () => {
     const original = await upload();
     const replacement = await upload();
-    let artwork = await create({ title: "Photo history", images: [original] });
+    let artwork = await create({ title: "Current photos", images: [original] });
     const assertProtected = async (key: string) => {
       const response = await request("/studio/images", json("DELETE", { key }));
       expect(response.status).toBe(409);
       expect(await response.json()).toMatchObject({
-        error: expect.stringContaining("saved version"),
+        error: expect.stringContaining("current draft or published version"),
       });
       expect(await bindings.IMAGES.head(key)).not.toBeNull();
       expect((await library()).find((item) => item.key === key)?.used).toBe(
@@ -1114,12 +1496,113 @@ describe("immutable public web derivatives in real R2", () => {
     artwork = ((await published.json()) as { artwork: Artwork }).artwork;
     artwork = await save({ ...artwork, images: [replacement] });
     await assertProtected(original.key);
-    await request(`/studio/artworks/${artwork.id}/publish`, json("POST"));
-    // The original is now absent from both current snapshots but is retained by history.
-    await assertProtected(original.key);
-    await request(`/studio/artworks/${artwork.id}`, json("DELETE"));
     await assertProtected(replacement.key);
-    await assertProtected(original.key);
+    await request(`/studio/artworks/${artwork.id}/publish`, json("POST"));
+    // Neither current snapshot references the original; no history retains it.
+    expect(
+      (await library()).find((item) => item.key === original.key)?.used,
+    ).toBe(false);
+    expect(
+      (await request("/studio/images", json("DELETE", { key: original.key })))
+        .status,
+    ).toBe(200);
+    expect(await bindings.IMAGES.head(original.key)).toBeNull();
+    await assertProtected(replacement.key);
+  });
+
+  it("releases published-only photos on unpublish without deleting R2 objects or the current draft photo", async () => {
+    const original = await upload();
+    const replacement = await upload();
+    const initial = await create({
+      title: "Unpublish photo",
+      images: [original],
+    });
+    await request(`/studio/artworks/${initial.id}/publish`, json("POST"));
+    const snapshot = (await catalogue()).artworks[0];
+    const draft = await save({ ...snapshot, images: [replacement] });
+    expect(
+      (
+        await request(
+          `/studio/artworks/${initial.id}/unpublish`,
+          json("POST", { version: draft.version }),
+        )
+      ).status,
+    ).toBe(200);
+    expect(
+      (await library()).find((item) => item.key === original.key)?.used,
+    ).toBe(false);
+    expect(
+      (await library()).find((item) => item.key === replacement.key)?.used,
+    ).toBe(true);
+    expect(await bindings.IMAGES.head(original.key)).not.toBeNull();
+    expect(
+      (await request("/studio/images", json("DELETE", { key: original.key })))
+        .status,
+    ).toBe(200);
+    expect(
+      (
+        await request(
+          "/studio/images",
+          json("DELETE", { key: replacement.key }),
+        )
+      ).status,
+    ).toBe(409);
+    const current = (await (
+      await request(`/studio/artworks/${initial.id}`, {
+        headers: { Cookie: cookie },
+      })
+    ).json()) as { artwork: Artwork };
+    expect(
+      (
+        await request(
+          `/studio/artworks/${initial.id}`,
+          json("PUT", {
+            artwork: { ...current.artwork, images: [original] },
+          }),
+        )
+      ).status,
+    ).toBe(409);
+  });
+
+  it("permanent artwork deletion only releases references and never cascades to shared or unused R2 photos", async () => {
+    const shared = await upload();
+    const draftOnly = await upload();
+    const first = await create({ title: "First painting", images: [shared] });
+    const second = await create({ title: "Shared photo", images: [shared] });
+    await request(`/studio/artworks/${first.id}/publish`, json("POST"));
+    const published = (await catalogue()).artworks[0];
+    await save({ ...published, images: [draftOnly] });
+    expect(
+      (await request(`/studio/artworks/${first.id}`, json("DELETE"))).status,
+    ).toBe(200);
+    expect(await bindings.IMAGES.head(shared.key)).not.toBeNull();
+    expect(await bindings.IMAGES.head(draftOnly.key)).not.toBeNull();
+    expect(
+      (await library()).find((item) => item.key === shared.key)?.used,
+    ).toBe(true);
+    expect(
+      (await library()).find((item) => item.key === draftOnly.key)?.used,
+    ).toBe(false);
+    expect(
+      (await request("/studio/images", json("DELETE", { key: shared.key })))
+        .status,
+    ).toBe(409);
+    expect(
+      (await request("/studio/images", json("DELETE", { key: draftOnly.key })))
+        .status,
+    ).toBe(200);
+    expect(
+      (await request(`/studio/artworks/${second.id}`, json("DELETE"))).status,
+    ).toBe(200);
+    expect(await bindings.IMAGES.head(shared.key)).not.toBeNull();
+    expect(
+      (await library()).find((item) => item.key === shared.key)?.used,
+    ).toBe(false);
+    expect(
+      (await request("/studio/images", json("DELETE", { key: shared.key })))
+        .status,
+    ).toBe(200);
+    expect(await library()).toEqual([]);
   });
 
   it("serializes deletion against a competing save so no painting acquires a missing photo", async () => {

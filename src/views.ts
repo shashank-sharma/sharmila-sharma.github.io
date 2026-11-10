@@ -1,12 +1,5 @@
 import type { Artwork, Series } from "./api";
-import r2 from "../data/r2-manifest.json";
 export type { Artwork, Series } from "./api";
-const catalogueImages = new Map(
-  r2.artworks.map((item) => [
-    item.derivatives.find((d) => d.role === "web")!.object_key,
-    item.derivatives.find((d) => d.role === "catalogue")!,
-  ]),
-);
 export const escape = (value: unknown) =>
   String(value ?? "").replace(
     /[&<>"']/g,
@@ -31,9 +24,7 @@ export const image = (a: Artwork, className = "", eager = false) => {
   const original = a.images[0];
   if (!original)
     return '<div class="image-placeholder">Photograph to follow</div>';
-  const thumbnail = catalogueImages.get(original.key);
-  const selected = eager || !thumbnail ? original : thumbnail;
-  return `<img class="${className}" src="${escape(selected.url)}" alt="${escape(original.alt || a.title)}" width="${selected.width}" height="${selected.height}" loading="${eager ? "eager" : "lazy"}" decoding="async">`;
+  return `<img class="${className}" src="${escape(original.url)}" alt="${escape(original.alt || a.title)}" width="${original.width}" height="${original.height}" loading="${eager ? "eager" : "lazy"}" decoding="async">`;
 };
 export function artworkCard(a: Artwork, series: Series[], preview: boolean) {
   return `<article class="work" data-series="${escape(a.seriesId || "standalone")}" data-availability="${preview ? "unconfirmed" : escape(a.availability)}"><a class="work-image" href="/works/${escape(a.slug)}">${image(a)}</a><div class="work-caption"><div><a class="work-title" href="/works/${escape(a.slug)}">${escape(a.title || a.id)}</a><p>${escape(preview ? "From the studio archive" : [a.medium, a.year].filter(Boolean).join(", "))}</p></div><span class="work-status">${preview ? escape(a.id) : escape(a.availability === "available" ? series.find((s) => s.id === a.seriesId)?.name || "" : price(a))}</span></div></article>`;
@@ -60,7 +51,7 @@ export function layout(
   const description =
     options.description ||
     "Paintings and selected works by Sharmila Sharma. Explore the catalogue, discover series and enquire about an original work.";
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${e(title)}${title === "Sharmila Sharma" ? "" : " — Sharmila Sharma"}</title><meta name="description" content="${e(description)}"><meta name="theme-color" content="#f1f1f1"><meta property="og:title" content="${e(title)}"><meta property="og:description" content="${e(description)}"><meta property="og:type" content="website">${options.image ? `<meta property="og:image" content="${e(options.image)}">` : ""}${options.preview || options.studio ? '<meta name="robots" content="noindex,nofollow">' : `<link rel="canonical" href="https://sharmila.me${e(options.path || "/")}">`}<link rel="icon" type="image/svg+xml" href="/mark.svg">${options.studio ? '<link rel="manifest" href="/manifest.webmanifest">' : ""}<link rel="stylesheet" href="/style.css"><script src="/site.js" defer></script>${options.studio ? '<script src="/studio.js" defer></script>' : ""}</head><body${options.studio ? ' class="studio-page"' : ""}><a class="skip-link" href="#main">Skip to content</a>${options.preview ? '<div class="preview-note">Design preview <span>Archive images · titles, series and prices awaiting review</span></div>' : ""}<div class="shell"><header class="site-header"><a class="wordmark" href="/">Sharmila Sharma<span>Paintings & selected works</span></a><nav aria-label="Main navigation">${nav}${options.studio ? '<a href="/studio" aria-current="page">Studio</a>' : ""}</nav></header><main id="main">${content}</main><footer class="site-footer"><div><a class="footer-name" href="/">Sharmila Sharma</a><span>Original paintings. Enquiries welcome.</span></div><div><a href="mailto:sharmila.sharma31@gmail.com">Email</a><a href="https://www.instagram.com/sharmila.sharma31/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="/studio">Studio</a></div><p>© ${new Date().getFullYear()} Sharmila Sharma</p></footer></div><dialog id="image-viewer" aria-label="Painting image viewer"><div class="viewer-toolbar"><span>Use your browser’s zoom to see the details</span><button type="button" id="close-viewer" aria-label="Close image viewer">Close <span aria-hidden="true">×</span></button></div><img id="viewer-image" alt=""></dialog></body></html>`;
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${e(title)}${title === "Sharmila Sharma" ? "" : " — Sharmila Sharma"}</title><meta name="description" content="${e(description)}"><meta name="theme-color" content="#f1f1f1"><meta property="og:title" content="${e(title)}"><meta property="og:description" content="${e(description)}"><meta property="og:type" content="website">${options.image ? `<meta property="og:image" content="${e(options.image)}">` : ""}${options.preview || options.studio ? '<meta name="robots" content="noindex,nofollow">' : `<link rel="canonical" href="https://sharmila.me${e(options.path || "/")}">`}<link rel="icon" type="image/svg+xml" href="/mark.svg">${options.studio ? '<link rel="manifest" href="/manifest.webmanifest">' : ""}<link rel="stylesheet" href="/style.css"><script src="/site.js" defer></script>${options.studio ? '<script src="/studio.js" defer></script>' : ""}</head><body${options.studio ? ' class="studio-page"' : ""}><a class="skip-link" href="#main">Skip to content</a>${options.preview ? '<div class="preview-note">Local preview <span>No archive paintings are imported</span></div>' : ""}<div class="shell"><header class="site-header"><a class="wordmark" href="/">Sharmila Sharma<span>Contemporary artist</span></a><nav aria-label="Main navigation">${nav}${options.studio ? '<a href="/studio" aria-current="page">Studio</a>' : ""}</nav></header><main id="main">${content}</main><footer class="site-footer"><div><a class="footer-name" href="/">Sharmila Sharma</a><span>Original paintings. Enquiries welcome.</span></div><div><a href="mailto:sharmila.sharma31@gmail.com">Email</a><a href="https://www.instagram.com/sharmila.sharma31/" target="_blank" rel="noopener noreferrer">Instagram</a>${options.studio ? '<a href="/studio">Studio</a>' : ""}</div><p>© ${new Date().getFullYear()} Sharmila Sharma</p></footer></div><dialog id="image-viewer" aria-label="Painting image viewer"><div class="viewer-toolbar"><span>Use your browser’s zoom to see the details</span><button type="button" id="close-viewer" aria-label="Close image viewer">Close <span aria-hidden="true">×</span></button></div><img id="viewer-image" alt=""></dialog></body></html>`;
 }
 export function studioMarkup() {
   return /* HTML */ `
@@ -120,8 +111,7 @@ export function studioMarkup() {
         <button data-filter="all" aria-pressed="true">All paintings</button
         ><button data-filter="draft" aria-pressed="false">Drafts</button
         ><button data-filter="published" aria-pressed="false">Published</button
-        ><button data-filter="sold" aria-pressed="false">Sold</button
-        ><button data-filter="trash" aria-pressed="false">Trash</button>
+        ><button data-filter="sold" aria-pressed="false">Sold</button>
       </div>
       <div id="inventory" class="inventory-list"></div>
     </section>
@@ -318,18 +308,17 @@ export function studioMarkup() {
       <div class="painting-management">
         <a id="view-published" class="text-link" href="/works" hidden
           >View published painting ↗</a
-        ><button id="trash-painting" class="text-button danger-text" hidden>
-          Move painting to Trash
+        ><button id="unpublish-painting" class="text-button" hidden>
+          Unpublish painting</button
+        ><button id="delete-painting" class="text-button danger-text" hidden>
+          Delete painting permanently
         </button>
         <p class="field-help">
-          Trash removes the painting from the website. You can restore it later,
-          including its photographs and previous versions.
+          Unpublish keeps the painting as a private draft. Delete is permanent;
+          there is no Trash or version history. Unused uploaded photographs can
+          be deleted separately in Image library.
         </p>
       </div>
-      <section id="revision-section" class="revision-section" hidden>
-        <h3>Previous versions</h3>
-        <div id="revision-list"></div>
-      </section>
     </section>
     <dialog
       id="painting-preview"

@@ -1,4 +1,4 @@
-import { cp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
+import { cp, mkdir, readdir, rm, writeFile } from "node:fs/promises";
 import { resolve, dirname } from "node:path";
 import site from "../src/site.ts";
 import { escape } from "../src/views.ts";
@@ -9,33 +9,14 @@ const preview = process.argv.includes("--preview");
 let catalogue;
 if (preview) {
   catalogue = {
-    artworks: JSON.parse(
-      await readFile(resolve(root, "data/legacy-preview.json"), "utf8"),
-    ),
-    series: [
-      {
-        id: "school",
-        slug: "school",
-        name: "School",
-        description: "",
-        coverArtworkId: null,
-        sortOrder: 0,
-      },
-      {
-        id: "puppet",
-        slug: "puppet",
-        name: "Puppet",
-        description: "",
-        coverArtworkId: null,
-        sortOrder: 1,
-      },
-    ],
-    preview: true,
+    artworks: [],
+    series: [],
+    preview: false,
   };
 } else {
   if (!process.env.CATALOGUE_URL || !process.env.STUDIO_URL)
     throw new Error(
-      "Set CATALOGUE_URL to the published /api/catalogue endpoint and STUDIO_URL to the private Studio. Use --preview only for archive design review.",
+      "Set CATALOGUE_URL to the published /api/catalogue endpoint and STUDIO_URL to the private Studio. Use --preview for an empty local preview.",
     );
   const endpoint = new URL(process.env.CATALOGUE_URL);
   if (endpoint.pathname.replace(/\/$/, "") !== "/api/catalogue")
@@ -123,5 +104,5 @@ for (const path of paths) {
   await writeFile(file, html);
 }
 console.log(
-  `Built ${paths.length} static pages/files from ${catalogue.artworks.length} ${preview ? "archive-preview" : "published"} paintings into dist/pages. No runtime API calls required by visitors.`,
+  `Built ${paths.length} static pages/files from ${catalogue.artworks.length} ${preview ? "preview" : "published"} paintings into dist/pages. No runtime API calls required by visitors.`,
 );

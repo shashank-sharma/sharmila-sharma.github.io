@@ -8,7 +8,6 @@ import {
   type Artwork,
   type Series,
 } from "./views";
-import legacy from "../data/legacy-preview.json";
 
 export type Catalogue = {
   artworks: Artwork[];
@@ -25,12 +24,14 @@ app.get("/", async (c) => {
   const featured = artworks.filter((a) => a.featured);
   const selected = (featured.length ? featured : artworks).slice(0, 6);
   const hero = selected[0];
-  const content = `<section class="home-intro"><div><p class="eyebrow">The artist’s catalogue</p><h1>Sharmila Sharma</h1><p class="intro-line">Paintings in acrylic and watercolour.</p></div><div class="intro-bio"><p>An artist from Gwalior.<br>Browse individual paintings and related series.</p><a class="text-link" href="/about">About the artist <span aria-hidden="true">↗</span></a></div></section>${hero ? `<figure class="hero-work"><a href="/works/${e(hero.slug)}" aria-label="View ${e(hero.title)}">${image(hero, "", true)}</a><figcaption><span>${e(hero.title)} <span class="caption-divider">/</span> ${e(preview ? "From the archive" : [hero.medium, hero.year].filter(Boolean).join(", "))}</span><a href="/works/${e(hero.slug)}">View painting ↗</a></figcaption></figure>` : '<section class="empty-state"><h2>The catalogue is being prepared.</h2><p>A selection of paintings will appear here soon.</p><a href="/contact">Enquire about available work</a></section>'}<section class="selected-section"><div class="section-heading"><div><p class="eyebrow">From the studio</p><h2>Selected works</h2></div><a class="text-link" href="/works">View all works ↗</a></div><div class="works-grid">${selected
-    .slice(1)
-    .map((a) => artworkCard(a, series, preview))
-    .join(
-      "",
-    )}</div></section><section class="home-closing"><h2>Enquiries</h2><p>For availability, delivery or further photographs, please contact Sharmila.</p><a class="text-link" href="/contact">Contact Sharmila ↗</a></section>`;
+  const content = `<section class="home-intro"><div><p class="eyebrow">The artist’s catalogue</p><h1>Sharmila Sharma</h1><p class="intro-line">Paintings in acrylic and watercolour.</p></div><div class="intro-bio"><p>An artist from Gwalior.<br>Browse individual paintings and related series.</p><a class="text-link" href="/about">About the artist <span aria-hidden="true">↗</span></a></div></section>${hero ? `<figure class="hero-work"><a href="/works/${e(hero.slug)}" aria-label="View ${e(hero.title)}">${image(hero, "", true)}</a><figcaption><span>${e(hero.title)} <span class="caption-divider">/</span> ${e(preview ? "From the archive" : [hero.medium, hero.year].filter(Boolean).join(", "))}</span><a href="/works/${e(hero.slug)}">View painting ↗</a></figcaption></figure>` : '<section class="empty-state"><h2>The catalogue is being prepared.</h2><p>A selection of paintings will appear here soon.</p><a href="/contact">Enquire about available work</a></section>'}${
+    selected.length > 1
+      ? `<section class="selected-section"><div class="section-heading"><div><p class="eyebrow">From the studio</p><h2>Selected works</h2></div><a class="text-link" href="/works">View all works ↗</a></div><div class="works-grid">${selected
+          .slice(1)
+          .map((a) => artworkCard(a, series, preview))
+          .join("")}</div></section>`
+      : ""
+  }<section class="home-closing"><h2>Enquiries</h2><p>For availability, delivery or further photographs, please contact Sharmila.</p><a class="text-link" href="/contact">Contact Sharmila ↗</a></section>`;
   return c.html(layout("Sharmila Sharma", content, { preview }));
 });
 app.get("/works", async (c) => {
@@ -130,7 +131,7 @@ app.get("/about", (c) =>
   c.html(
     layout(
       "About the artist",
-      `<section class="page-heading"><p class="eyebrow">About the artist</p><h1>Sharmila Sharma</h1><p>Paintings in acrylic and watercolour.</p></section><div class="about-layout"><div class="about-art">${image(legacy[0] as Artwork, "", true)}</div><div class="prose"><h2>From Gwalior</h2><p>I am an artist from Gwalior, working with acrylics and watercolours. My interest in painting began in my school days and grew into a lifelong artistic practice.</p><p>Figurative art remains a constant in my work, while the approach changes—from brushwork and palette knife to more abstract explorations.</p><p>I studied at the Government Institute of Fine Arts in Gwalior and completed an MA in Drawing & Painting at Jiwaji University.</p><p>This catalogue brings together paintings from across my practice, both individual works and bodies of work connected by a shared theme.</p><a href="/works" class="text-link">Explore the paintings ↗</a></div></div>`,
+      `<section class="page-heading"><p class="eyebrow">About the artist</p><h1>Sharmila Sharma</h1><p>Paintings in acrylic and watercolour.</p></section><div class="about-layout prose"><h2>From Gwalior</h2><p>I am an artist from Gwalior, working with acrylics and watercolours. My interest in painting began in my school days and grew into a lifelong artistic practice.</p><p>Figurative art remains a constant in my work, while the approach changes—from brushwork and palette knife to more abstract explorations.</p><p>I studied at the Government Institute of Fine Arts in Gwalior and completed an MA in Drawing & Painting at Jiwaji University.</p><p>This catalogue brings together paintings from across my practice, both individual works and bodies of work connected by a shared theme.</p><a href="/works" class="text-link">Explore the paintings ↗</a></div>`,
       { active: "about", path: "/about" },
     ),
   ),

@@ -12,8 +12,7 @@
     "preview:pages": "python3 -m http.server 8080 --bind 0.0.0.0 --directory dist/pages",
     "check": "tsc --noEmit",
     "test": "vitest run",
-    "db:migrate": "wrangler d1 migrations apply DB --local",
-    "import:legacy": "node scripts/import-legacy.mjs"
+    "db:migrate": "wrangler d1 migrations apply DB --local"
   },
   "repository": {
     "type": "git",

@@ -95,10 +95,9 @@ type ArtworkRow = {
   draft_json: string | null;
   published_json: string | null;
   version: number;
-  deleted_at: string | null;
 };
 type Environment = { Bindings: Bindings; Variables: { email: string } };
-const rowColumns = "id, slug, draft_json, published_json, version, deleted_at";
+const rowColumns = "id, slug, draft_json, published_json, version";
 
 async function rebuildSite(
   env: Bindings,
@@ -140,11 +139,10 @@ async function rebuildSite(
     clearTimeout(timer);
   }
 }
-// Exact JSON key matches, including every saved version and paintings in Trash.
+// Exact JSON key matches in both current snapshots.
 const referencedImages = `SELECT json_extract(image.value, '$.key') AS key FROM (
   SELECT draft_json AS artwork_json FROM artworks WHERE draft_json IS NOT NULL
   UNION ALL SELECT published_json FROM artworks WHERE published_json IS NOT NULL
-  UNION ALL SELECT artwork_json FROM artwork_revisions
 ) AS snapshot, json_each(snapshot.artwork_json, '$.images') AS image`;
 
 function parse<T>(schema: z.ZodType<T>, input: unknown): T {
@@ -216,13 +214,6 @@ async function getRow(db: D1Database, id: string): Promise<ArtworkRow> {
   return row;
 }
 
-function requireActive(row: ArtworkRow) {
-  if (row.deleted_at)
-    throw new HTTPException(409, {
-      message: "This painting is in Trash. Restore it before making changes.",
-    });
-}
-
 async function checkExpectedVersion(c: Context<Environment>, row: ArtworkRow) {
   const text = await c.req.text();
   const { version } = parse(
@@ -241,7 +232,6 @@ function studioArtwork(env: Bindings, row: ArtworkRow) {
     artwork: workingArtwork(env, row),
     published: row.published_json !== null,
     hasDraft: row.draft_json !== null,
-    trashed: row.deleted_at !== null,
   };
 }
 
@@ -273,26 +263,22 @@ async function validateReferences(db: D1Database, artwork: Artwork) {
   }
 }
 
-// D1 batch is atomic. The conditional UPDATE and conditional history INSERT must stay together.
-async function saveRevision(
+// The conditional UPDATE atomically protects the working version.
+async function saveArtwork(
   env: Bindings,
   row: ArtworkRow,
   artwork: Artwork,
-  action: "save" | "publish" | "restore",
+  action: "save" | "publish",
 ) {
   const json = JSON.stringify(artwork);
   const column = action === "publish" ? "published_json" : "draft_json";
-  const result = await env.DB.batch([
-    env.DB.prepare(
-      `UPDATE artworks SET ${column} = ?, ${action === "publish" ? "draft_json = NULL," : ""}
-      version = ?, updated_at = strftime('%Y-%m-%dT%H:%M:%fZ', 'now') WHERE id = ? AND version = ? AND deleted_at IS NULL`,
-    ).bind(json, artwork.version, row.id, row.version),
-    env.DB.prepare(
-      `INSERT INTO artwork_revisions (id, artwork_id, action, artwork_json, version)
-      SELECT ?, id, ?, ?, version FROM artworks WHERE changes() = 1 AND id = ? AND version = ? AND ${column} = ?`,
-    ).bind(crypto.randomUUID(), action, json, row.id, artwork.version, json),
-  ]);
-  if (result[0].meta.changes !== 1)
+  const result = await env.DB.prepare(
+    `UPDATE artworks SET ${column} = ?, ${action === "publish" ? "draft_json = NULL," : ""}
+      version = ?, updated_at = strftime('%Y-%m-%dT%H:%M:%fZ', 'now') WHERE id = ? AND version = ?`,
+  )
+    .bind(json, artwork.version, row.id, row.version)
+    .run();
+  if (result.meta.changes !== 1)
     throw new HTTPException(409, {
       message: "Artwork changed; reload before saving",
     });
@@ -351,7 +337,7 @@ api.post("/studio/rebuild", async (c) => {
 api.get("/catalogue", async (c) => {
   const [{ results }, series] = await Promise.all([
     c.env.DB.prepare(
-      "SELECT published_json FROM artworks WHERE published_json IS NOT NULL AND deleted_at IS NULL",
+      "SELECT published_json FROM artworks WHERE published_json IS NOT NULL",
     ).all<{ published_json: string }>(),
     getSeries(c.env.DB),
   ]);
@@ -381,7 +367,6 @@ api.get("/studio/artworks", async (c) => {
       ...workingArtwork(c.env, row),
       published: row.published_json !== null,
       hasDraft: row.draft_json !== null,
-      trashed: row.deleted_at !== null,
     }))
     .sort((a, b) => a.sortOrder - b.sortOrder || a.id.localeCompare(b.id));
   return c.json({ artworks, series });
@@ -420,21 +405,16 @@ api.post("/studio/artworks", async (c) => {
   });
   await validateReferences(c.env.DB, artwork);
   const json = JSON.stringify(artwork);
-  await c.env.DB.batch([
-    c.env.DB.prepare(
-      "INSERT INTO artworks (id, slug, draft_json, version) VALUES (?, ?, ?, 1)",
-    ).bind(id, artwork.slug, json),
-    c.env.DB.prepare(
-      `INSERT INTO artwork_revisions (id, artwork_id, action, artwork_json, version)
-      VALUES (?, ?, 'create', ?, 1)`,
-    ).bind(crypto.randomUUID(), id, json),
-  ]);
+  await c.env.DB.prepare(
+    "INSERT INTO artworks (id, slug, draft_json, version) VALUES (?, ?, ?, 1)",
+  )
+    .bind(id, artwork.slug, json)
+    .run();
   return c.json(
     {
       artwork: publicArtwork(c.env, json),
       published: false,
       hasDraft: true,
-      trashed: false,
     },
     201,
   );
@@ -442,18 +422,11 @@ api.post("/studio/artworks", async (c) => {
 
 api.get("/studio/artworks/:id", async (c) => {
   const row = await getRow(c.env.DB, c.req.param("id"));
-  const { results: history } = await c.env.DB.prepare(
-    `SELECT id, action, version, created_at AS createdAt
-    FROM artwork_revisions WHERE artwork_id = ? ORDER BY version DESC`,
-  )
-    .bind(row.id)
-    .all();
-  return c.json({ ...studioArtwork(c.env, row), history });
+  return c.json(studioArtwork(c.env, row));
 });
 
 api.put("/studio/artworks/:id", async (c) => {
   const row = await getRow(c.env.DB, c.req.param("id"));
-  requireActive(row);
   const { artwork: input } = parse(
     z.object({ artwork: artworkSchema }),
     await c.req.json(),
@@ -465,18 +438,16 @@ api.put("/studio/artworks/:id", async (c) => {
     return c.json({ error: "Artwork changed; reload before saving" }, 409);
   const artwork = { ...input, version: row.version + 1 };
   await validateReferences(c.env.DB, artwork);
-  await saveRevision(c.env, row, artwork, "save");
+  await saveArtwork(c.env, row, artwork, "save");
   return c.json({
     artwork: publicArtwork(c.env, JSON.stringify(artwork)),
     published: row.published_json !== null,
     hasDraft: true,
-    trashed: false,
   });
 });
 
 api.post("/studio/artworks/:id/publish", async (c) => {
   const row = await getRow(c.env.DB, c.req.param("id"));
-  requireActive(row);
   await checkExpectedVersion(c, row);
   if (!row.draft_json) return c.json({ error: "No draft to publish" }, 409);
   const artwork = parse(publishSchema, {
@@ -484,83 +455,70 @@ api.post("/studio/artworks/:id/publish", async (c) => {
     version: row.version + 1,
   });
   await validateReferences(c.env.DB, artwork);
-  await saveRevision(c.env, row, artwork, "publish");
+  await saveArtwork(c.env, row, artwork, "publish");
   return c.json({
     artwork,
     published: true,
     hasDraft: false,
-    trashed: false,
     siteUpdate: await rebuildSite(c.env),
   });
 });
 
-api.post("/studio/artworks/:id/restore", async (c) => {
-  const { revisionId } = parse(
-    z.object({ revisionId: idSchema }),
-    await c.req.json(),
-  );
+api.post("/studio/artworks/:id/unpublish", async (c) => {
   const row = await getRow(c.env.DB, c.req.param("id"));
-  requireActive(row);
-  const revision = await c.env.DB.prepare(
-    "SELECT artwork_json FROM artwork_revisions WHERE id = ? AND artwork_id = ?",
-  )
-    .bind(revisionId, row.id)
-    .first<{ artwork_json: string }>();
-  if (!revision) return c.json({ error: "Revision not found" }, 404);
-  const artwork = parse(artworkSchema, {
-    ...JSON.parse(revision.artwork_json),
-    version: row.version + 1,
-  });
-  await validateReferences(c.env.DB, artwork);
-  await saveRevision(c.env, row, artwork, "restore");
-  return c.json({
-    artwork: publicArtwork(c.env, JSON.stringify(artwork)),
-    published: row.published_json !== null,
-    hasDraft: true,
-    trashed: false,
-  });
-});
-
-async function setTrashed(c: Context<Environment>, trashed: boolean) {
-  const row = await getRow(c.env.DB, c.req.param("id")!);
   await checkExpectedVersion(c, row);
-  if ((row.deleted_at !== null) === trashed)
-    return c.json(studioArtwork(c.env, row));
-  const deletedAt = trashed ? new Date().toISOString() : null;
+  if (!row.published_json)
+    return c.json({
+      ...studioArtwork(c.env, row),
+      siteUpdate: { status: "not-needed" },
+    });
   const result = await c.env.DB.prepare(
-    `UPDATE artworks SET deleted_at = ?, version = version + 1,
-    updated_at = strftime('%Y-%m-%dT%H:%M:%fZ', 'now') WHERE id = ? AND version = ?`,
+    `UPDATE artworks SET draft_json = COALESCE(draft_json, published_json), published_json = NULL,
+    version = version + 1, updated_at = strftime('%Y-%m-%dT%H:%M:%fZ', 'now')
+    WHERE id = ? AND version = ? AND published_json IS NOT NULL`,
   )
-    .bind(deletedAt, row.id, row.version)
+    .bind(row.id, row.version)
     .run();
   if (result.meta.changes !== 1)
     return c.json({ error: "Artwork changed; reload before continuing" }, 409);
-  // Snapshots and revision history remain untouched. Undo restores the previous published state.
   return c.json({
     ...studioArtwork(c.env, {
       ...row,
-      deleted_at: deletedAt,
+      draft_json: row.draft_json ?? row.published_json,
+      published_json: null,
       version: row.version + 1,
     }),
+    siteUpdate: await rebuildSite(c.env),
+  });
+});
+
+api.delete("/studio/artworks/:id", async (c) => {
+  const row = await getRow(c.env.DB, c.req.param("id"));
+  await checkExpectedVersion(c, row);
+  // RETURNING counts only the artwork, not series-cover foreign-key updates.
+  const result = await c.env.DB.prepare(
+    "DELETE FROM artworks WHERE id = ? AND version = ? RETURNING id",
+  )
+    .bind(row.id, row.version)
+    .first<{ id: string }>();
+  if (!result)
+    return c.json({ error: "Artwork changed; reload before continuing" }, 409);
+  // Only artwork references are removed. Unused photos remain manually deletable.
+  return c.json({
+    deleted: true,
+    id: row.id,
     ...(row.published_json !== null
       ? { siteUpdate: await rebuildSite(c.env) }
       : {}),
   });
-}
-
-api.delete("/studio/artworks/:id", (c) => setTrashed(c, true));
-api.post("/studio/artworks/:id/undelete", (c) => setTrashed(c, false));
+});
 
 api.get("/studio/export", async (c) => {
-  const [rows, series, revisions, images] = await Promise.all([
+  const [rows, series, images] = await Promise.all([
     c.env.DB.prepare(
       `SELECT ${rowColumns} FROM artworks ORDER BY id`,
     ).all<ArtworkRow>(),
     getSeries(c.env.DB),
-    c.env.DB.prepare(
-      `SELECT id, artwork_id AS artworkId, action, artwork_json, version, created_at AS createdAt
-      FROM artwork_revisions ORDER BY artwork_id, version`,
-    ).all<{ artwork_json: string } & Record<string, unknown>>(),
     c.env.DB.prepare(
       "SELECT key, content_type AS contentType, width, height, byte_size AS byteSize FROM images ORDER BY key",
     ).all(),
@@ -577,16 +535,10 @@ api.get("/studio/export", async (c) => {
       id: row.id,
       slug: row.slug,
       version: row.version,
-      trashed: row.deleted_at !== null,
-      deletedAt: row.deleted_at,
       draft: row.draft_json ? publicArtwork(c.env, row.draft_json) : null,
       published: row.published_json
         ? publicArtwork(c.env, row.published_json)
         : null,
-    })),
-    revisions: revisions.results.map(({ artwork_json, ...revision }) => ({
-      ...revision,
-      artwork: publicArtwork(c.env, artwork_json),
     })),
     images: images.results,
   });
@@ -697,7 +649,7 @@ api.delete("/studio/images", async (c) => {
   ) {
     return c.json({ error: "Image not found in the image library" }, 404);
   }
-  // Reserve deletion atomically against all snapshot/history references. Triggers then
+  // Reserve deletion atomically against both current snapshots. Triggers then
   // prevent a concurrent save from attaching the key while R2 deletion is in flight.
   await c.env.DB.prepare(
     `INSERT INTO deleted_images (key)
@@ -714,7 +666,7 @@ api.delete("/studio/images", async (c) => {
     return c.json(
       {
         error:
-          "This photo is used by a painting or a saved version, including Trash. Removing it from the current painting does not remove saved versions; permanent deletion is blocked.",
+          "This photo is used by a painting's current draft or published version. Remove it from both snapshots before permanently deleting it.",
       },
       409,
     );

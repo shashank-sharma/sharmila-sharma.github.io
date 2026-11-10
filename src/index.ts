@@ -2,15 +2,8 @@ import { Hono } from "hono";
 import api, { type Bindings, type Artwork, type Series } from "./api";
 import site from "./site";
 import { layout, studioMarkup } from "./views";
-import legacy from "../data/legacy-preview.json";
-import r2 from "../data/r2-manifest.json";
 
 type Env = Bindings & { ASSETS: Fetcher; CATALOGUE_PREVIEW?: string };
-const legacyImageURLs = new Map(
-  r2.artworks.flatMap((a) =>
-    a.derivatives.map((d) => [d.object_key, d.url] as const),
-  ),
-);
 const app = new Hono<{ Bindings: Env }>();
 app.use("*", async (c, next) => {
   await next();
@@ -31,8 +24,6 @@ app.get("/studio", (c) =>
 app.get("/media/*", async (c) => {
   const key = c.req.path.slice("/media/".length);
   if (!key.startsWith("sharmila/")) return c.notFound();
-  const url = legacyImageURLs.get(key);
-  if (url) return c.redirect(url, 302);
   const object = await c.env.IMAGES.get(key);
   if (!object) return c.notFound();
   c.header("Cache-Control", "public, max-age=31536000, immutable");
@@ -52,18 +43,10 @@ app.get("*", async (c) => {
     artworks: Artwork[];
     series: Series[];
   };
-  const preview = !data.artworks.length;
-  if (preview) {
-    const { results } = await c.env.DB.prepare(
-      "SELECT id FROM artworks WHERE deleted_at IS NOT NULL",
-    ).all<{ id: string }>();
-    const trashed = new Set(results.map((row) => row.id));
-    data.artworks = (legacy as Artwork[]).filter((a) => !trashed.has(a.id));
-  }
   return site.request(
     c.req.raw,
     {},
-    { CATALOGUE: { ...data, preview }, STUDIO_URL: "/studio" },
+    { CATALOGUE: { ...data, preview: false }, STUDIO_URL: "/studio" },
   );
 });
 export default app;

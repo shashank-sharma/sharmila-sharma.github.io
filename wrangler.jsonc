@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sharmila-catalogue",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-01",
+  "workers_dev": false,
+  "routes": [{ "pattern": "studio-sharmila.vipul.xyz", "custom_domain": true }],
+  "assets": { "directory": "public", "binding": "ASSETS" },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "sharmila-catalogue",
+      "database_id": "d5476c1e-2def-414b-a3b6-9868e70956bf",
+      "migrations_dir": "migrations",
+    },
+  ],
+  "r2_buckets": [{ "binding": "IMAGES", "bucket_name": "blog" }],
+  "vars": {
+    "IMAGE_BASE_URL": "https://images.vipul.xyz",
+    "ACCESS_TEAM_DOMAIN": "tabaahi.cloudflareaccess.com",
+    "ACCESS_AUD": "8e91bf2b03e41f7d51544efaff14d5e28b50c2bec469e1c015f33357595dac81",
+  },
+}

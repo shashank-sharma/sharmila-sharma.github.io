@@ -1,10 +1,19 @@
 {
-  "name": "photorama",
-  "version": "1.0.0",
-  "description": "Theme by [Start Bootstrap](http://startbootstrap.com/).",
-  "main": "Gruntfile.js",
+  "name": "sharmila-sharma-catalogue",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Sharmila Sharma's painting catalogue and Studio",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "wrangler dev --ip 0.0.0.0 --port 8787",
+    "build": "tsx scripts/build-pages.mjs",
+    "build:preview": "tsx scripts/build-pages.mjs --preview",
+    "build:studio": "wrangler deploy --dry-run --outdir dist/worker",
+    "preview:pages": "python3 -m http.server 8080 --bind 0.0.0.0 --directory dist/pages",
+    "check": "tsc --noEmit",
+    "test": "vitest run",
+    "db:migrate": "wrangler d1 migrations apply DB --local",
+    "import:legacy": "node scripts/import-legacy.mjs"
   },
   "repository": {
     "type": "git",
@@ -17,6 +26,18 @@
   },
   "homepage": "http://sunbliss.github.io",
   "dependencies": {
-    "searchkit": "^0.7.0"
+    "hono": "^4.13.17",
+    "jose": "^6.2.17",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-plugin": "^1.6.1",
+    "@cloudflare/workers-types": "^5.20261110.1",
+    "@playwright/test": "^1.65.0",
+    "prettier": "^3.9.10",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0",
+    "wrangler": "^4.159.0"
   }
 }

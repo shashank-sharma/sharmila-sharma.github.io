@@ -1,0 +1,51 @@
+name: Publish catalogue to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: catalogue-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm test
+      - name: Generate public HTML from published inventory only
+        run: npm run build
+        env:
+          CATALOGUE_URL: https://studio-sharmila.vipul.xyz/api/catalogue
+          STUDIO_URL: https://studio-sharmila.vipul.xyz/studio
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/pages
+          retention-days: 1
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy static catalogue
+        id: deployment
+        uses: actions/deploy-pages@v4

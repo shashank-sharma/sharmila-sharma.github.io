@@ -1,0 +1,650 @@
+[
+  {
+    "source": "gallery/archive/g01/gal1.jpg",
+    "artworkId": "SS-G01-GAL1",
+    "sha256": "21a080a0cf8e370c1d741c13f3abee418efa3557ccae6733bc62d64940e2ac40",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal2.jpg",
+    "artworkId": "SS-G01-GAL2",
+    "sha256": "01ff7b6f12a8a59bc950dfcd4c90c11997af7657fa3c70de491d7f2a11abfda3",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal3.jpg",
+    "artworkId": "SS-G01-GAL3",
+    "sha256": "9217962f935b5856d3f6ac31b6308ca05c6a102e2d30c92bdfd59c401c27caf3",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal4.jpg",
+    "artworkId": "SS-G01-GAL4",
+    "sha256": "0458d7a428b81f5723256355b55c7c0ada4ad20de5ee7af139031cabc954af17",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal5.jpg",
+    "artworkId": "SS-G01-GAL5",
+    "sha256": "1ec21c28da0b5ca8bcea153c89f5e7d97162eca55d7ee21503de8c9aaf94181a",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal6.jpg",
+    "artworkId": "SS-G01-GAL6",
+    "sha256": "3debfe380c58ae00c748ae19f423f8ef3bfe946a6469c0019dbf6db547db3e36",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal7.jpg",
+    "artworkId": "SS-G01-GAL7",
+    "sha256": "bb76d39c4a04f0766a72797084d6d9944fa171f68ab04da6d94c33590636f25a",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal8.jpg",
+    "artworkId": "SS-G01-GAL8",
+    "sha256": "0e289ac9594e9e6d9201ce5112282a70679e3856c07c02ad2b3b12fa88fd2b48",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal9.jpg",
+    "artworkId": "SS-G01-GAL9",
+    "sha256": "93f338a60e9b27f968ac81a6f22b3c593fa594de3cb0417957f8d04ea47032fe",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal10.jpg",
+    "artworkId": "SS-G01-GAL10",
+    "sha256": "fa6dc1cc9399b9be2b5777ec30763f60d45984245822594439b6475679367959",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal11.jpg",
+    "artworkId": "SS-G01-GAL11",
+    "sha256": "4cc8b844a6dbf82c1b21d2f7c944f91e27008a3684a955df80ff06caf865a5ce",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal12.jpg",
+    "artworkId": "SS-G01-GAL12",
+    "sha256": "39f9a2825726a41e92b413307ae83505df71d8dabb26bb3531ab131808614167",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal13.jpg",
+    "artworkId": "SS-G01-GAL13",
+    "sha256": "1d549ac7622fe5ad66974b70ec6249046a6562ce0c2af0a0d73ab331d4296b48",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal14.jpg",
+    "artworkId": "SS-G01-GAL14",
+    "sha256": "8ab4b52617ca391b8196ab0cb4eff72d17aaa5db47fa860ed7657247b81c36ab",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal15.jpg",
+    "artworkId": "SS-G01-GAL15",
+    "sha256": "00ac7dcb3f5b1c3d4c01954ea9e314f2f6269df750bcdac552389bed7ea52be4",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal16.jpg",
+    "artworkId": "SS-G01-GAL16",
+    "sha256": "0bcb30cb883872daaee2165ca1bab05be05b0ae50982654c46cfd6a29c90a9e0",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal17.jpg",
+    "artworkId": "SS-G01-GAL17",
+    "sha256": "d3e95fe85f90d6040c4d6b26e445852326e0619db4655fdabf80a23853dadda5",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal18.jpg",
+    "artworkId": "SS-G01-GAL18",
+    "sha256": "ce9a3b4763c2c3c190a529c53051bf57f3c7454b75d06739c42736afac29f451",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal19.jpg",
+    "artworkId": "SS-G01-GAL19",
+    "sha256": "4c59e652c1e0fdb2edb978599060ae92db39c32c78c52cae6ab5d461d583f6c8",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal20.jpg",
+    "artworkId": "SS-G01-GAL20",
+    "sha256": "73d246b9987636f0f7c46921bcaf14c60ddf33ff46695f81c8e9c1b66e0e25a7",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal21.jpg",
+    "artworkId": "SS-G01-GAL21",
+    "sha256": "f8fe2cc264a7d1ca2492983e767eed56d2ef0775ed7d9a2abc64d00f0f93defe",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal22.jpg",
+    "artworkId": "SS-G01-GAL22",
+    "sha256": "8de7b3703dc41947e8af95ce9e872d52bb1713d02d1115ad323a5f03f971936f",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal23.jpg",
+    "artworkId": "SS-G01-GAL23",
+    "sha256": "de661c8524e9dcc8d201d4d40ec36289baf7c30125f69251484ae3062ec77bc3",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal24.jpg",
+    "artworkId": "SS-G01-GAL24",
+    "sha256": "e12c8bd2cf36d8ae20145c3157b248e6299606b58235d6d92ba6d497951f900f",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal25.jpg",
+    "artworkId": "SS-G01-GAL25",
+    "sha256": "cc9057fcc0a1a3dd2324c75f2adbd39fbc61cbf1378beda41133f0295ad4b132",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal26.jpg",
+    "artworkId": "SS-G01-GAL26",
+    "sha256": "abb6e66fbc10aa049a08e7df5448d511aaf0a1e2dd95294ed1a08f25c117be8d",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal27.jpg",
+    "artworkId": "SS-G01-GAL27",
+    "sha256": "b376ae2f4df4374ae53222fc5e802baaeb7523e1365bd4fd6b08adc92a0a61c0",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal28.jpg",
+    "artworkId": "SS-G01-GAL28",
+    "sha256": "1ef6c7f227f8579fd10aadfdd56222bb355c510ca00b587336b8766331f6b314",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal29.jpg",
+    "artworkId": "SS-G01-GAL29",
+    "sha256": "bfc3e21f0e1e504d718757ffcb5cbe989c131253de06691761bfd471dc20996c",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal30.jpg",
+    "artworkId": "SS-G01-GAL30",
+    "sha256": "7f3faa8f34acb7c2cc3af8e00aa2b3c0f0f87bc827d34c6f660c4babbcfcb1d9",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal31.jpg",
+    "artworkId": "SS-G01-GAL31",
+    "sha256": "2b1d9e75a313f90559b7edee14113badb5b534b7cee5b09a723b6f1aee7b7210",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal32.jpg",
+    "artworkId": "SS-G01-GAL32",
+    "sha256": "68390a37cb1a93d5e06886a37ce84bc4939d3c3401862e51f757c4a98a907893",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal33.jpg",
+    "artworkId": "SS-G01-GAL33",
+    "sha256": "5d30a70b1582cd477a267f14d4413b71e2b38449cb7312be5a7a9d772d807cab",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal34.jpg",
+    "artworkId": "SS-G01-GAL34",
+    "sha256": "7295cbe2ca5b452c8d13ff650bc4163711f6beb88d70f080872a5691959792c3",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal35.jpg",
+    "artworkId": "SS-G01-GAL35",
+    "sha256": "455b5ea6b9f415198bf729ec1646bb137a64b88b8e16661172068d26dbdb6afd",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal36.jpg",
+    "artworkId": "SS-G01-GAL36",
+    "sha256": "893678705326dee1d70c8c65ee7c50ff17adc5cd4e2550989522cd424b9879db",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal37.jpg",
+    "artworkId": "SS-G01-GAL37",
+    "sha256": "e6ffefeb5c72014359ec571ce02bbf689429a62e164f4235623427a575fbeeb4",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal38.jpg",
+    "artworkId": "SS-G01-GAL38",
+    "sha256": "b837b84430ebeb2913538d7ca4f3ec51bf223a387499c51f0dce3e292c96faf6",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal39.jpg",
+    "artworkId": "SS-G01-GAL39",
+    "sha256": "02d8b7973d6a20ec3762d76ba5021be12488f4c5ebfb62075f0944119b944ae2",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal40.jpg",
+    "artworkId": "SS-G01-GAL40",
+    "sha256": "b2f92732b1915c9547e8f341d140c2dda767b1ffb6ce0699cbf27dbaa2bb04ca",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal41.jpg",
+    "artworkId": "SS-G01-GAL41",
+    "sha256": "a96634e9bfeddc0234317f11e7dc32870450a1422e081ee26ba0913570901772",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal42.jpg",
+    "artworkId": "SS-G01-GAL42",
+    "sha256": "353b295e82f42a57b52472eba662fd335e1e33d9cc0b8330d329bdf14ca9699b",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal43.jpg",
+    "artworkId": "SS-G01-GAL43",
+    "sha256": "a14b959d021a3d8ce018a495b3ab7929864e5b07aff9f882737b70188d9bb22d",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal44.jpg",
+    "artworkId": "SS-G01-GAL44",
+    "sha256": "d118ca3df5863d0376b1f413f6edc2beb5f1301d69aff99f97aa922998f68cbe",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal45.jpg",
+    "artworkId": "SS-G01-GAL45",
+    "sha256": "5978a079287de81d65002cab12ad6cd6166244aead66fb150dc492051ae7e5a7",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal46.jpg",
+    "artworkId": "SS-G01-GAL46",
+    "sha256": "d82eda4c44f1b3b3abd9f0348df571f75c11f11a770cea4f3b47ca73fb984691",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal47.jpg",
+    "artworkId": "SS-G01-GAL47",
+    "sha256": "28d1abe5a188588f9c1ba47403d396e7e0e95dca8f1b66dec04bb7421f32c6a4",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal48.jpg",
+    "artworkId": "SS-G01-GAL48",
+    "sha256": "b0bb788fe632ec43a00e2912fe844b7aebb7af354f83297fbd70620651d08187",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal49.jpg",
+    "artworkId": "SS-G01-GAL49",
+    "sha256": "555c4b338618e25e25a7bf2a22049d20f0492c98f0f6135ed54bb3ae7b7ce575",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal50.jpg",
+    "artworkId": "SS-G01-GAL50",
+    "sha256": "20e01fb35148eeaac4bfbd60ee99220704f31652634e2c174957548a4c6c0acf",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal51.jpg",
+    "artworkId": "SS-G01-GAL51",
+    "sha256": "bc451556552e819f4364e9a5712d9353e9d0db5842832a6c9a77bb4fe3991142",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal52.jpg",
+    "artworkId": "SS-G01-GAL52",
+    "sha256": "b63d72c43ef78bf6541da293d394373702536ccc2bf5a83ba242c3d98e1f656d",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal53.jpg",
+    "artworkId": "SS-G01-GAL53",
+    "sha256": "fccf5014dfaef60daff439484eba11240ff8177f9a94dd344958e2627fc73f86",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal54.jpg",
+    "artworkId": "SS-G01-GAL54",
+    "sha256": "ca4eb190399c9bd79d4dd2c1e05e1655a1d47155b0604d0dae2345664d4c3748",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal55.jpg",
+    "artworkId": "SS-G01-GAL55",
+    "sha256": "46c72e3575e3c9f2a2602604e1d517997896d2e28138b06977a50b2df6fd433f",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal56.jpg",
+    "artworkId": "SS-G01-GAL56",
+    "sha256": "df8c07074d3414c2da257c17a565194c449e6e81ce87e1fbdf024d419bf4bdd7",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal57.jpg",
+    "artworkId": "SS-G01-GAL57",
+    "sha256": "aaa0ea90056233c3779d09b2e10c30a1b35e818a3f6b5932cd8f44c7280b48e0",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal58.jpg",
+    "artworkId": "SS-G01-GAL58",
+    "sha256": "2bd549a12de3a7e5a83956e518bce8fa7a3707f049b40de1cbc296a1bc59a482",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal59.jpg",
+    "artworkId": "SS-G01-GAL59",
+    "sha256": "25dbf549a79c23430b4b4735247a51285d816343f07392d72eae35a10da82362",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal60.jpg",
+    "artworkId": "SS-G01-GAL60",
+    "sha256": "a43173f7989bb1e4a647d474e6b92aaee18b729a678693ff38452309588a216d",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal61.jpeg",
+    "artworkId": "SS-G01-GAL61",
+    "sha256": "27c86aaf559284695882b0362d33940ef54f90c012e96e03785decf8b2567503",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal62.jpeg",
+    "artworkId": "SS-G01-GAL62",
+    "sha256": "58fee867054bcf4e4c1fc9634c9901d08ac63ab5897babd7ea959170bf43c004",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal63.jpeg",
+    "artworkId": "SS-G01-GAL63",
+    "sha256": "e652c10c8342dc934306f68c382947eb58e24e8b2455f0b625e48f666617a8f5",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal64.jpeg",
+    "artworkId": "SS-G01-GAL64",
+    "sha256": "8d6a28bacdf6668afa9694732a2cf30f89f3938ca80ec3ee9250735149d28e8c",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal65.jpeg",
+    "artworkId": "SS-G01-GAL65",
+    "sha256": "07f1b630b97617bf9f48838fff99bb6cbb4d14c4418db35e52804df3b38dfa4d",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal66.jpeg",
+    "artworkId": "SS-G01-GAL66",
+    "sha256": "485d3c4c55582ffa30b6b777a1f29fcc5197bc32f8cb90db5c3d82ba0e266aa9",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal67.jpeg",
+    "artworkId": "SS-G01-GAL67",
+    "sha256": "7995dafcd196ac0784595b22ff9666427538a481c9cafab569e3a1f45adeb995",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal81.jpg",
+    "artworkId": "SS-G01-GAL81",
+    "sha256": "466ade770c02574c55ad111f163a3efaebb8d771ddd6b89d4c7939d1613dbd7e",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal82.jpg",
+    "artworkId": "SS-G01-GAL82",
+    "sha256": "00ecc0af7b5b821ab45e42cfa30e61555049e448494c66bece9cb80bae62a8c0",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal83.jpg",
+    "artworkId": "SS-G01-GAL83",
+    "sha256": "da87e813e9276cabae7f9c43c38f6eeaae05b73e585ca2d8ea4de946d46ca2fe",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal84.jpg",
+    "artworkId": "SS-G01-GAL84",
+    "sha256": "95b18c96c85da5bd8de259d889b0acc3b35b016d7a740b9966c2c5f29b39325c",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal85.jpg",
+    "artworkId": "SS-G01-GAL85",
+    "sha256": "e177cb71a9c46ea39be77a157f38308944d9d0fd8e93cb9adfa5364fe05d7e6c",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal86.jpg",
+    "artworkId": "SS-G01-GAL86",
+    "sha256": "6219710a99912587dda63865c8399f7d7d10274707e6aa04719e14bc5d2a2c06",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal87.jpg",
+    "artworkId": "SS-G01-GAL87",
+    "sha256": "46518a748df2637b7887ed4ca2446c198b22cd58baa26b8c7532d811630ec533",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal88.jpg",
+    "artworkId": "SS-G01-GAL88",
+    "sha256": "a36065b2395e91e72a090d6d42ae71edca9d22c68b112749528973ed5c7204aa",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal89.jpg",
+    "artworkId": "SS-G01-GAL89",
+    "sha256": "98afef447a72bc746de60b1a1b38b770a5acb638553e5d08fd3b195492493ed7",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal90.jpg",
+    "artworkId": "SS-G01-GAL90",
+    "sha256": "d834e41249b9508d54c1e64c92c1a6186d6c32e004a40fc618b17bbd5fcf330d",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal91.jpg",
+    "artworkId": "SS-G01-GAL91",
+    "sha256": "b3f3f552423fdace428c751930497516e9ba8f78360c4ac74469720cd2226c51",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal92.jpg",
+    "artworkId": "SS-G01-GAL92",
+    "sha256": "b54c7f0f1f3a2d5c6fd88f34d16587fa8b1b4eaed8784062a54db4bcf448a86c",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal93.jpg",
+    "artworkId": "SS-G01-GAL93",
+    "sha256": "0babba27520f6cd2f055edda791462f0df92e4a7e3301e28f66cfff56bc8e004",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal94.jpg",
+    "artworkId": "SS-G01-GAL94",
+    "sha256": "89183759025b6400edbecd25a182fc4c801077edbb716b3b32e40a66cc0cad20",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal95.jpg",
+    "artworkId": "SS-G01-GAL95",
+    "sha256": "90776021c176e33e4b4a8d157c02c37b87af9735b2663bc6d1b9b9ea9546a98c",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal96.jpg",
+    "artworkId": "SS-G01-GAL96",
+    "sha256": "3bb6dee1a9d805ae250102db6d11ad7a06a03a35c57e11ebeca70c30896acbf0",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal97.jpg",
+    "artworkId": "SS-G01-GAL97",
+    "sha256": "18e596da7d2a2e1b8c0cb8bfc9332e260b29adab99e03a11f6b4c2e1ddb0fdbe",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal98.jpeg",
+    "artworkId": "SS-G01-GAL98",
+    "sha256": "5f4d99837688cd76268ff1380fd15532caa72ac80e4d55cd7325a60b04f490b7",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal99.jpeg",
+    "artworkId": "SS-G01-GAL99",
+    "sha256": "6f3cccf789ebb665bc9cabc0856a41282878f37725ffd2489163a1df507fc4c8",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal100.jpeg",
+    "artworkId": "SS-G01-GAL100",
+    "sha256": "7627b782e9479547df9650a969534f4e1e021f73cb9e6d8ddfecd244a0991f34",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal101.jpeg",
+    "artworkId": "SS-G01-GAL101",
+    "sha256": "26152ec828ceefc6b66cdea7a2af136aa80bb5ad2b50c403579e6b2ac59411ad",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal102.jpeg",
+    "artworkId": "SS-G01-GAL102",
+    "sha256": "27b2c0700d38d588fa428a48c5289a2db951ec0dbd6c3016e03d8a5f71ff30a9",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal103.jpeg",
+    "artworkId": "SS-G01-GAL103",
+    "sha256": "d00ea9a6a93059b7975f65beb24300087527179821a6e84e859056c264020f5e",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal104.jpeg",
+    "artworkId": "SS-G01-GAL104",
+    "sha256": "b1c8b093a0e186fa3e3a8b5a12838b9450b1a0b3a6394933fc7cce9e432af8b2",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal105.jpeg",
+    "artworkId": "SS-G01-GAL105",
+    "sha256": "5d784fc86c6588920107069e65c732fda3a20e203707e3d9ad84b8cb9164e672",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal106.jpeg",
+    "artworkId": "SS-G01-GAL106",
+    "sha256": "56501992dc2e95f4b4f5252dc7954692e2d11a356656c290f33e8908857ff97b",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal107.jpeg",
+    "artworkId": "SS-G01-GAL107",
+    "sha256": "b2e4fb40b92dd140a009c660825ec84eb43dbf098110a8bae756290b68217ec0",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal108.jpeg",
+    "artworkId": "SS-G01-GAL108",
+    "sha256": "87efd6955c0ad00d375c4623d31a927745be940868ed1b08a319d86ef5525a9b",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal109.jpeg",
+    "artworkId": "SS-G01-GAL109",
+    "sha256": "04b3aecde92e7fd2354307a0cf771fb066092926ef7819515694efd6d303fd3b",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal110.jpeg",
+    "artworkId": "SS-G01-GAL110",
+    "sha256": "3175bf325a46486ae56bcf5705c178b6ba479fd0c90fca9e3a9185140347e3a0",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g01/gal111.jpeg",
+    "artworkId": "SS-G01-GAL111",
+    "sha256": "2ca6e089104993db7e62484fdaa062c46e98e47c4b0071a4feb572fc1d20aa73",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g02/gal1.jpeg",
+    "artworkId": "SS-G02-GAL1",
+    "sha256": "ab24886dcf2b3aa6347f93fca390c13aa4cb0ea11c30e4ad704b938312e7ccd2",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g02/gal2.jpeg",
+    "artworkId": "SS-G02-GAL2",
+    "sha256": "314be53f25c6206d5441272c8819ba1d841beba852bd6be12629efe669c55624",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g02/gal3.jpeg",
+    "artworkId": "SS-G02-GAL3",
+    "sha256": "bbe83c0cb498e4039bc365fd5f894da48e3297dd8f54dbebdb969183b6a204d4",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g02/gal4.jpeg",
+    "artworkId": "SS-G02-GAL4",
+    "sha256": "a0f77a29fc54d72feacea8706f212f6bdd23d36b205f53219d2199d369bb675f",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g02/gal5.jpeg",
+    "artworkId": "SS-G02-GAL5",
+    "sha256": "6499c50ba9b43019fbb21af470c38f7af4c4eb485e88d18efb73b0e5d1ad1625",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g02/gal6.jpeg",
+    "artworkId": "SS-G02-GAL6",
+    "sha256": "ff456e44047b54f5ff5d7374a523ca587ef280301ae4024ba7af74807612f548",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g03/gal1.jpeg",
+    "artworkId": "SS-G03-GAL1",
+    "sha256": "eabeeae51770bafb465ee2ce12cc8f8d6ad774c1fa48845e6c9279d0715f9e0b",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g03/gal2.jpeg",
+    "artworkId": "SS-G03-GAL2",
+    "sha256": "261fb0ac7e1594bde23939d1f8548233c706709081f532759f1645f694547959",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g03/gal3.jpeg",
+    "artworkId": "SS-G03-GAL3",
+    "sha256": "02fa8501b936f4571fa4117f3039deafe6f2103a7303c7d3026320e4196f4093",
+    "duplicate": false
+  },
+  {
+    "source": "gallery/archive/g03/gal4.jpeg",
+    "artworkId": "SS-G03-GAL4",
+    "sha256": "bfdf7c106e7f3a3df9bc323d6a8c709937694fb51270fae3bd59c37827c295e0",
+    "duplicate": false
+  }
+]

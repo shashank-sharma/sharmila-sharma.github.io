@@ -1,0 +1,4349 @@
+{
+  "schema_version": 1,
+  "repository": "https://github.com/shashank-sharma/sharmila-sharma.github.io",
+  "branch": "master",
+  "commit": "1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0",
+  "bucket": "blog",
+  "delivery_origin": "https://images.vipul.xyz",
+  "source_count": 108,
+  "derivative_record_count": 216,
+  "unique_image_object_count": 215,
+  "processing": {
+    "orientation": "EXIF transpose",
+    "colour": "embedded ICC converted to sRGB where present; otherwise RGB assumed sRGB",
+    "resize": "aspect-preserving Lanczos; longest edge bounded; no upscaling, cropping, retouching, or generative edits",
+    "encoding": "lossless WebP; decoded pixels verified identical to resized RGB",
+    "metadata": "EXIF, GPS, XMP, ICC and other embedded source metadata omitted",
+    "filename_width": "actual encoded width in pixels",
+    "cache_control": "public, max-age=31536000, immutable"
+  },
+  "artworks": [
+    {
+      "source_path": "gallery/archive/g01/gal1.jpg",
+      "source_id": "g01-gal1-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal1.jpg",
+      "source_git_blob_sha1": "ce5f751cea18031132cacbcb28d95980f8f76d90",
+      "source_sha256": "21a080a0cf8e370c1d741c13f3abee418efa3557ccae6733bc62d64940e2ac40",
+      "source_bytes": 4011188,
+      "source_dimensions": [
+        2417,
+        3667
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        2417,
+        3667
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal1-jpg/63736c58c41462e9c5ade78e4f8e442b6b65a816f9cc4456544e382f5ae4d039-1266.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal1-jpg/63736c58c41462e9c5ade78e4f8e442b6b65a816f9cc4456544e382f5ae4d039-1266.webp",
+          "width": 1266,
+          "height": 1920,
+          "bytes": 3626610,
+          "sha256": "63736c58c41462e9c5ade78e4f8e442b6b65a816f9cc4456544e382f5ae4d039"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal1-jpg/8f17011aca6f3c1e73c4bc1f84e236d6a32c5f65fc3c20c1a26d2231bd279458-422.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal1-jpg/8f17011aca6f3c1e73c4bc1f84e236d6a32c5f65fc3c20c1a26d2231bd279458-422.webp",
+          "width": 422,
+          "height": 640,
+          "bytes": 440784,
+          "sha256": "8f17011aca6f3c1e73c4bc1f84e236d6a32c5f65fc3c20c1a26d2231bd279458"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal10.jpg",
+      "source_id": "g01-gal10-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal10.jpg",
+      "source_git_blob_sha1": "faa008e9abe4de3c9ac56c1d91f46fb25ab6a6f5",
+      "source_sha256": "fa6dc1cc9399b9be2b5777ec30763f60d45984245822594439b6475679367959",
+      "source_bytes": 298608,
+      "source_dimensions": [
+        1836,
+        1867
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1836,
+        1867
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal10-jpg/047478413bcd0e980d98542aa7fffd2fa3499e631a6782fa044cbaffaefe74d2-1836.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal10-jpg/047478413bcd0e980d98542aa7fffd2fa3499e631a6782fa044cbaffaefe74d2-1836.webp",
+          "width": 1836,
+          "height": 1867,
+          "bytes": 2888602,
+          "sha256": "047478413bcd0e980d98542aa7fffd2fa3499e631a6782fa044cbaffaefe74d2"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal10-jpg/f6e60cbd2daae030d9dc19120c7ca1167e1262861d71caadebdac6af8c1511de-629.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal10-jpg/f6e60cbd2daae030d9dc19120c7ca1167e1262861d71caadebdac6af8c1511de-629.webp",
+          "width": 629,
+          "height": 640,
+          "bytes": 499392,
+          "sha256": "f6e60cbd2daae030d9dc19120c7ca1167e1262861d71caadebdac6af8c1511de"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal100.jpeg",
+      "source_id": "g01-gal100-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal100.jpeg",
+      "source_git_blob_sha1": "a9edbee6f903435e3a6ac7388cb582b49831c5db",
+      "source_sha256": "7627b782e9479547df9650a969534f4e1e021f73cb9e6d8ddfecd244a0991f34",
+      "source_bytes": 195650,
+      "source_dimensions": [
+        1600,
+        1385
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1600,
+        1385
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal100-jpeg/6d58077cc509a9082a6f2834229c41fa008e4aa71128d92da3d98975a1b463e2-1600.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal100-jpeg/6d58077cc509a9082a6f2834229c41fa008e4aa71128d92da3d98975a1b463e2-1600.webp",
+          "width": 1600,
+          "height": 1385,
+          "bytes": 1196208,
+          "sha256": "6d58077cc509a9082a6f2834229c41fa008e4aa71128d92da3d98975a1b463e2"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal100-jpeg/dd3569caad3757cbb88c5558c73374ff82b00537d26c26d783de3a5eeec2684a-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal100-jpeg/dd3569caad3757cbb88c5558c73374ff82b00537d26c26d783de3a5eeec2684a-640.webp",
+          "width": 640,
+          "height": 554,
+          "bytes": 272980,
+          "sha256": "dd3569caad3757cbb88c5558c73374ff82b00537d26c26d783de3a5eeec2684a"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal101.jpeg",
+      "source_id": "g01-gal101-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal101.jpeg",
+      "source_git_blob_sha1": "53583e8e7f25c887992b9810f10963765f85969b",
+      "source_sha256": "26152ec828ceefc6b66cdea7a2af136aa80bb5ad2b50c403579e6b2ac59411ad",
+      "source_bytes": 357458,
+      "source_dimensions": [
+        1600,
+        1161
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1600,
+        1161
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal101-jpeg/90ef8bed43a89859ae73f22985c8064b358f002c8ba09dbdaed78a62db5eba15-1600.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal101-jpeg/90ef8bed43a89859ae73f22985c8064b358f002c8ba09dbdaed78a62db5eba15-1600.webp",
+          "width": 1600,
+          "height": 1161,
+          "bytes": 2193304,
+          "sha256": "90ef8bed43a89859ae73f22985c8064b358f002c8ba09dbdaed78a62db5eba15"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal101-jpeg/1b40830a6f7f829da1b0e99248b77d7c31659aca0da5acaea7397308346c67d2-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal101-jpeg/1b40830a6f7f829da1b0e99248b77d7c31659aca0da5acaea7397308346c67d2-640.webp",
+          "width": 640,
+          "height": 464,
+          "bytes": 503316,
+          "sha256": "1b40830a6f7f829da1b0e99248b77d7c31659aca0da5acaea7397308346c67d2"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal102.jpeg",
+      "source_id": "g01-gal102-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal102.jpeg",
+      "source_git_blob_sha1": "c39741ca31ba0d88d62608623a3f15b45671f4b9",
+      "source_sha256": "27b2c0700d38d588fa428a48c5289a2db951ec0dbd6c3016e03d8a5f71ff30a9",
+      "source_bytes": 655087,
+      "source_dimensions": [
+        1280,
+        1280
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1280,
+        1280
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal102-jpeg/61e190c3e402f7b2a00a14231d62e88e8a76dddcc1a88be14139cbc69de3ff6a-1280.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal102-jpeg/61e190c3e402f7b2a00a14231d62e88e8a76dddcc1a88be14139cbc69de3ff6a-1280.webp",
+          "width": 1280,
+          "height": 1280,
+          "bytes": 1149116,
+          "sha256": "61e190c3e402f7b2a00a14231d62e88e8a76dddcc1a88be14139cbc69de3ff6a"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal102-jpeg/3b44b2cacdcd8a939cdd694cfb021a4df8138363ac2b8cd00eab11846bbdbac7-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal102-jpeg/3b44b2cacdcd8a939cdd694cfb021a4df8138363ac2b8cd00eab11846bbdbac7-640.webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 369164,
+          "sha256": "3b44b2cacdcd8a939cdd694cfb021a4df8138363ac2b8cd00eab11846bbdbac7"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal103.jpeg",
+      "source_id": "g01-gal103-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal103.jpeg",
+      "source_git_blob_sha1": "bb540a3d1babb7d76b4a6a86b084f31f12ccfe6f",
+      "source_sha256": "d00ea9a6a93059b7975f65beb24300087527179821a6e84e859056c264020f5e",
+      "source_bytes": 266794,
+      "source_dimensions": [
+        1080,
+        1080
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1080,
+        1080
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal103-jpeg/5837509d74e0db9791cfeaa13227dc9fb562407dc905ab62ee83077ce6de7863-1080.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal103-jpeg/5837509d74e0db9791cfeaa13227dc9fb562407dc905ab62ee83077ce6de7863-1080.webp",
+          "width": 1080,
+          "height": 1080,
+          "bytes": 1343762,
+          "sha256": "5837509d74e0db9791cfeaa13227dc9fb562407dc905ab62ee83077ce6de7863"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal103-jpeg/23c48291bb689fe20e747be1954dfba77246ef3f27e0e9551c451633c8bf54c3-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal103-jpeg/23c48291bb689fe20e747be1954dfba77246ef3f27e0e9551c451633c8bf54c3-640.webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 578358,
+          "sha256": "23c48291bb689fe20e747be1954dfba77246ef3f27e0e9551c451633c8bf54c3"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal104.jpeg",
+      "source_id": "g01-gal104-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal104.jpeg",
+      "source_git_blob_sha1": "3507efe91f40dd9388920480aaea46d6c46fa697",
+      "source_sha256": "b1c8b093a0e186fa3e3a8b5a12838b9450b1a0b3a6394933fc7cce9e432af8b2",
+      "source_bytes": 88558,
+      "source_dimensions": [
+        826,
+        626
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        826,
+        626
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal104-jpeg/a3b5d9fe7a74b6d26d141ef39273f64eedc27c5d6dfb15f6b4a810e44d3aab3b-826.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal104-jpeg/a3b5d9fe7a74b6d26d141ef39273f64eedc27c5d6dfb15f6b4a810e44d3aab3b-826.webp",
+          "width": 826,
+          "height": 626,
+          "bytes": 557812,
+          "sha256": "a3b5d9fe7a74b6d26d141ef39273f64eedc27c5d6dfb15f6b4a810e44d3aab3b"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal104-jpeg/dca133c9109632f82d8e699ccb9eeeaca583dfb5f7fd9629da1b874228d18241-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal104-jpeg/dca133c9109632f82d8e699ccb9eeeaca583dfb5f7fd9629da1b874228d18241-640.webp",
+          "width": 640,
+          "height": 485,
+          "bytes": 386410,
+          "sha256": "dca133c9109632f82d8e699ccb9eeeaca583dfb5f7fd9629da1b874228d18241"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal105.jpeg",
+      "source_id": "g01-gal105-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal105.jpeg",
+      "source_git_blob_sha1": "f6f3db87560d80588ba5e0940ca8f65a9cf1e7f2",
+      "source_sha256": "5d784fc86c6588920107069e65c732fda3a20e203707e3d9ad84b8cb9164e672",
+      "source_bytes": 205993,
+      "source_dimensions": [
+        1502,
+        1086
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1502,
+        1086
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal105-jpeg/39f399cda3ae5aab1b7bbd5a8d8f2350d98b9841182b0af581409355177a8f41-1502.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal105-jpeg/39f399cda3ae5aab1b7bbd5a8d8f2350d98b9841182b0af581409355177a8f41-1502.webp",
+          "width": 1502,
+          "height": 1086,
+          "bytes": 1432536,
+          "sha256": "39f399cda3ae5aab1b7bbd5a8d8f2350d98b9841182b0af581409355177a8f41"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal105-jpeg/4c5c5367c329e4415d7a1d7debc90392f0702bf2c4ee600ab9220b27276b82c2-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal105-jpeg/4c5c5367c329e4415d7a1d7debc90392f0702bf2c4ee600ab9220b27276b82c2-640.webp",
+          "width": 640,
+          "height": 463,
+          "bytes": 368086,
+          "sha256": "4c5c5367c329e4415d7a1d7debc90392f0702bf2c4ee600ab9220b27276b82c2"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal106.jpeg",
+      "source_id": "g01-gal106-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal106.jpeg",
+      "source_git_blob_sha1": "c510753c7a57f20f2779b3e9400feb1cbf6cb738",
+      "source_sha256": "56501992dc2e95f4b4f5252dc7954692e2d11a356656c290f33e8908857ff97b",
+      "source_bytes": 316164,
+      "source_dimensions": [
+        1180,
+        1600
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1180,
+        1600
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal106-jpeg/de60a112da5e8f86a3c60ef1cc394cf79a6e3a360cf1575bb06a41776dba2889-1180.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal106-jpeg/de60a112da5e8f86a3c60ef1cc394cf79a6e3a360cf1575bb06a41776dba2889-1180.webp",
+          "width": 1180,
+          "height": 1600,
+          "bytes": 1975462,
+          "sha256": "de60a112da5e8f86a3c60ef1cc394cf79a6e3a360cf1575bb06a41776dba2889"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal106-jpeg/f727dd24ec98e098bc3d1e5adcdbf69f41029192c8a5c451a1c3cb5068ea5216-472.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal106-jpeg/f727dd24ec98e098bc3d1e5adcdbf69f41029192c8a5c451a1c3cb5068ea5216-472.webp",
+          "width": 472,
+          "height": 640,
+          "bytes": 441542,
+          "sha256": "f727dd24ec98e098bc3d1e5adcdbf69f41029192c8a5c451a1c3cb5068ea5216"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal107.jpeg",
+      "source_id": "g01-gal107-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal107.jpeg",
+      "source_git_blob_sha1": "21ed6e44c07c565729c689acf0f5141b5a9f9ecd",
+      "source_sha256": "b2e4fb40b92dd140a009c660825ec84eb43dbf098110a8bae756290b68217ec0",
+      "source_bytes": 226842,
+      "source_dimensions": [
+        1176,
+        1600
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1176,
+        1600
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal107-jpeg/d8930d889390fc29e5a71c4e8ec5a225d4707fd638d2ca9de60d1d2b552775fb-1176.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal107-jpeg/d8930d889390fc29e5a71c4e8ec5a225d4707fd638d2ca9de60d1d2b552775fb-1176.webp",
+          "width": 1176,
+          "height": 1600,
+          "bytes": 1630948,
+          "sha256": "d8930d889390fc29e5a71c4e8ec5a225d4707fd638d2ca9de60d1d2b552775fb"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal107-jpeg/ddbc90294c53d07b08d4134a39a26201632b8d1b904d37d5fca8565b845f8bc1-470.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal107-jpeg/ddbc90294c53d07b08d4134a39a26201632b8d1b904d37d5fca8565b845f8bc1-470.webp",
+          "width": 470,
+          "height": 640,
+          "bytes": 384818,
+          "sha256": "ddbc90294c53d07b08d4134a39a26201632b8d1b904d37d5fca8565b845f8bc1"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal108.jpeg",
+      "source_id": "g01-gal108-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal108.jpeg",
+      "source_git_blob_sha1": "636bc1cddb175b59ad983f5d6f48f52aa790c42b",
+      "source_sha256": "87efd6955c0ad00d375c4623d31a927745be940868ed1b08a319d86ef5525a9b",
+      "source_bytes": 323272,
+      "source_dimensions": [
+        1538,
+        1600
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1538,
+        1600
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal108-jpeg/1da878d8fc082fe672965b41542982534703a81191470a0cce90be115e7f7e74-1538.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal108-jpeg/1da878d8fc082fe672965b41542982534703a81191470a0cce90be115e7f7e74-1538.webp",
+          "width": 1538,
+          "height": 1600,
+          "bytes": 1892754,
+          "sha256": "1da878d8fc082fe672965b41542982534703a81191470a0cce90be115e7f7e74"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal108-jpeg/34f0059a3efc3d45fc1e90c9a5b119550289dcb3845690fc0b285d956616ff78-615.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal108-jpeg/34f0059a3efc3d45fc1e90c9a5b119550289dcb3845690fc0b285d956616ff78-615.webp",
+          "width": 615,
+          "height": 640,
+          "bytes": 478002,
+          "sha256": "34f0059a3efc3d45fc1e90c9a5b119550289dcb3845690fc0b285d956616ff78"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal109.jpeg",
+      "source_id": "g01-gal109-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal109.jpeg",
+      "source_git_blob_sha1": "44f03b7fe4b0538b828c3dcedb055a0eb1f8b0eb",
+      "source_sha256": "04b3aecde92e7fd2354307a0cf771fb066092926ef7819515694efd6d303fd3b",
+      "source_bytes": 376208,
+      "source_dimensions": [
+        1578,
+        1600
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1578,
+        1600
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal109-jpeg/1e881d8558dd8fce645104745c3fb39e9c17c66ff4c71f31388d85a18ee659a8-1578.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal109-jpeg/1e881d8558dd8fce645104745c3fb39e9c17c66ff4c71f31388d85a18ee659a8-1578.webp",
+          "width": 1578,
+          "height": 1600,
+          "bytes": 2343856,
+          "sha256": "1e881d8558dd8fce645104745c3fb39e9c17c66ff4c71f31388d85a18ee659a8"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal109-jpeg/daf89a52f0bf48742a20a6de7390a51fb605805387eda206732c3f6a6794da4d-631.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal109-jpeg/daf89a52f0bf48742a20a6de7390a51fb605805387eda206732c3f6a6794da4d-631.webp",
+          "width": 631,
+          "height": 640,
+          "bytes": 510952,
+          "sha256": "daf89a52f0bf48742a20a6de7390a51fb605805387eda206732c3f6a6794da4d"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal11.jpg",
+      "source_id": "g01-gal11-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal11.jpg",
+      "source_git_blob_sha1": "b3662ac51e64fa4f9c3fd7b429690e009928deb9",
+      "source_sha256": "4cc8b844a6dbf82c1b21d2f7c944f91e27008a3684a955df80ff06caf865a5ce",
+      "source_bytes": 3837221,
+      "source_dimensions": [
+        3098,
+        3120
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        3098,
+        3120
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal11-jpg/247cfa45de0462754adeedb8c657013201745cf97acbd6baddc2f04295e965ac-1906.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal11-jpg/247cfa45de0462754adeedb8c657013201745cf97acbd6baddc2f04295e965ac-1906.webp",
+          "width": 1906,
+          "height": 1920,
+          "bytes": 4389486,
+          "sha256": "247cfa45de0462754adeedb8c657013201745cf97acbd6baddc2f04295e965ac"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal11-jpg/4e39a34a6705a0a90ae660c5a85a954fb41dce989f64f04072cd0618e82d513c-635.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal11-jpg/4e39a34a6705a0a90ae660c5a85a954fb41dce989f64f04072cd0618e82d513c-635.webp",
+          "width": 635,
+          "height": 640,
+          "bytes": 702242,
+          "sha256": "4e39a34a6705a0a90ae660c5a85a954fb41dce989f64f04072cd0618e82d513c"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal110.jpeg",
+      "source_id": "g01-gal110-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal110.jpeg",
+      "source_git_blob_sha1": "5aab1c542cbad760e72136af57b5dbe0c20ca6e3",
+      "source_sha256": "3175bf325a46486ae56bcf5705c178b6ba479fd0c90fca9e3a9185140347e3a0",
+      "source_bytes": 156388,
+      "source_dimensions": [
+        1181,
+        1600
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1181,
+        1600
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal110-jpeg/2b5225268bc73778e22d31a00bb37a5eab9519963dd04a387d613ef9cfcabea9-1181.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal110-jpeg/2b5225268bc73778e22d31a00bb37a5eab9519963dd04a387d613ef9cfcabea9-1181.webp",
+          "width": 1181,
+          "height": 1600,
+          "bytes": 1081198,
+          "sha256": "2b5225268bc73778e22d31a00bb37a5eab9519963dd04a387d613ef9cfcabea9"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal110-jpeg/52f2c970e130d73f1bcb3fc16ebe55f8a0dd20d37669bf53eb2c7337d90cdbf1-472.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal110-jpeg/52f2c970e130d73f1bcb3fc16ebe55f8a0dd20d37669bf53eb2c7337d90cdbf1-472.webp",
+          "width": 472,
+          "height": 640,
+          "bytes": 304050,
+          "sha256": "52f2c970e130d73f1bcb3fc16ebe55f8a0dd20d37669bf53eb2c7337d90cdbf1"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal111.jpeg",
+      "source_id": "g01-gal111-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal111.jpeg",
+      "source_git_blob_sha1": "1a36ae1b0cc797c353d6b45c9fa1c7cc020a802c",
+      "source_sha256": "2ca6e089104993db7e62484fdaa062c46e98e47c4b0071a4feb572fc1d20aa73",
+      "source_bytes": 374060,
+      "source_dimensions": [
+        1600,
+        1576
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1600,
+        1576
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal111-jpeg/7e7b7ac10b91bdcede326384b65b65076e0411a2b14c493f047869850129cf47-1600.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal111-jpeg/7e7b7ac10b91bdcede326384b65b65076e0411a2b14c493f047869850129cf47-1600.webp",
+          "width": 1600,
+          "height": 1576,
+          "bytes": 1960426,
+          "sha256": "7e7b7ac10b91bdcede326384b65b65076e0411a2b14c493f047869850129cf47"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal111-jpeg/6c8654b43a9d2c9f8c1d75c91a855e2f333c2cec307fe5197bae170997a549db-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal111-jpeg/6c8654b43a9d2c9f8c1d75c91a855e2f333c2cec307fe5197bae170997a549db-640.webp",
+          "width": 640,
+          "height": 630,
+          "bytes": 496834,
+          "sha256": "6c8654b43a9d2c9f8c1d75c91a855e2f333c2cec307fe5197bae170997a549db"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal12.jpg",
+      "source_id": "g01-gal12-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal12.jpg",
+      "source_git_blob_sha1": "87d5a9e38db13b890ad77b9a87f9f37bc4ab667a",
+      "source_sha256": "39f9a2825726a41e92b413307ae83505df71d8dabb26bb3531ab131808614167",
+      "source_bytes": 1595253,
+      "source_dimensions": [
+        2550,
+        3129
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        2550,
+        3129
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal12-jpg/4f23fb863e6d8e25f2b18e394bd3db4ed71a18932b7e798bcad4c5adfe6b72d9-1565.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal12-jpg/4f23fb863e6d8e25f2b18e394bd3db4ed71a18932b7e798bcad4c5adfe6b72d9-1565.webp",
+          "width": 1565,
+          "height": 1920,
+          "bytes": 3976658,
+          "sha256": "4f23fb863e6d8e25f2b18e394bd3db4ed71a18932b7e798bcad4c5adfe6b72d9"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal12-jpg/4a02a643cbfb289b19963f1020dfaf78ff027aac367b3553c96d8ca9453fcd45-522.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal12-jpg/4a02a643cbfb289b19963f1020dfaf78ff027aac367b3553c96d8ca9453fcd45-522.webp",
+          "width": 522,
+          "height": 640,
+          "bytes": 581962,
+          "sha256": "4a02a643cbfb289b19963f1020dfaf78ff027aac367b3553c96d8ca9453fcd45"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal13.jpg",
+      "source_id": "g01-gal13-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal13.jpg",
+      "source_git_blob_sha1": "b6af19033256778fefff46ff33b529acc65eea16",
+      "source_sha256": "1d549ac7622fe5ad66974b70ec6249046a6562ce0c2af0a0d73ab331d4296b48",
+      "source_bytes": 211280,
+      "source_dimensions": [
+        900,
+        1600
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        900,
+        1600
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal13-jpg/a26dd6598fc004beff24bc8a5c1f04b53cdfb6eceef0381cc071b2301ea217f7-900.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal13-jpg/a26dd6598fc004beff24bc8a5c1f04b53cdfb6eceef0381cc071b2301ea217f7-900.webp",
+          "width": 900,
+          "height": 1600,
+          "bytes": 682600,
+          "sha256": "a26dd6598fc004beff24bc8a5c1f04b53cdfb6eceef0381cc071b2301ea217f7"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal13-jpg/d920fe7f3b39e41a391c6a19800bd851715b73209462502608eaccfbfc13d105-360.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal13-jpg/d920fe7f3b39e41a391c6a19800bd851715b73209462502608eaccfbfc13d105-360.webp",
+          "width": 360,
+          "height": 640,
+          "bytes": 134070,
+          "sha256": "d920fe7f3b39e41a391c6a19800bd851715b73209462502608eaccfbfc13d105"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal14.jpg",
+      "source_id": "g01-gal14-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal14.jpg",
+      "source_git_blob_sha1": "dce1ff3e3d01a8a1c4f82db2ab9ab71aa8c2d5da",
+      "source_sha256": "8ab4b52617ca391b8196ab0cb4eff72d17aaa5db47fa860ed7657247b81c36ab",
+      "source_bytes": 116519,
+      "source_dimensions": [
+        720,
+        576
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        720,
+        576
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal14-jpg/2ef7c6e807100fd706401c003699050e5dfa3d68be32e76b420308af8f04735e-720.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal14-jpg/2ef7c6e807100fd706401c003699050e5dfa3d68be32e76b420308af8f04735e-720.webp",
+          "width": 720,
+          "height": 576,
+          "bytes": 407698,
+          "sha256": "2ef7c6e807100fd706401c003699050e5dfa3d68be32e76b420308af8f04735e"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal14-jpg/6859303be33e8002ef0868d01685b1948f3d3f07923d6207307160715a5eda2d-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal14-jpg/6859303be33e8002ef0868d01685b1948f3d3f07923d6207307160715a5eda2d-640.webp",
+          "width": 640,
+          "height": 512,
+          "bytes": 352614,
+          "sha256": "6859303be33e8002ef0868d01685b1948f3d3f07923d6207307160715a5eda2d"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal15.jpg",
+      "source_id": "g01-gal15-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal15.jpg",
+      "source_git_blob_sha1": "5b2533ca7e9979a4167818ad7fd46f69a8668576",
+      "source_sha256": "00ac7dcb3f5b1c3d4c01954ea9e314f2f6269df750bcdac552389bed7ea52be4",
+      "source_bytes": 161464,
+      "source_dimensions": [
+        960,
+        1280
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        960,
+        1280
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal15-jpg/3688471635335ce602e0b5e59719e8f6fa465bbba816319de8b4f836ec3d0bb1-960.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal15-jpg/3688471635335ce602e0b5e59719e8f6fa465bbba816319de8b4f836ec3d0bb1-960.webp",
+          "width": 960,
+          "height": 1280,
+          "bytes": 1320196,
+          "sha256": "3688471635335ce602e0b5e59719e8f6fa465bbba816319de8b4f836ec3d0bb1"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal15-jpg/36c1d6ab688b1bc2f2432ea960f6f01962a3d09fbb53ed2bd4e9bd75f1e63a35-480.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal15-jpg/36c1d6ab688b1bc2f2432ea960f6f01962a3d09fbb53ed2bd4e9bd75f1e63a35-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 431326,
+          "sha256": "36c1d6ab688b1bc2f2432ea960f6f01962a3d09fbb53ed2bd4e9bd75f1e63a35"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal16.jpg",
+      "source_id": "g01-gal16-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal16.jpg",
+      "source_git_blob_sha1": "fbc95171ec15586f576c19cd28ab35bb30d52312",
+      "source_sha256": "0bcb30cb883872daaee2165ca1bab05be05b0ae50982654c46cfd6a29c90a9e0",
+      "source_bytes": 2581697,
+      "source_dimensions": [
+        2725,
+        4000
+      ],
+      "exif_orientation": 0,
+      "oriented_dimensions": [
+        2725,
+        4000
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal16-jpg/76a595431a9dbfa43a425f5d823fb16c2675b53fd5c7866949312d21d81684e0-1308.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal16-jpg/76a595431a9dbfa43a425f5d823fb16c2675b53fd5c7866949312d21d81684e0-1308.webp",
+          "width": 1308,
+          "height": 1920,
+          "bytes": 3568672,
+          "sha256": "76a595431a9dbfa43a425f5d823fb16c2675b53fd5c7866949312d21d81684e0"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal16-jpg/98ad3f19fd46b4919c9f43dcadcce8c9d6f3715decd38c10f348bc68a5eca3e0-436.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal16-jpg/98ad3f19fd46b4919c9f43dcadcce8c9d6f3715decd38c10f348bc68a5eca3e0-436.webp",
+          "width": 436,
+          "height": 640,
+          "bytes": 516294,
+          "sha256": "98ad3f19fd46b4919c9f43dcadcce8c9d6f3715decd38c10f348bc68a5eca3e0"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal17.jpg",
+      "source_id": "g01-gal17-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal17.jpg",
+      "source_git_blob_sha1": "17c5365aeb80eca5e7235f5e606d3955879ee9be",
+      "source_sha256": "d3e95fe85f90d6040c4d6b26e445852326e0619db4655fdabf80a23853dadda5",
+      "source_bytes": 2243197,
+      "source_dimensions": [
+        2978,
+        2974
+      ],
+      "exif_orientation": 0,
+      "oriented_dimensions": [
+        2978,
+        2974
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal17-jpg/ea02628821b0513ef1f805f21d54df0ca61f0e2461d45c9b10720673cbd4268e-1920.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal17-jpg/ea02628821b0513ef1f805f21d54df0ca61f0e2461d45c9b10720673cbd4268e-1920.webp",
+          "width": 1920,
+          "height": 1917,
+          "bytes": 4562600,
+          "sha256": "ea02628821b0513ef1f805f21d54df0ca61f0e2461d45c9b10720673cbd4268e"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal17-jpg/3fbb0426821608ccf75aeba3e2e360a991e145312bfa667834c61133a166d4fd-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal17-jpg/3fbb0426821608ccf75aeba3e2e360a991e145312bfa667834c61133a166d4fd-640.webp",
+          "width": 640,
+          "height": 639,
+          "bytes": 600966,
+          "sha256": "3fbb0426821608ccf75aeba3e2e360a991e145312bfa667834c61133a166d4fd"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal18.jpg",
+      "source_id": "g01-gal18-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal18.jpg",
+      "source_git_blob_sha1": "fcf701a3291449544ea9df619af58425e41dc9aa",
+      "source_sha256": "ce9a3b4763c2c3c190a529c53051bf57f3c7454b75d06739c42736afac29f451",
+      "source_bytes": 780246,
+      "source_dimensions": [
+        1940,
+        2929
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1940,
+        2929
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal18-jpg/891b3be1976185ddbfeb14351b074812c88f19d3ca48dca9a20fe1cb61c8f7a7-1272.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal18-jpg/891b3be1976185ddbfeb14351b074812c88f19d3ca48dca9a20fe1cb61c8f7a7-1272.webp",
+          "width": 1272,
+          "height": 1920,
+          "bytes": 2542784,
+          "sha256": "891b3be1976185ddbfeb14351b074812c88f19d3ca48dca9a20fe1cb61c8f7a7"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal18-jpg/cc696b8ef2f55b06b39d94e6978227f6d535c82037a5720a4099a0745c9c9674-424.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal18-jpg/cc696b8ef2f55b06b39d94e6978227f6d535c82037a5720a4099a0745c9c9674-424.webp",
+          "width": 424,
+          "height": 640,
+          "bytes": 408460,
+          "sha256": "cc696b8ef2f55b06b39d94e6978227f6d535c82037a5720a4099a0745c9c9674"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal19.jpg",
+      "source_id": "g01-gal19-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal19.jpg",
+      "source_git_blob_sha1": "206a383aba77580c23491036a00f5fc234a73924",
+      "source_sha256": "4c59e652c1e0fdb2edb978599060ae92db39c32c78c52cae6ab5d461d583f6c8",
+      "source_bytes": 268846,
+      "source_dimensions": [
+        768,
+        960
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        768,
+        960
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal19-jpg/1ea20a8d2e8feb22264bd51afe0701bbc1087f2dd1531f4d7edc1a215f0fc6c4-768.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal19-jpg/1ea20a8d2e8feb22264bd51afe0701bbc1087f2dd1531f4d7edc1a215f0fc6c4-768.webp",
+          "width": 768,
+          "height": 960,
+          "bytes": 888252,
+          "sha256": "1ea20a8d2e8feb22264bd51afe0701bbc1087f2dd1531f4d7edc1a215f0fc6c4"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal19-jpg/737fa6c2c9aec3075c64f824e4881a77d9931749c03eb9b9b95e0e8317754faf-512.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal19-jpg/737fa6c2c9aec3075c64f824e4881a77d9931749c03eb9b9b95e0e8317754faf-512.webp",
+          "width": 512,
+          "height": 640,
+          "bytes": 468424,
+          "sha256": "737fa6c2c9aec3075c64f824e4881a77d9931749c03eb9b9b95e0e8317754faf"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal2.jpg",
+      "source_id": "g01-gal2-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal2.jpg",
+      "source_git_blob_sha1": "7dfcb0d0692e819bb092390e03376df9822be912",
+      "source_sha256": "01ff7b6f12a8a59bc950dfcd4c90c11997af7657fa3c70de491d7f2a11abfda3",
+      "source_bytes": 3039274,
+      "source_dimensions": [
+        2641,
+        4000
+      ],
+      "exif_orientation": 0,
+      "oriented_dimensions": [
+        2641,
+        4000
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal2-jpg/7baaddb416c45e653bdaf3e6fc39e7d0b7a9d92e5567fca8cfdef46e26779e8d-1268.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal2-jpg/7baaddb416c45e653bdaf3e6fc39e7d0b7a9d92e5567fca8cfdef46e26779e8d-1268.webp",
+          "width": 1268,
+          "height": 1920,
+          "bytes": 3482746,
+          "sha256": "7baaddb416c45e653bdaf3e6fc39e7d0b7a9d92e5567fca8cfdef46e26779e8d"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal2-jpg/cbf52daca374ac822ea8a1ff7c8d6db23ad03946295509eff67fa65ef0042dfd-423.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal2-jpg/cbf52daca374ac822ea8a1ff7c8d6db23ad03946295509eff67fa65ef0042dfd-423.webp",
+          "width": 423,
+          "height": 640,
+          "bytes": 463714,
+          "sha256": "cbf52daca374ac822ea8a1ff7c8d6db23ad03946295509eff67fa65ef0042dfd"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal20.jpg",
+      "source_id": "g01-gal20-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal20.jpg",
+      "source_git_blob_sha1": "5d1107bedcdfd31958b2ee9d38017a9232b948a2",
+      "source_sha256": "73d246b9987636f0f7c46921bcaf14c60ddf33ff46695f81c8e9c1b66e0e25a7",
+      "source_bytes": 2193424,
+      "source_dimensions": [
+        2663,
+        4000
+      ],
+      "exif_orientation": 0,
+      "oriented_dimensions": [
+        2663,
+        4000
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal20-jpg/6b259145db84aaa1d3afcfba54c0509dc93fa072f42e336ca5368d0c89a808b5-1278.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal20-jpg/6b259145db84aaa1d3afcfba54c0509dc93fa072f42e336ca5368d0c89a808b5-1278.webp",
+          "width": 1278,
+          "height": 1920,
+          "bytes": 3300638,
+          "sha256": "6b259145db84aaa1d3afcfba54c0509dc93fa072f42e336ca5368d0c89a808b5"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal20-jpg/feb616b84d2f72d5521dad7b604dc982f25957ae430d37bd1e1ee0c31599989b-426.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal20-jpg/feb616b84d2f72d5521dad7b604dc982f25957ae430d37bd1e1ee0c31599989b-426.webp",
+          "width": 426,
+          "height": 640,
+          "bytes": 474168,
+          "sha256": "feb616b84d2f72d5521dad7b604dc982f25957ae430d37bd1e1ee0c31599989b"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal21.jpg",
+      "source_id": "g01-gal21-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal21.jpg",
+      "source_git_blob_sha1": "865f0e356b8359ed9bacd0c7bf8ed8df813ac71b",
+      "source_sha256": "f8fe2cc264a7d1ca2492983e767eed56d2ef0775ed7d9a2abc64d00f0f93defe",
+      "source_bytes": 2554636,
+      "source_dimensions": [
+        2516,
+        1920
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        2516,
+        1920
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal21-jpg/03b76061a1e0d82378a6b1cec28d49617bbc4f6c0d51b00ce883fb559dee48d8-1920.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal21-jpg/03b76061a1e0d82378a6b1cec28d49617bbc4f6c0d51b00ce883fb559dee48d8-1920.webp",
+          "width": 1920,
+          "height": 1465,
+          "bytes": 3997252,
+          "sha256": "03b76061a1e0d82378a6b1cec28d49617bbc4f6c0d51b00ce883fb559dee48d8"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal21-jpg/d914de57d30ae122510fb4a72e1a4a7f121dec297f9bae6ea1af9cbf46d7f060-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal21-jpg/d914de57d30ae122510fb4a72e1a4a7f121dec297f9bae6ea1af9cbf46d7f060-640.webp",
+          "width": 640,
+          "height": 488,
+          "bytes": 568996,
+          "sha256": "d914de57d30ae122510fb4a72e1a4a7f121dec297f9bae6ea1af9cbf46d7f060"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal22.jpg",
+      "source_id": "g01-gal22-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal22.jpg",
+      "source_git_blob_sha1": "dcc2a7224f2c0bc9918847e34526b12cf6e1021b",
+      "source_sha256": "8de7b3703dc41947e8af95ce9e872d52bb1713d02d1115ad323a5f03f971936f",
+      "source_bytes": 171067,
+      "source_dimensions": [
+        759,
+        960
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        759,
+        960
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal22-jpg/09cda28856ac81ea5b39171ae397235e528e9d547d9f0c47649b79b4e1b957ad-759.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal22-jpg/09cda28856ac81ea5b39171ae397235e528e9d547d9f0c47649b79b4e1b957ad-759.webp",
+          "width": 759,
+          "height": 960,
+          "bytes": 925184,
+          "sha256": "09cda28856ac81ea5b39171ae397235e528e9d547d9f0c47649b79b4e1b957ad"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal22-jpg/03f0ab600825d1845e7771b4a1c4f281c495431698e8d45642bbb196fb17ad6e-506.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal22-jpg/03f0ab600825d1845e7771b4a1c4f281c495431698e8d45642bbb196fb17ad6e-506.webp",
+          "width": 506,
+          "height": 640,
+          "bytes": 478800,
+          "sha256": "03f0ab600825d1845e7771b4a1c4f281c495431698e8d45642bbb196fb17ad6e"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal23.jpg",
+      "source_id": "g01-gal23-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal23.jpg",
+      "source_git_blob_sha1": "490807a122da335764df538f2084e4be2446b184",
+      "source_sha256": "de661c8524e9dcc8d201d4d40ec36289baf7c30125f69251484ae3062ec77bc3",
+      "source_bytes": 1700726,
+      "source_dimensions": [
+        3500,
+        3519
+      ],
+      "exif_orientation": 0,
+      "oriented_dimensions": [
+        3500,
+        3519
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal23-jpg/f60aa8bea80db9bf7d6e064a2210b5ca3cb1e4d8930bffa5688c6741159745d4-1910.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal23-jpg/f60aa8bea80db9bf7d6e064a2210b5ca3cb1e4d8930bffa5688c6741159745d4-1910.webp",
+          "width": 1910,
+          "height": 1920,
+          "bytes": 3802650,
+          "sha256": "f60aa8bea80db9bf7d6e064a2210b5ca3cb1e4d8930bffa5688c6741159745d4"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal23-jpg/f64f76970e874c796838d50e3b9c581bf9f24b82fecb06fdaeff7722fef8d473-637.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal23-jpg/f64f76970e874c796838d50e3b9c581bf9f24b82fecb06fdaeff7722fef8d473-637.webp",
+          "width": 637,
+          "height": 640,
+          "bytes": 528840,
+          "sha256": "f64f76970e874c796838d50e3b9c581bf9f24b82fecb06fdaeff7722fef8d473"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal24.jpg",
+      "source_id": "g01-gal24-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal24.jpg",
+      "source_git_blob_sha1": "5b4f443ebe7e6564adda267397967cd8bdc491d4",
+      "source_sha256": "e12c8bd2cf36d8ae20145c3157b248e6299606b58235d6d92ba6d497951f900f",
+      "source_bytes": 2305996,
+      "source_dimensions": [
+        2252,
+        2306
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        2252,
+        2306
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal24-jpg/2bb933630533b30a8334fe3233eb0b053f84f03e682c5741e5069164aabc9fbc-1875.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal24-jpg/2bb933630533b30a8334fe3233eb0b053f84f03e682c5741e5069164aabc9fbc-1875.webp",
+          "width": 1875,
+          "height": 1920,
+          "bytes": 3777394,
+          "sha256": "2bb933630533b30a8334fe3233eb0b053f84f03e682c5741e5069164aabc9fbc"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal24-jpg/4d27b483ab5df29e0946c3293e8af3b585978257a57ec6f29c9780fa670d2657-625.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal24-jpg/4d27b483ab5df29e0946c3293e8af3b585978257a57ec6f29c9780fa670d2657-625.webp",
+          "width": 625,
+          "height": 640,
+          "bytes": 513486,
+          "sha256": "4d27b483ab5df29e0946c3293e8af3b585978257a57ec6f29c9780fa670d2657"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal25.jpg",
+      "source_id": "g01-gal25-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal25.jpg",
+      "source_git_blob_sha1": "2d46683716d641c365c0fd35c410998b3b6f986a",
+      "source_sha256": "cc9057fcc0a1a3dd2324c75f2adbd39fbc61cbf1378beda41133f0295ad4b132",
+      "source_bytes": 831554,
+      "source_dimensions": [
+        2560,
+        1765
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        2560,
+        1765
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal25-jpg/72a5dc7407bdd9e38bdba84e9bb049ddf2f96a381ffd9978b9873dca52c9603e-1920.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal25-jpg/72a5dc7407bdd9e38bdba84e9bb049ddf2f96a381ffd9978b9873dca52c9603e-1920.webp",
+          "width": 1920,
+          "height": 1324,
+          "bytes": 2165366,
+          "sha256": "72a5dc7407bdd9e38bdba84e9bb049ddf2f96a381ffd9978b9873dca52c9603e"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal25-jpg/267d9f4fb9c780bc197b5878b70dfec811543391e5aa0d39b7f3a35d0d309ab4-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal25-jpg/267d9f4fb9c780bc197b5878b70dfec811543391e5aa0d39b7f3a35d0d309ab4-640.webp",
+          "width": 640,
+          "height": 441,
+          "bytes": 362584,
+          "sha256": "267d9f4fb9c780bc197b5878b70dfec811543391e5aa0d39b7f3a35d0d309ab4"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal26.jpg",
+      "source_id": "g01-gal26-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal26.jpg",
+      "source_git_blob_sha1": "7fa295adeb6a28180d6872e02db0fc328751563d",
+      "source_sha256": "abb6e66fbc10aa049a08e7df5448d511aaf0a1e2dd95294ed1a08f25c117be8d",
+      "source_bytes": 1297155,
+      "source_dimensions": [
+        2516,
+        1920
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        2516,
+        1920
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal26-jpg/8cd798bb856df0d75fd92ff484d2a75020bbb1bd64c8205db7bf72b26eca2419-1920.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal26-jpg/8cd798bb856df0d75fd92ff484d2a75020bbb1bd64c8205db7bf72b26eca2419-1920.webp",
+          "width": 1920,
+          "height": 1465,
+          "bytes": 3808562,
+          "sha256": "8cd798bb856df0d75fd92ff484d2a75020bbb1bd64c8205db7bf72b26eca2419"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal26-jpg/44c69136da7ea8ffda769eacb2d543dec553eb174622b999136c9dc983778741-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal26-jpg/44c69136da7ea8ffda769eacb2d543dec553eb174622b999136c9dc983778741-640.webp",
+          "width": 640,
+          "height": 488,
+          "bytes": 557684,
+          "sha256": "44c69136da7ea8ffda769eacb2d543dec553eb174622b999136c9dc983778741"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal27.jpg",
+      "source_id": "g01-gal27-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal27.jpg",
+      "source_git_blob_sha1": "c728c5a3a4113af9a7b2054df9d5e49b2bdd0f40",
+      "source_sha256": "b376ae2f4df4374ae53222fc5e802baaeb7523e1365bd4fd6b08adc92a0a61c0",
+      "source_bytes": 2280520,
+      "source_dimensions": [
+        2951,
+        3000
+      ],
+      "exif_orientation": 0,
+      "oriented_dimensions": [
+        2951,
+        3000
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal27-jpg/3d335573d343435fc8fb015603083258edd7c7f641d6db86995e01e792d3af13-1889.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal27-jpg/3d335573d343435fc8fb015603083258edd7c7f641d6db86995e01e792d3af13-1889.webp",
+          "width": 1889,
+          "height": 1920,
+          "bytes": 4700232,
+          "sha256": "3d335573d343435fc8fb015603083258edd7c7f641d6db86995e01e792d3af13"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal27-jpg/0018e647f6be9cdfc7b26e1b505a20ae45cab9e0700491fd45ae1ec4842e2761-630.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal27-jpg/0018e647f6be9cdfc7b26e1b505a20ae45cab9e0700491fd45ae1ec4842e2761-630.webp",
+          "width": 630,
+          "height": 640,
+          "bytes": 625982,
+          "sha256": "0018e647f6be9cdfc7b26e1b505a20ae45cab9e0700491fd45ae1ec4842e2761"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal28.jpg",
+      "source_id": "g01-gal28-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal28.jpg",
+      "source_git_blob_sha1": "7b48117a57ee4cb7f184c98482588432fc1deb1c",
+      "source_sha256": "1ef6c7f227f8579fd10aadfdd56222bb355c510ca00b587336b8766331f6b314",
+      "source_bytes": 65421,
+      "source_dimensions": [
+        720,
+        576
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        720,
+        576
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal28-jpg/55f3df57c74bcd5424119388861debfbd7ec28f69e0c2ea41979ee278158a1e1-720.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal28-jpg/55f3df57c74bcd5424119388861debfbd7ec28f69e0c2ea41979ee278158a1e1-720.webp",
+          "width": 720,
+          "height": 576,
+          "bytes": 377008,
+          "sha256": "55f3df57c74bcd5424119388861debfbd7ec28f69e0c2ea41979ee278158a1e1"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal28-jpg/534897618af353a4b7111d2f41defee76cdd5ab03d23ff91bb00abd962407064-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal28-jpg/534897618af353a4b7111d2f41defee76cdd5ab03d23ff91bb00abd962407064-640.webp",
+          "width": 640,
+          "height": 512,
+          "bytes": 347820,
+          "sha256": "534897618af353a4b7111d2f41defee76cdd5ab03d23ff91bb00abd962407064"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal29.jpg",
+      "source_id": "g01-gal29-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal29.jpg",
+      "source_git_blob_sha1": "f694df0259fc2ead5ee6451bdc2ec197bdd401ea",
+      "source_sha256": "bfc3e21f0e1e504d718757ffcb5cbe989c131253de06691761bfd471dc20996c",
+      "source_bytes": 316207,
+      "source_dimensions": [
+        1685,
+        2491
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1685,
+        2491
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal29-jpg/778d850b7292fe01f666b2835e9a3820f3aa979ac972af0a498d66979a25b04a-1299.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal29-jpg/778d850b7292fe01f666b2835e9a3820f3aa979ac972af0a498d66979a25b04a-1299.webp",
+          "width": 1299,
+          "height": 1920,
+          "bytes": 2279922,
+          "sha256": "778d850b7292fe01f666b2835e9a3820f3aa979ac972af0a498d66979a25b04a"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal29-jpg/fb30286f50d9e7d4b6db834f4970eaaef6c27c7e89bb8748ebe9a551f8f0873b-433.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal29-jpg/fb30286f50d9e7d4b6db834f4970eaaef6c27c7e89bb8748ebe9a551f8f0873b-433.webp",
+          "width": 433,
+          "height": 640,
+          "bytes": 365594,
+          "sha256": "fb30286f50d9e7d4b6db834f4970eaaef6c27c7e89bb8748ebe9a551f8f0873b"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal3.jpg",
+      "source_id": "g01-gal3-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal3.jpg",
+      "source_git_blob_sha1": "6e1f36e0578507e5dc153ba08d8a272fdd2017d2",
+      "source_sha256": "9217962f935b5856d3f6ac31b6308ca05c6a102e2d30c92bdfd59c401c27caf3",
+      "source_bytes": 815727,
+      "source_dimensions": [
+        1500,
+        2220
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1500,
+        2220
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal3-jpg/82de3883f40011f41f2d2290b00a8f83e63b7159d64bf0ba8887979a4679e55c-1297.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal3-jpg/82de3883f40011f41f2d2290b00a8f83e63b7159d64bf0ba8887979a4679e55c-1297.webp",
+          "width": 1297,
+          "height": 1920,
+          "bytes": 2372212,
+          "sha256": "82de3883f40011f41f2d2290b00a8f83e63b7159d64bf0ba8887979a4679e55c"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal3-jpg/4b2fd35ea7392c39d222e7fb947e93284905f552d952dd160a89b040f712ef16-432.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal3-jpg/4b2fd35ea7392c39d222e7fb947e93284905f552d952dd160a89b040f712ef16-432.webp",
+          "width": 432,
+          "height": 640,
+          "bytes": 395906,
+          "sha256": "4b2fd35ea7392c39d222e7fb947e93284905f552d952dd160a89b040f712ef16"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal30.jpg",
+      "source_id": "g01-gal30-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal30.jpg",
+      "source_git_blob_sha1": "dfd60748ee4bd681aeb111b5d7ee1a2ad2f5dcef",
+      "source_sha256": "7f3faa8f34acb7c2cc3af8e00aa2b3c0f0f87bc827d34c6f660c4babbcfcb1d9",
+      "source_bytes": 615719,
+      "source_dimensions": [
+        1618,
+        2430
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1618,
+        2430
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal30-jpg/451b8ba82e25de27a9dca72115e4704a0a816a70bb396424a01b3b35a8e73c08-1278.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal30-jpg/451b8ba82e25de27a9dca72115e4704a0a816a70bb396424a01b3b35a8e73c08-1278.webp",
+          "width": 1278,
+          "height": 1920,
+          "bytes": 2583924,
+          "sha256": "451b8ba82e25de27a9dca72115e4704a0a816a70bb396424a01b3b35a8e73c08"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal30-jpg/1f14b6190e3d1a138a2ac70c15361a13e9eeb72fe186ef66f45207671a7d6cbf-426.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal30-jpg/1f14b6190e3d1a138a2ac70c15361a13e9eeb72fe186ef66f45207671a7d6cbf-426.webp",
+          "width": 426,
+          "height": 640,
+          "bytes": 399564,
+          "sha256": "1f14b6190e3d1a138a2ac70c15361a13e9eeb72fe186ef66f45207671a7d6cbf"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal31.jpg",
+      "source_id": "g01-gal31-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal31.jpg",
+      "source_git_blob_sha1": "ff4305c36a9270d98570efe19b3f39af4b7f1b60",
+      "source_sha256": "2b1d9e75a313f90559b7edee14113badb5b534b7cee5b09a723b6f1aee7b7210",
+      "source_bytes": 2454722,
+      "source_dimensions": [
+        2626,
+        3920
+      ],
+      "exif_orientation": 0,
+      "oriented_dimensions": [
+        2626,
+        3920
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal31-jpg/1f89695fc99a3d4dd9fa7c0f9733cc61d39effd330a0818f6506f0f1427f1d79-1286.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal31-jpg/1f89695fc99a3d4dd9fa7c0f9733cc61d39effd330a0818f6506f0f1427f1d79-1286.webp",
+          "width": 1286,
+          "height": 1920,
+          "bytes": 3175084,
+          "sha256": "1f89695fc99a3d4dd9fa7c0f9733cc61d39effd330a0818f6506f0f1427f1d79"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal31-jpg/459d46c3fa5c5e38e6c4f7776507220cd8d86733940cfd2c515d9b55625feba5-429.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal31-jpg/459d46c3fa5c5e38e6c4f7776507220cd8d86733940cfd2c515d9b55625feba5-429.webp",
+          "width": 429,
+          "height": 640,
+          "bytes": 441022,
+          "sha256": "459d46c3fa5c5e38e6c4f7776507220cd8d86733940cfd2c515d9b55625feba5"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal32.jpg",
+      "source_id": "g01-gal32-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal32.jpg",
+      "source_git_blob_sha1": "aaa4785592d09144fadc5f9b5a7a58306dd5babd",
+      "source_sha256": "68390a37cb1a93d5e06886a37ce84bc4939d3c3401862e51f757c4a98a907893",
+      "source_bytes": 295027,
+      "source_dimensions": [
+        1613,
+        1636
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1613,
+        1636
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal32-jpg/5ab377995cc1f6f009668081aeae89827da0992a90fd466ca2ba16a4ff3d0d3e-1613.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal32-jpg/5ab377995cc1f6f009668081aeae89827da0992a90fd466ca2ba16a4ff3d0d3e-1613.webp",
+          "width": 1613,
+          "height": 1636,
+          "bytes": 1970016,
+          "sha256": "5ab377995cc1f6f009668081aeae89827da0992a90fd466ca2ba16a4ff3d0d3e"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal32-jpg/3fed5088be8d38e3422db8a65f7c3d664d63b3a88a20746ac08cbce83e894f35-631.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal32-jpg/3fed5088be8d38e3422db8a65f7c3d664d63b3a88a20746ac08cbce83e894f35-631.webp",
+          "width": 631,
+          "height": 640,
+          "bytes": 466114,
+          "sha256": "3fed5088be8d38e3422db8a65f7c3d664d63b3a88a20746ac08cbce83e894f35"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal33.jpg",
+      "source_id": "g01-gal33-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal33.jpg",
+      "source_git_blob_sha1": "676feb057bd1d1f93ef9c65e0ef8b8a7365dce1e",
+      "source_sha256": "5d30a70b1582cd477a267f14d4413b71e2b38449cb7312be5a7a9d772d807cab",
+      "source_bytes": 552273,
+      "source_dimensions": [
+        2560,
+        1920
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        2560,
+        1920
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal33-jpg/9c1c044601a20d26fe7cae5c4ed6aaf077cf455e5bedfdd23f8ddfeef83b9ee0-1920.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal33-jpg/9c1c044601a20d26fe7cae5c4ed6aaf077cf455e5bedfdd23f8ddfeef83b9ee0-1920.webp",
+          "width": 1920,
+          "height": 1440,
+          "bytes": 2809340,
+          "sha256": "9c1c044601a20d26fe7cae5c4ed6aaf077cf455e5bedfdd23f8ddfeef83b9ee0"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal33-jpg/2eb01ce78425d9d9cf732c792d3b237acffbb2fcca4b43c6556ed89ced0c411d-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal33-jpg/2eb01ce78425d9d9cf732c792d3b237acffbb2fcca4b43c6556ed89ced0c411d-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 431564,
+          "sha256": "2eb01ce78425d9d9cf732c792d3b237acffbb2fcca4b43c6556ed89ced0c411d"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal34.jpg",
+      "source_id": "g01-gal34-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal34.jpg",
+      "source_git_blob_sha1": "6bf51b4a46b28ea31a6fae23a8642d6a2415ec18",
+      "source_sha256": "7295cbe2ca5b452c8d13ff650bc4163711f6beb88d70f080872a5691959792c3",
+      "source_bytes": 2049467,
+      "source_dimensions": [
+        2713,
+        4000
+      ],
+      "exif_orientation": 0,
+      "oriented_dimensions": [
+        2713,
+        4000
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal34-jpg/8e581390a4e02e29d6f2da7f5bc6032689e8eb9d3b94c754c12d98f5dbf4de26-1302.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal34-jpg/8e581390a4e02e29d6f2da7f5bc6032689e8eb9d3b94c754c12d98f5dbf4de26-1302.webp",
+          "width": 1302,
+          "height": 1920,
+          "bytes": 2885132,
+          "sha256": "8e581390a4e02e29d6f2da7f5bc6032689e8eb9d3b94c754c12d98f5dbf4de26"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal34-jpg/d754ccbe2e19a1b4bf9013e56c25de5ec6b2268ae9fb716c466496ed10801758-434.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal34-jpg/d754ccbe2e19a1b4bf9013e56c25de5ec6b2268ae9fb716c466496ed10801758-434.webp",
+          "width": 434,
+          "height": 640,
+          "bytes": 384210,
+          "sha256": "d754ccbe2e19a1b4bf9013e56c25de5ec6b2268ae9fb716c466496ed10801758"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal35.jpg",
+      "source_id": "g01-gal35-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal35.jpg",
+      "source_git_blob_sha1": "88245c4a9540fcd172f9f2c957e391e6b4548866",
+      "source_sha256": "455b5ea6b9f415198bf729ec1646bb137a64b88b8e16661172068d26dbdb6afd",
+      "source_bytes": 76139,
+      "source_dimensions": [
+        720,
+        576
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        720,
+        576
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal35-jpg/cf973b7f89fe205161950f4f929caed5be746a392f05b0bf80c2b6592601d19f-720.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal35-jpg/cf973b7f89fe205161950f4f929caed5be746a392f05b0bf80c2b6592601d19f-720.webp",
+          "width": 720,
+          "height": 576,
+          "bytes": 424704,
+          "sha256": "cf973b7f89fe205161950f4f929caed5be746a392f05b0bf80c2b6592601d19f"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal35-jpg/48fa4af129f3e8227045c3bb55075996003985be2d89921529d9fae2c3d31261-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal35-jpg/48fa4af129f3e8227045c3bb55075996003985be2d89921529d9fae2c3d31261-640.webp",
+          "width": 640,
+          "height": 512,
+          "bytes": 372350,
+          "sha256": "48fa4af129f3e8227045c3bb55075996003985be2d89921529d9fae2c3d31261"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal36.jpg",
+      "source_id": "g01-gal36-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal36.jpg",
+      "source_git_blob_sha1": "58ee7900e0e2bb652829b2208b602e319ff992f2",
+      "source_sha256": "893678705326dee1d70c8c65ee7c50ff17adc5cd4e2550989522cd424b9879db",
+      "source_bytes": 2654162,
+      "source_dimensions": [
+        2624,
+        3975
+      ],
+      "exif_orientation": 0,
+      "oriented_dimensions": [
+        2624,
+        3975
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal36-jpg/27b1d90735556b010b6d13b9d5e4e8d705cc4c7eda97dd4ef9030c0ecdca27a2-1267.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal36-jpg/27b1d90735556b010b6d13b9d5e4e8d705cc4c7eda97dd4ef9030c0ecdca27a2-1267.webp",
+          "width": 1267,
+          "height": 1920,
+          "bytes": 3465292,
+          "sha256": "27b1d90735556b010b6d13b9d5e4e8d705cc4c7eda97dd4ef9030c0ecdca27a2"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal36-jpg/efdd4caa0408c358cd3c0cc2ade7285fd33699837261582e9b30391174fc6580-422.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal36-jpg/efdd4caa0408c358cd3c0cc2ade7285fd33699837261582e9b30391174fc6580-422.webp",
+          "width": 422,
+          "height": 640,
+          "bytes": 484918,
+          "sha256": "efdd4caa0408c358cd3c0cc2ade7285fd33699837261582e9b30391174fc6580"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal37.jpg",
+      "source_id": "g01-gal37-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal37.jpg",
+      "source_git_blob_sha1": "6183d43a8f39a43f58066c2a596f7a1521ab5aff",
+      "source_sha256": "e6ffefeb5c72014359ec571ce02bbf689429a62e164f4235623427a575fbeeb4",
+      "source_bytes": 167307,
+      "source_dimensions": [
+        960,
+        1264
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        960,
+        1264
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal37-jpg/f38c56acc0f5987e8da490ee27632bfc615edcec97a89825ee447bb4bc14cecd-960.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal37-jpg/f38c56acc0f5987e8da490ee27632bfc615edcec97a89825ee447bb4bc14cecd-960.webp",
+          "width": 960,
+          "height": 1264,
+          "bytes": 1278376,
+          "sha256": "f38c56acc0f5987e8da490ee27632bfc615edcec97a89825ee447bb4bc14cecd"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal37-jpg/1f3e836f30b95c330be5d716a180109aab941c86599a5b8583089d44e2006004-486.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal37-jpg/1f3e836f30b95c330be5d716a180109aab941c86599a5b8583089d44e2006004-486.webp",
+          "width": 486,
+          "height": 640,
+          "bytes": 438584,
+          "sha256": "1f3e836f30b95c330be5d716a180109aab941c86599a5b8583089d44e2006004"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal38.jpg",
+      "source_id": "g01-gal38-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal38.jpg",
+      "source_git_blob_sha1": "24c0f00907ff0e61b5341bcdcc63068cce40708b",
+      "source_sha256": "b837b84430ebeb2913538d7ca4f3ec51bf223a387499c51f0dce3e292c96faf6",
+      "source_bytes": 2575580,
+      "source_dimensions": [
+        2694,
+        3994
+      ],
+      "exif_orientation": 0,
+      "oriented_dimensions": [
+        2694,
+        3994
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal38-jpg/1aed3c285344a838201c3018f6f96d6b9c2c9618816377bede56efaa3e282949-1295.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal38-jpg/1aed3c285344a838201c3018f6f96d6b9c2c9618816377bede56efaa3e282949-1295.webp",
+          "width": 1295,
+          "height": 1920,
+          "bytes": 3487002,
+          "sha256": "1aed3c285344a838201c3018f6f96d6b9c2c9618816377bede56efaa3e282949"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal38-jpg/acc8fe0d4a4915e3c176fee4b95014ac097981de4971a4fec601e2130aa0c25a-432.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal38-jpg/acc8fe0d4a4915e3c176fee4b95014ac097981de4971a4fec601e2130aa0c25a-432.webp",
+          "width": 432,
+          "height": 640,
+          "bytes": 501754,
+          "sha256": "acc8fe0d4a4915e3c176fee4b95014ac097981de4971a4fec601e2130aa0c25a"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal39.jpg",
+      "source_id": "g01-gal39-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal39.jpg",
+      "source_git_blob_sha1": "9ad9c6604f44b82522827c4511c1b9ad6483e636",
+      "source_sha256": "02d8b7973d6a20ec3762d76ba5021be12488f4c5ebfb62075f0944119b944ae2",
+      "source_bytes": 620117,
+      "source_dimensions": [
+        1648,
+        2444
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1648,
+        2444
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal39-jpg/671f42efda3b482ce7da41c2fc0953129d27f4f06e6f211117792bcfe2e532a1-1295.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal39-jpg/671f42efda3b482ce7da41c2fc0953129d27f4f06e6f211117792bcfe2e532a1-1295.webp",
+          "width": 1295,
+          "height": 1920,
+          "bytes": 2536418,
+          "sha256": "671f42efda3b482ce7da41c2fc0953129d27f4f06e6f211117792bcfe2e532a1"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal39-jpg/30b07814252d0ff2ddea30266102dd2c7beb4625304be1d5b93945ec89f2773e-432.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal39-jpg/30b07814252d0ff2ddea30266102dd2c7beb4625304be1d5b93945ec89f2773e-432.webp",
+          "width": 432,
+          "height": 640,
+          "bytes": 376216,
+          "sha256": "30b07814252d0ff2ddea30266102dd2c7beb4625304be1d5b93945ec89f2773e"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal4.jpg",
+      "source_id": "g01-gal4-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal4.jpg",
+      "source_git_blob_sha1": "f5c5310b9a2d5bddd3991f93938ecbe8b4f36631",
+      "source_sha256": "0458d7a428b81f5723256355b55c7c0ada4ad20de5ee7af139031cabc954af17",
+      "source_bytes": 3894310,
+      "source_dimensions": [
+        3000,
+        3137
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        3000,
+        3137
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal4-jpg/42e34369d27b5e91a2718879803b97e9c4b1c4f19c485525e5ec91e37a8ea9bf-1836.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal4-jpg/42e34369d27b5e91a2718879803b97e9c4b1c4f19c485525e5ec91e37a8ea9bf-1836.webp",
+          "width": 1836,
+          "height": 1920,
+          "bytes": 4623518,
+          "sha256": "42e34369d27b5e91a2718879803b97e9c4b1c4f19c485525e5ec91e37a8ea9bf"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal4-jpg/73ed4cb56ea3bdc474ec4c10e1fdca762d7d322ba19082ff104e305fbb239b6a-612.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal4-jpg/73ed4cb56ea3bdc474ec4c10e1fdca762d7d322ba19082ff104e305fbb239b6a-612.webp",
+          "width": 612,
+          "height": 640,
+          "bytes": 623062,
+          "sha256": "73ed4cb56ea3bdc474ec4c10e1fdca762d7d322ba19082ff104e305fbb239b6a"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal40.jpg",
+      "source_id": "g01-gal40-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal40.jpg",
+      "source_git_blob_sha1": "7380e14e6e77da0ece8c99d240c418a993dbb2a9",
+      "source_sha256": "b2f92732b1915c9547e8f341d140c2dda767b1ffb6ce0699cbf27dbaa2bb04ca",
+      "source_bytes": 375600,
+      "source_dimensions": [
+        1848,
+        2560
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1848,
+        2560
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal40-jpg/f4ca77316bf5cf2c445e10d10fa15d7800448fa6957dca3a8cc949b5568dfde0-1386.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal40-jpg/f4ca77316bf5cf2c445e10d10fa15d7800448fa6957dca3a8cc949b5568dfde0-1386.webp",
+          "width": 1386,
+          "height": 1920,
+          "bytes": 2413652,
+          "sha256": "f4ca77316bf5cf2c445e10d10fa15d7800448fa6957dca3a8cc949b5568dfde0"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal40-jpg/ea8e84541f6b8f6ad854dbd60559600b07f4811fc184993b972685be4201ae8a-462.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal40-jpg/ea8e84541f6b8f6ad854dbd60559600b07f4811fc184993b972685be4201ae8a-462.webp",
+          "width": 462,
+          "height": 640,
+          "bytes": 349182,
+          "sha256": "ea8e84541f6b8f6ad854dbd60559600b07f4811fc184993b972685be4201ae8a"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal41.jpg",
+      "source_id": "g01-gal41-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal41.jpg",
+      "source_git_blob_sha1": "092448f0566bca0153c46eb450ff1c79ee2bca26",
+      "source_sha256": "a96634e9bfeddc0234317f11e7dc32870450a1422e081ee26ba0913570901772",
+      "source_bytes": 629398,
+      "source_dimensions": [
+        1608,
+        2397
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1608,
+        2397
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal41-jpg/c8c0db65cfdac7dc816c90be3c2ccc0cb261183646975033d1fa92ca4e1b82ee-1288.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal41-jpg/c8c0db65cfdac7dc816c90be3c2ccc0cb261183646975033d1fa92ca4e1b82ee-1288.webp",
+          "width": 1288,
+          "height": 1920,
+          "bytes": 2614560,
+          "sha256": "c8c0db65cfdac7dc816c90be3c2ccc0cb261183646975033d1fa92ca4e1b82ee"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal41-jpg/2b5266288c27586cec0c5efd2163b4a72ca12d38f319f676e02c1408c7c40ca9-429.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal41-jpg/2b5266288c27586cec0c5efd2163b4a72ca12d38f319f676e02c1408c7c40ca9-429.webp",
+          "width": 429,
+          "height": 640,
+          "bytes": 389348,
+          "sha256": "2b5266288c27586cec0c5efd2163b4a72ca12d38f319f676e02c1408c7c40ca9"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal42.jpg",
+      "source_id": "g01-gal42-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal42.jpg",
+      "source_git_blob_sha1": "313d9f772c197f911eaede46d76a6f0fabadb950",
+      "source_sha256": "353b295e82f42a57b52472eba662fd335e1e33d9cc0b8330d329bdf14ca9699b",
+      "source_bytes": 390901,
+      "source_dimensions": [
+        1825,
+        2510
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1825,
+        2510
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal42-jpg/6e9f95d3aecc39c6e0a96ea20246819bbf676071ae3f6d54f7bc262606633305-1396.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal42-jpg/6e9f95d3aecc39c6e0a96ea20246819bbf676071ae3f6d54f7bc262606633305-1396.webp",
+          "width": 1396,
+          "height": 1920,
+          "bytes": 2627564,
+          "sha256": "6e9f95d3aecc39c6e0a96ea20246819bbf676071ae3f6d54f7bc262606633305"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal42-jpg/d176c63cfc8b8b927be95caf628c66be041d1592a05b17bd952a745c4af5b7d0-465.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal42-jpg/d176c63cfc8b8b927be95caf628c66be041d1592a05b17bd952a745c4af5b7d0-465.webp",
+          "width": 465,
+          "height": 640,
+          "bytes": 431766,
+          "sha256": "d176c63cfc8b8b927be95caf628c66be041d1592a05b17bd952a745c4af5b7d0"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal43.jpg",
+      "source_id": "g01-gal43-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal43.jpg",
+      "source_git_blob_sha1": "cc5684f7bf2f96191d30e057987d18d4d978bf39",
+      "source_sha256": "a14b959d021a3d8ce018a495b3ab7929864e5b07aff9f882737b70188d9bb22d",
+      "source_bytes": 756962,
+      "source_dimensions": [
+        1560,
+        2433
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1560,
+        2433
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal43-jpg/6753be51abe955b6386bb25e69d92d8f4b09d6266c3c76ff043fb4b813962920-1231.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal43-jpg/6753be51abe955b6386bb25e69d92d8f4b09d6266c3c76ff043fb4b813962920-1231.webp",
+          "width": 1231,
+          "height": 1920,
+          "bytes": 2630540,
+          "sha256": "6753be51abe955b6386bb25e69d92d8f4b09d6266c3c76ff043fb4b813962920"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal43-jpg/3caaa61ecd426474533e48335e6dad6cdf311436b56178c1eb8f47ca2e10cb66-410.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal43-jpg/3caaa61ecd426474533e48335e6dad6cdf311436b56178c1eb8f47ca2e10cb66-410.webp",
+          "width": 410,
+          "height": 640,
+          "bytes": 395098,
+          "sha256": "3caaa61ecd426474533e48335e6dad6cdf311436b56178c1eb8f47ca2e10cb66"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal44.jpg",
+      "source_id": "g01-gal44-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal44.jpg",
+      "source_git_blob_sha1": "68724af04aa9c469566576a4ff28c45798e46fb9",
+      "source_sha256": "d118ca3df5863d0376b1f413f6edc2beb5f1301d69aff99f97aa922998f68cbe",
+      "source_bytes": 910769,
+      "source_dimensions": [
+        2550,
+        3300
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        2550,
+        3300
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal44-jpg/bd6f2f7543e21aa2d02c6106ad6bc12cd10174cb21dce0acf73ffcbdeefd5047-1484.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal44-jpg/bd6f2f7543e21aa2d02c6106ad6bc12cd10174cb21dce0acf73ffcbdeefd5047-1484.webp",
+          "width": 1484,
+          "height": 1920,
+          "bytes": 3548388,
+          "sha256": "bd6f2f7543e21aa2d02c6106ad6bc12cd10174cb21dce0acf73ffcbdeefd5047"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal44-jpg/24bb5cbd216bf6bcd5f291840161efa4f8f9b182c022e5568fbeaa041c851b52-495.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal44-jpg/24bb5cbd216bf6bcd5f291840161efa4f8f9b182c022e5568fbeaa041c851b52-495.webp",
+          "width": 495,
+          "height": 640,
+          "bytes": 504110,
+          "sha256": "24bb5cbd216bf6bcd5f291840161efa4f8f9b182c022e5568fbeaa041c851b52"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal45.jpg",
+      "source_id": "g01-gal45-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal45.jpg",
+      "source_git_blob_sha1": "01c4a7a84ded68d2e57f305313f0a90c06311d08",
+      "source_sha256": "5978a079287de81d65002cab12ad6cd6166244aead66fb150dc492051ae7e5a7",
+      "source_bytes": 1118515,
+      "source_dimensions": [
+        2550,
+        2928
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        2550,
+        2928
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal45-jpg/ceca7ea4d8ea15473bc0d2ab4f8abb1c720e18887e774e93df955b0a836734a5-1672.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal45-jpg/ceca7ea4d8ea15473bc0d2ab4f8abb1c720e18887e774e93df955b0a836734a5-1672.webp",
+          "width": 1672,
+          "height": 1920,
+          "bytes": 3520530,
+          "sha256": "ceca7ea4d8ea15473bc0d2ab4f8abb1c720e18887e774e93df955b0a836734a5"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal45-jpg/7dbb72422a98fee73039a8298c5d09c961bb8ce8ac9de46c89a44d411be3ef39-557.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal45-jpg/7dbb72422a98fee73039a8298c5d09c961bb8ce8ac9de46c89a44d411be3ef39-557.webp",
+          "width": 557,
+          "height": 640,
+          "bytes": 526154,
+          "sha256": "7dbb72422a98fee73039a8298c5d09c961bb8ce8ac9de46c89a44d411be3ef39"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal46.jpg",
+      "source_id": "g01-gal46-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal46.jpg",
+      "source_git_blob_sha1": "a722fcbcaf1b074edfe7b1b96b45f339dab38976",
+      "source_sha256": "d82eda4c44f1b3b3abd9f0348df571f75c11f11a770cea4f3b47ca73fb984691",
+      "source_bytes": 766091,
+      "source_dimensions": [
+        2550,
+        3300
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        2550,
+        3300
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal46-jpg/70a3870547608823ccfd8e3b15cb5d4d6b45fdd6e95b23544f48c48d49789c1a-1484.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal46-jpg/70a3870547608823ccfd8e3b15cb5d4d6b45fdd6e95b23544f48c48d49789c1a-1484.webp",
+          "width": 1484,
+          "height": 1920,
+          "bytes": 3111158,
+          "sha256": "70a3870547608823ccfd8e3b15cb5d4d6b45fdd6e95b23544f48c48d49789c1a"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal46-jpg/db9e99c32a40d0e7aabb762d39e473edf0ff4ce4f1d3f70d1bad5bc096391ce9-495.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal46-jpg/db9e99c32a40d0e7aabb762d39e473edf0ff4ce4f1d3f70d1bad5bc096391ce9-495.webp",
+          "width": 495,
+          "height": 640,
+          "bytes": 464250,
+          "sha256": "db9e99c32a40d0e7aabb762d39e473edf0ff4ce4f1d3f70d1bad5bc096391ce9"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal47.jpg",
+      "source_id": "g01-gal47-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal47.jpg",
+      "source_git_blob_sha1": "56c9ba444acc4ecb2a47baefeeb5a6101ba5b1cf",
+      "source_sha256": "28d1abe5a188588f9c1ba47403d396e7e0e95dca8f1b66dec04bb7421f32c6a4",
+      "source_bytes": 1227761,
+      "source_dimensions": [
+        2550,
+        3300
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        2550,
+        3300
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal47-jpg/cac5cafa787e59b25af485247e5cdc04a86ac84f30a02ebc863f7d2626ad9b13-1484.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal47-jpg/cac5cafa787e59b25af485247e5cdc04a86ac84f30a02ebc863f7d2626ad9b13-1484.webp",
+          "width": 1484,
+          "height": 1920,
+          "bytes": 3297336,
+          "sha256": "cac5cafa787e59b25af485247e5cdc04a86ac84f30a02ebc863f7d2626ad9b13"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal47-jpg/f498b3d6afcdd614ed2e7b8edf14f7d89c4562a887be6acffbd33efe562bec19-495.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal47-jpg/f498b3d6afcdd614ed2e7b8edf14f7d89c4562a887be6acffbd33efe562bec19-495.webp",
+          "width": 495,
+          "height": 640,
+          "bytes": 475414,
+          "sha256": "f498b3d6afcdd614ed2e7b8edf14f7d89c4562a887be6acffbd33efe562bec19"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal48.jpg",
+      "source_id": "g01-gal48-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal48.jpg",
+      "source_git_blob_sha1": "2beefc25c2cf1945fee0402a997f92834bf9220a",
+      "source_sha256": "b0bb788fe632ec43a00e2912fe844b7aebb7af354f83297fbd70620651d08187",
+      "source_bytes": 2783971,
+      "source_dimensions": [
+        4000,
+        2962
+      ],
+      "exif_orientation": 0,
+      "oriented_dimensions": [
+        4000,
+        2962
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal48-jpg/939b298370c4997d2d1d39d46c7333ed0f883c650dd915ba65def91368333eef-1920.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal48-jpg/939b298370c4997d2d1d39d46c7333ed0f883c650dd915ba65def91368333eef-1920.webp",
+          "width": 1920,
+          "height": 1422,
+          "bytes": 3532812,
+          "sha256": "939b298370c4997d2d1d39d46c7333ed0f883c650dd915ba65def91368333eef"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal48-jpg/6fadaad863742e1a6e771200756f0118c3e6f5530004ff6916df4c91f6e80f84-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal48-jpg/6fadaad863742e1a6e771200756f0118c3e6f5530004ff6916df4c91f6e80f84-640.webp",
+          "width": 640,
+          "height": 474,
+          "bytes": 507428,
+          "sha256": "6fadaad863742e1a6e771200756f0118c3e6f5530004ff6916df4c91f6e80f84"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal49.jpg",
+      "source_id": "g01-gal49-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal49.jpg",
+      "source_git_blob_sha1": "ee9914eef11709f86b8819b5be97c064e6e73623",
+      "source_sha256": "555c4b338618e25e25a7bf2a22049d20f0492c98f0f6135ed54bb3ae7b7ce575",
+      "source_bytes": 439009,
+      "source_dimensions": [
+        1712,
+        2501
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1712,
+        2501
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal49-jpg/37b31291610c2e037278344fe4927c81d630ad89270f9b3626b9e26f874aeb64-1314.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal49-jpg/37b31291610c2e037278344fe4927c81d630ad89270f9b3626b9e26f874aeb64-1314.webp",
+          "width": 1314,
+          "height": 1920,
+          "bytes": 2347768,
+          "sha256": "37b31291610c2e037278344fe4927c81d630ad89270f9b3626b9e26f874aeb64"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal49-jpg/2cb3e4677a9ec0ac12c117c8bbb7fbcfe70181349cf191dbe9f21611aa407709-438.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal49-jpg/2cb3e4677a9ec0ac12c117c8bbb7fbcfe70181349cf191dbe9f21611aa407709-438.webp",
+          "width": 438,
+          "height": 640,
+          "bytes": 336722,
+          "sha256": "2cb3e4677a9ec0ac12c117c8bbb7fbcfe70181349cf191dbe9f21611aa407709"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal5.jpg",
+      "source_id": "g01-gal5-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal5.jpg",
+      "source_git_blob_sha1": "104a4c52a36ae011f0d6ffdcee79703b97ed15a1",
+      "source_sha256": "1ec21c28da0b5ca8bcea153c89f5e7d97162eca55d7ee21503de8c9aaf94181a",
+      "source_bytes": 208368,
+      "source_dimensions": [
+        964,
+        780
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        964,
+        780
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal5-jpg/788f5bbdad3d974631ce0b1ae616db9349e5aec2ae432d6b65297a7c1cab5324-964.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal5-jpg/788f5bbdad3d974631ce0b1ae616db9349e5aec2ae432d6b65297a7c1cab5324-964.webp",
+          "width": 964,
+          "height": 780,
+          "bytes": 895384,
+          "sha256": "788f5bbdad3d974631ce0b1ae616db9349e5aec2ae432d6b65297a7c1cab5324"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal5-jpg/c335a042ca529cdaceb2cdd984684c56247c64c9c8522d4929d7ee8d58aa3bdd-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal5-jpg/c335a042ca529cdaceb2cdd984684c56247c64c9c8522d4929d7ee8d58aa3bdd-640.webp",
+          "width": 640,
+          "height": 518,
+          "bytes": 464388,
+          "sha256": "c335a042ca529cdaceb2cdd984684c56247c64c9c8522d4929d7ee8d58aa3bdd"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal50.jpg",
+      "source_id": "g01-gal50-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal50.jpg",
+      "source_git_blob_sha1": "aa071d3ad552ceaee25c927b76b5f74163c8a188",
+      "source_sha256": "20e01fb35148eeaac4bfbd60ee99220704f31652634e2c174957548a4c6c0acf",
+      "source_bytes": 1069067,
+      "source_dimensions": [
+        2481,
+        3114
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        2481,
+        3114
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal50-jpg/30792f09634e12e3c27956c5b7a485dade80b5afdc7b92522ec7ae0263154fa5-1530.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal50-jpg/30792f09634e12e3c27956c5b7a485dade80b5afdc7b92522ec7ae0263154fa5-1530.webp",
+          "width": 1530,
+          "height": 1920,
+          "bytes": 3589004,
+          "sha256": "30792f09634e12e3c27956c5b7a485dade80b5afdc7b92522ec7ae0263154fa5"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal50-jpg/0af5e34e77a228e3799e9c5e0f5054e3d9492324b8e00ace95521fd7fe1cf3ea-510.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal50-jpg/0af5e34e77a228e3799e9c5e0f5054e3d9492324b8e00ace95521fd7fe1cf3ea-510.webp",
+          "width": 510,
+          "height": 640,
+          "bytes": 522582,
+          "sha256": "0af5e34e77a228e3799e9c5e0f5054e3d9492324b8e00ace95521fd7fe1cf3ea"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal51.jpg",
+      "source_id": "g01-gal51-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal51.jpg",
+      "source_git_blob_sha1": "52e59af51c2a7d1d56169ae0c79bbce0a5c6476f",
+      "source_sha256": "bc451556552e819f4364e9a5712d9353e9d0db5842832a6c9a77bb4fe3991142",
+      "source_bytes": 100450,
+      "source_dimensions": [
+        605,
+        639
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        605,
+        639
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal51-jpg/6d3fa62ca7ee4902f7ed5ca9cb7ed75884ddc804c60ccce0269e394bb8a96494-605.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal51-jpg/6d3fa62ca7ee4902f7ed5ca9cb7ed75884ddc804c60ccce0269e394bb8a96494-605.webp",
+          "width": 605,
+          "height": 639,
+          "bytes": 416894,
+          "sha256": "6d3fa62ca7ee4902f7ed5ca9cb7ed75884ddc804c60ccce0269e394bb8a96494"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal51-jpg/6d3fa62ca7ee4902f7ed5ca9cb7ed75884ddc804c60ccce0269e394bb8a96494-605.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal51-jpg/6d3fa62ca7ee4902f7ed5ca9cb7ed75884ddc804c60ccce0269e394bb8a96494-605.webp",
+          "width": 605,
+          "height": 639,
+          "bytes": 416894,
+          "sha256": "6d3fa62ca7ee4902f7ed5ca9cb7ed75884ddc804c60ccce0269e394bb8a96494"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal52.jpg",
+      "source_id": "g01-gal52-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal52.jpg",
+      "source_git_blob_sha1": "f8c31515907e4e854a11e41da44bd0e7899d56b5",
+      "source_sha256": "b63d72c43ef78bf6541da293d394373702536ccc2bf5a83ba242c3d98e1f656d",
+      "source_bytes": 4150123,
+      "source_dimensions": [
+        2663,
+        4000
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        2663,
+        4000
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal52-jpg/7280bdda8be8de0a98471be2fa9270e9d128bd5f49e0dbf2d4a38c88d926f978-1278.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal52-jpg/7280bdda8be8de0a98471be2fa9270e9d128bd5f49e0dbf2d4a38c88d926f978-1278.webp",
+          "width": 1278,
+          "height": 1920,
+          "bytes": 3664296,
+          "sha256": "7280bdda8be8de0a98471be2fa9270e9d128bd5f49e0dbf2d4a38c88d926f978"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal52-jpg/58cd0077f81feae3e08606aab3a1c9957b755dd7b0b96dac0a672fae375f74b1-426.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal52-jpg/58cd0077f81feae3e08606aab3a1c9957b755dd7b0b96dac0a672fae375f74b1-426.webp",
+          "width": 426,
+          "height": 640,
+          "bytes": 502070,
+          "sha256": "58cd0077f81feae3e08606aab3a1c9957b755dd7b0b96dac0a672fae375f74b1"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal53.jpg",
+      "source_id": "g01-gal53-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal53.jpg",
+      "source_git_blob_sha1": "98bdc7f9440f58722ba860792d843fe7f47e4233",
+      "source_sha256": "fccf5014dfaef60daff439484eba11240ff8177f9a94dd344958e2627fc73f86",
+      "source_bytes": 2286002,
+      "source_dimensions": [
+        2735,
+        4000
+      ],
+      "exif_orientation": 0,
+      "oriented_dimensions": [
+        2735,
+        4000
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal53-jpg/8902f6bea0a741a65e4b138880d91ea22c2a448eaa0d24f34a20a09f23f67f04-1313.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal53-jpg/8902f6bea0a741a65e4b138880d91ea22c2a448eaa0d24f34a20a09f23f67f04-1313.webp",
+          "width": 1313,
+          "height": 1920,
+          "bytes": 3247116,
+          "sha256": "8902f6bea0a741a65e4b138880d91ea22c2a448eaa0d24f34a20a09f23f67f04"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal53-jpg/77a17354c315f08b0c8ee91aa77472b283c247bd98233e157c19ac7042886f0b-438.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal53-jpg/77a17354c315f08b0c8ee91aa77472b283c247bd98233e157c19ac7042886f0b-438.webp",
+          "width": 438,
+          "height": 640,
+          "bytes": 470118,
+          "sha256": "77a17354c315f08b0c8ee91aa77472b283c247bd98233e157c19ac7042886f0b"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal54.jpg",
+      "source_id": "g01-gal54-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal54.jpg",
+      "source_git_blob_sha1": "438a1b32dc166ad75dc237f26378d9f64b3bdc7c",
+      "source_sha256": "ca4eb190399c9bd79d4dd2c1e05e1655a1d47155b0604d0dae2345664d4c3748",
+      "source_bytes": 1410590,
+      "source_dimensions": [
+        2560,
+        1920
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        2560,
+        1920
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal54-jpg/b930604eff0832c67a670e6df9e5502c5b261b487c9838dc519e385e37bd0d70-1920.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal54-jpg/b930604eff0832c67a670e6df9e5502c5b261b487c9838dc519e385e37bd0d70-1920.webp",
+          "width": 1920,
+          "height": 1440,
+          "bytes": 3500546,
+          "sha256": "b930604eff0832c67a670e6df9e5502c5b261b487c9838dc519e385e37bd0d70"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal54-jpg/76ca8385ea59b4257d644df64e937e60ceab355c11789a52bda7fdae0437d8d0-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal54-jpg/76ca8385ea59b4257d644df64e937e60ceab355c11789a52bda7fdae0437d8d0-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 548086,
+          "sha256": "76ca8385ea59b4257d644df64e937e60ceab355c11789a52bda7fdae0437d8d0"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal55.jpg",
+      "source_id": "g01-gal55-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal55.jpg",
+      "source_git_blob_sha1": "f8e19c10abe896f7331772aee48e56fae8314571",
+      "source_sha256": "46c72e3575e3c9f2a2602604e1d517997896d2e28138b06977a50b2df6fd433f",
+      "source_bytes": 252546,
+      "source_dimensions": [
+        960,
+        768
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        960,
+        768
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal55-jpg/41ff2c9eb10c12bef7194895d58291c73d0c0e970c4a81cfc05e2c6d25579f53-960.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal55-jpg/41ff2c9eb10c12bef7194895d58291c73d0c0e970c4a81cfc05e2c6d25579f53-960.webp",
+          "width": 960,
+          "height": 768,
+          "bytes": 1083872,
+          "sha256": "41ff2c9eb10c12bef7194895d58291c73d0c0e970c4a81cfc05e2c6d25579f53"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal55-jpg/55ef91ca701be6e102a7cc95b8ce657c68499621e37a798d91c68d9264ca54f9-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal55-jpg/55ef91ca701be6e102a7cc95b8ce657c68499621e37a798d91c68d9264ca54f9-640.webp",
+          "width": 640,
+          "height": 512,
+          "bytes": 537908,
+          "sha256": "55ef91ca701be6e102a7cc95b8ce657c68499621e37a798d91c68d9264ca54f9"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal56.jpg",
+      "source_id": "g01-gal56-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal56.jpg",
+      "source_git_blob_sha1": "84491b89dcc93ef9a829b500228c3baf9d85a6a9",
+      "source_sha256": "df8c07074d3414c2da257c17a565194c449e6e81ce87e1fbdf024d419bf4bdd7",
+      "source_bytes": 218541,
+      "source_dimensions": [
+        733,
+        960
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        733,
+        960
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal56-jpg/f2905d9dac6a19413a50f858805d8f26291a94e3ee13e4be025c6e06ba007021-733.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal56-jpg/f2905d9dac6a19413a50f858805d8f26291a94e3ee13e4be025c6e06ba007021-733.webp",
+          "width": 733,
+          "height": 960,
+          "bytes": 1036948,
+          "sha256": "f2905d9dac6a19413a50f858805d8f26291a94e3ee13e4be025c6e06ba007021"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal56-jpg/9e08c61189d0d06cb7a3beba7faba33191c43f284d79289e0a651fdc02285022-489.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal56-jpg/9e08c61189d0d06cb7a3beba7faba33191c43f284d79289e0a651fdc02285022-489.webp",
+          "width": 489,
+          "height": 640,
+          "bytes": 521852,
+          "sha256": "9e08c61189d0d06cb7a3beba7faba33191c43f284d79289e0a651fdc02285022"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal57.jpg",
+      "source_id": "g01-gal57-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal57.jpg",
+      "source_git_blob_sha1": "bd2f48ee10bf63302bd326eea0b0716b981a4ce0",
+      "source_sha256": "aaa0ea90056233c3779d09b2e10c30a1b35e818a3f6b5932cd8f44c7280b48e0",
+      "source_bytes": 2956469,
+      "source_dimensions": [
+        4000,
+        2626
+      ],
+      "exif_orientation": 0,
+      "oriented_dimensions": [
+        4000,
+        2626
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal57-jpg/71e8e1733855efaa34714d4099b53801daee138bb3f2a0d18cf5eda223d1ed87-1920.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal57-jpg/71e8e1733855efaa34714d4099b53801daee138bb3f2a0d18cf5eda223d1ed87-1920.webp",
+          "width": 1920,
+          "height": 1260,
+          "bytes": 3368090,
+          "sha256": "71e8e1733855efaa34714d4099b53801daee138bb3f2a0d18cf5eda223d1ed87"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal57-jpg/969e5551c0fd8427176c49282e8d605a01588a3e6717e320c96dd5b9e7fa0abe-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal57-jpg/969e5551c0fd8427176c49282e8d605a01588a3e6717e320c96dd5b9e7fa0abe-640.webp",
+          "width": 640,
+          "height": 420,
+          "bytes": 438050,
+          "sha256": "969e5551c0fd8427176c49282e8d605a01588a3e6717e320c96dd5b9e7fa0abe"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal58.jpg",
+      "source_id": "g01-gal58-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal58.jpg",
+      "source_git_blob_sha1": "1f247efc19c989d777fa0eead2687dc3056104e6",
+      "source_sha256": "2bd549a12de3a7e5a83956e518bce8fa7a3707f049b40de1cbc296a1bc59a482",
+      "source_bytes": 1619372,
+      "source_dimensions": [
+        2672,
+        3987
+      ],
+      "exif_orientation": 0,
+      "oriented_dimensions": [
+        2672,
+        3987
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal58-jpg/b21ff2404d31bfbc36572b41facb0cc455547d0c7d03dbf2c8ec510b85a2da4e-1287.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal58-jpg/b21ff2404d31bfbc36572b41facb0cc455547d0c7d03dbf2c8ec510b85a2da4e-1287.webp",
+          "width": 1287,
+          "height": 1920,
+          "bytes": 2846116,
+          "sha256": "b21ff2404d31bfbc36572b41facb0cc455547d0c7d03dbf2c8ec510b85a2da4e"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal58-jpg/48bbe22c526be6fcbac0ed2e6bd17fb5e87cf9687a92e2cba06dc74b4efd415e-429.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal58-jpg/48bbe22c526be6fcbac0ed2e6bd17fb5e87cf9687a92e2cba06dc74b4efd415e-429.webp",
+          "width": 429,
+          "height": 640,
+          "bytes": 406904,
+          "sha256": "48bbe22c526be6fcbac0ed2e6bd17fb5e87cf9687a92e2cba06dc74b4efd415e"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal59.jpg",
+      "source_id": "g01-gal59-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal59.jpg",
+      "source_git_blob_sha1": "313084a39df2b3ff798fb6b095041f2e0718e723",
+      "source_sha256": "25dbf549a79c23430b4b4735247a51285d816343f07392d72eae35a10da82362",
+      "source_bytes": 94720,
+      "source_dimensions": [
+        960,
+        720
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        960,
+        720
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal59-jpg/781e9b8b07f291e27433fd66a658c28f956a43a15755959fc7bf57aa608ed0a1-960.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal59-jpg/781e9b8b07f291e27433fd66a658c28f956a43a15755959fc7bf57aa608ed0a1-960.webp",
+          "width": 960,
+          "height": 720,
+          "bytes": 758900,
+          "sha256": "781e9b8b07f291e27433fd66a658c28f956a43a15755959fc7bf57aa608ed0a1"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal59-jpg/967b88cda701fe0e3efb2c8df0f41e994a0e638e2b141cdf74dfd37d853bb069-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal59-jpg/967b88cda701fe0e3efb2c8df0f41e994a0e638e2b141cdf74dfd37d853bb069-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 403876,
+          "sha256": "967b88cda701fe0e3efb2c8df0f41e994a0e638e2b141cdf74dfd37d853bb069"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal6.jpg",
+      "source_id": "g01-gal6-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal6.jpg",
+      "source_git_blob_sha1": "ba98c89a9582a1e50ed91237ab49b237fb2c922b",
+      "source_sha256": "3debfe380c58ae00c748ae19f423f8ef3bfe946a6469c0019dbf6db547db3e36",
+      "source_bytes": 2734086,
+      "source_dimensions": [
+        2660,
+        4000
+      ],
+      "exif_orientation": 0,
+      "oriented_dimensions": [
+        2660,
+        4000
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal6-jpg/9901e228ebbd6dad6d855bf0e8bc3d051df72c7d6e91ee7b0bc733723257e84c-1277.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal6-jpg/9901e228ebbd6dad6d855bf0e8bc3d051df72c7d6e91ee7b0bc733723257e84c-1277.webp",
+          "width": 1277,
+          "height": 1920,
+          "bytes": 3465236,
+          "sha256": "9901e228ebbd6dad6d855bf0e8bc3d051df72c7d6e91ee7b0bc733723257e84c"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal6-jpg/4087798c07fdc05c7b0f79e359e5a8f805ecd0ade17934046dfc61463cba2fdb-426.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal6-jpg/4087798c07fdc05c7b0f79e359e5a8f805ecd0ade17934046dfc61463cba2fdb-426.webp",
+          "width": 426,
+          "height": 640,
+          "bytes": 471386,
+          "sha256": "4087798c07fdc05c7b0f79e359e5a8f805ecd0ade17934046dfc61463cba2fdb"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal60.jpg",
+      "source_id": "g01-gal60-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal60.jpg",
+      "source_git_blob_sha1": "3ef4942241fdc62e6e323bdeaec92a0e7d0b9fc6",
+      "source_sha256": "a43173f7989bb1e4a647d474e6b92aaee18b729a678693ff38452309588a216d",
+      "source_bytes": 502554,
+      "source_dimensions": [
+        1717,
+        1726
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1717,
+        1726
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal60-jpg/0772aa72b890e39909af4ca661f67ef8c5ca39ff43c3dd973e296fd5328531b0-1717.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal60-jpg/0772aa72b890e39909af4ca661f67ef8c5ca39ff43c3dd973e296fd5328531b0-1717.webp",
+          "width": 1717,
+          "height": 1726,
+          "bytes": 2956372,
+          "sha256": "0772aa72b890e39909af4ca661f67ef8c5ca39ff43c3dd973e296fd5328531b0"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal60-jpg/e7e58d5e0f6335d6b704223677e3b557f47f2ec2f2e1f514717759fb4839ef66-637.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal60-jpg/e7e58d5e0f6335d6b704223677e3b557f47f2ec2f2e1f514717759fb4839ef66-637.webp",
+          "width": 637,
+          "height": 640,
+          "bytes": 577202,
+          "sha256": "e7e58d5e0f6335d6b704223677e3b557f47f2ec2f2e1f514717759fb4839ef66"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal61.jpeg",
+      "source_id": "g01-gal61-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal61.jpeg",
+      "source_git_blob_sha1": "dbfe03eb8f9a78af2e0190c899859774f6fa295d",
+      "source_sha256": "27c86aaf559284695882b0362d33940ef54f90c012e96e03785decf8b2567503",
+      "source_bytes": 137218,
+      "source_dimensions": [
+        1040,
+        764
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1040,
+        764
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal61-jpeg/04b72e0e492aebcdafbcd1a47e2b03b02c6a2a99b4c3a759c192ebebbc931233-1040.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal61-jpeg/04b72e0e492aebcdafbcd1a47e2b03b02c6a2a99b4c3a759c192ebebbc931233-1040.webp",
+          "width": 1040,
+          "height": 764,
+          "bytes": 859320,
+          "sha256": "04b72e0e492aebcdafbcd1a47e2b03b02c6a2a99b4c3a759c192ebebbc931233"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal61-jpeg/5dbe654dd69dcdee74396a00f54c7fafdae8e9708e8aad54ffe91c3ef7803011-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal61-jpeg/5dbe654dd69dcdee74396a00f54c7fafdae8e9708e8aad54ffe91c3ef7803011-640.webp",
+          "width": 640,
+          "height": 470,
+          "bytes": 411638,
+          "sha256": "5dbe654dd69dcdee74396a00f54c7fafdae8e9708e8aad54ffe91c3ef7803011"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal62.jpeg",
+      "source_id": "g01-gal62-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal62.jpeg",
+      "source_git_blob_sha1": "f5eba3747e601c2cff9eb994410b2dddc4f982a7",
+      "source_sha256": "58fee867054bcf4e4c1fc9634c9901d08ac63ab5897babd7ea959170bf43c004",
+      "source_bytes": 83470,
+      "source_dimensions": [
+        780,
+        1040
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        780,
+        1040
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal62-jpeg/f3ec267111eec0d2887437a66c098a6054d888ce3f27c81269ceb5fe51a696b0-780.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal62-jpeg/f3ec267111eec0d2887437a66c098a6054d888ce3f27c81269ceb5fe51a696b0-780.webp",
+          "width": 780,
+          "height": 1040,
+          "bytes": 491754,
+          "sha256": "f3ec267111eec0d2887437a66c098a6054d888ce3f27c81269ceb5fe51a696b0"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal62-jpeg/950c4455ab8e623c222520b452b8e80e64a29570dc4cf4cf59e3e2f79ccdaeb0-480.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal62-jpeg/950c4455ab8e623c222520b452b8e80e64a29570dc4cf4cf59e3e2f79ccdaeb0-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 251696,
+          "sha256": "950c4455ab8e623c222520b452b8e80e64a29570dc4cf4cf59e3e2f79ccdaeb0"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal63.jpeg",
+      "source_id": "g01-gal63-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal63.jpeg",
+      "source_git_blob_sha1": "2aaad83a9c52546799403fb01f9065b7168e7885",
+      "source_sha256": "e652c10c8342dc934306f68c382947eb58e24e8b2455f0b625e48f666617a8f5",
+      "source_bytes": 252951,
+      "source_dimensions": [
+        1600,
+        1200
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1600,
+        1200
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal63-jpeg/2f04facc936b821048097d84e28e4c3096c56d335fee1daf6c40ffff3e9e81fb-1600.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal63-jpeg/2f04facc936b821048097d84e28e4c3096c56d335fee1daf6c40ffff3e9e81fb-1600.webp",
+          "width": 1600,
+          "height": 1200,
+          "bytes": 1737936,
+          "sha256": "2f04facc936b821048097d84e28e4c3096c56d335fee1daf6c40ffff3e9e81fb"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal63-jpeg/9b5bf0c7d628f21c29dea5e1bda57e566fde20602b56eac0be683a9bae0dfec0-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal63-jpeg/9b5bf0c7d628f21c29dea5e1bda57e566fde20602b56eac0be683a9bae0dfec0-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 427846,
+          "sha256": "9b5bf0c7d628f21c29dea5e1bda57e566fde20602b56eac0be683a9bae0dfec0"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal64.jpeg",
+      "source_id": "g01-gal64-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal64.jpeg",
+      "source_git_blob_sha1": "ca9938284c7efccca4ab60f44bf11a14c933b978",
+      "source_sha256": "8d6a28bacdf6668afa9694732a2cf30f89f3938ca80ec3ee9250735149d28e8c",
+      "source_bytes": 164580,
+      "source_dimensions": [
+        1600,
+        1200
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1600,
+        1200
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal64-jpeg/ccdf91189b3bb054a4efb8ceeae4fc20ad064c019d80ba3a7452f6a367e23b82-1600.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal64-jpeg/ccdf91189b3bb054a4efb8ceeae4fc20ad064c019d80ba3a7452f6a367e23b82-1600.webp",
+          "width": 1600,
+          "height": 1200,
+          "bytes": 1067514,
+          "sha256": "ccdf91189b3bb054a4efb8ceeae4fc20ad064c019d80ba3a7452f6a367e23b82"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal64-jpeg/ccd32b908f37a77c5a61f491183aec315cd28c75daf14eae5fecde2487738000-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal64-jpeg/ccd32b908f37a77c5a61f491183aec315cd28c75daf14eae5fecde2487738000-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 300538,
+          "sha256": "ccd32b908f37a77c5a61f491183aec315cd28c75daf14eae5fecde2487738000"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal65.jpeg",
+      "source_id": "g01-gal65-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal65.jpeg",
+      "source_git_blob_sha1": "8c704bdb684241e485d05d2dc9d1f6e7d27562f8",
+      "source_sha256": "07f1b630b97617bf9f48838fff99bb6cbb4d14c4418db35e52804df3b38dfa4d",
+      "source_bytes": 204983,
+      "source_dimensions": [
+        1200,
+        1600
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1200,
+        1600
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal65-jpeg/c47b468a1894adf6c9e9a33052237f44807ed709075ced13e16972090f5000a0-1200.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal65-jpeg/c47b468a1894adf6c9e9a33052237f44807ed709075ced13e16972090f5000a0-1200.webp",
+          "width": 1200,
+          "height": 1600,
+          "bytes": 800170,
+          "sha256": "c47b468a1894adf6c9e9a33052237f44807ed709075ced13e16972090f5000a0"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal65-jpeg/fda9a0e89ebb43c53633fb89f754b9d59554944d8ee61acb814f325400f4054f-480.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal65-jpeg/fda9a0e89ebb43c53633fb89f754b9d59554944d8ee61acb814f325400f4054f-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 178740,
+          "sha256": "fda9a0e89ebb43c53633fb89f754b9d59554944d8ee61acb814f325400f4054f"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal66.jpeg",
+      "source_id": "g01-gal66-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal66.jpeg",
+      "source_git_blob_sha1": "14064aae16f835e4a64381cc110f6736420ffdd2",
+      "source_sha256": "485d3c4c55582ffa30b6b777a1f29fcc5197bc32f8cb90db5c3d82ba0e266aa9",
+      "source_bytes": 183182,
+      "source_dimensions": [
+        1074,
+        1600
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1074,
+        1600
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal66-jpeg/dff32d9ff59b73aa0c8404ccabf2f73c802ca5c5096d47e6628fe05cce1e4344-1074.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal66-jpeg/dff32d9ff59b73aa0c8404ccabf2f73c802ca5c5096d47e6628fe05cce1e4344-1074.webp",
+          "width": 1074,
+          "height": 1600,
+          "bytes": 1315072,
+          "sha256": "dff32d9ff59b73aa0c8404ccabf2f73c802ca5c5096d47e6628fe05cce1e4344"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal66-jpeg/54acc81811ff596a85dd35fdc6b74cfa93691b0ee8a41175a82153afd5a64d8a-430.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal66-jpeg/54acc81811ff596a85dd35fdc6b74cfa93691b0ee8a41175a82153afd5a64d8a-430.webp",
+          "width": 430,
+          "height": 640,
+          "bytes": 334252,
+          "sha256": "54acc81811ff596a85dd35fdc6b74cfa93691b0ee8a41175a82153afd5a64d8a"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal67.jpeg",
+      "source_id": "g01-gal67-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal67.jpeg",
+      "source_git_blob_sha1": "7683ec4b03cc10dc710b5166ff09decfe62fd4e4",
+      "source_sha256": "7995dafcd196ac0784595b22ff9666427538a481c9cafab569e3a1f45adeb995",
+      "source_bytes": 240874,
+      "source_dimensions": [
+        1056,
+        1600
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1056,
+        1600
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal67-jpeg/3d478e9acff4b14cc2f3ff497c69984e198dd3a49dec067d1acafa17305cd689-1056.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal67-jpeg/3d478e9acff4b14cc2f3ff497c69984e198dd3a49dec067d1acafa17305cd689-1056.webp",
+          "width": 1056,
+          "height": 1600,
+          "bytes": 1465278,
+          "sha256": "3d478e9acff4b14cc2f3ff497c69984e198dd3a49dec067d1acafa17305cd689"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal67-jpeg/3be94dc263e3346dcd6dd06df5041ffca06114dfb5c5ff46f9ef362680a33185-422.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal67-jpeg/3be94dc263e3346dcd6dd06df5041ffca06114dfb5c5ff46f9ef362680a33185-422.webp",
+          "width": 422,
+          "height": 640,
+          "bytes": 328812,
+          "sha256": "3be94dc263e3346dcd6dd06df5041ffca06114dfb5c5ff46f9ef362680a33185"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal7.jpg",
+      "source_id": "g01-gal7-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal7.jpg",
+      "source_git_blob_sha1": "4b4834667d8057f50376a84d2c2fece6cb917e2b",
+      "source_sha256": "bb76d39c4a04f0766a72797084d6d9944fa171f68ab04da6d94c33590636f25a",
+      "source_bytes": 165479,
+      "source_dimensions": [
+        900,
+        1600
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        900,
+        1600
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal7-jpg/ee02faf73535af8fd73513254ec0da94c08d99d788825165e293b0c40f40954e-900.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal7-jpg/ee02faf73535af8fd73513254ec0da94c08d99d788825165e293b0c40f40954e-900.webp",
+          "width": 900,
+          "height": 1600,
+          "bytes": 705840,
+          "sha256": "ee02faf73535af8fd73513254ec0da94c08d99d788825165e293b0c40f40954e"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal7-jpg/8646c0766ecf29ab1b8368cdc02a76e1468033438862fe382c771d959c2fee2f-360.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal7-jpg/8646c0766ecf29ab1b8368cdc02a76e1468033438862fe382c771d959c2fee2f-360.webp",
+          "width": 360,
+          "height": 640,
+          "bytes": 136418,
+          "sha256": "8646c0766ecf29ab1b8368cdc02a76e1468033438862fe382c771d959c2fee2f"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal8.jpg",
+      "source_id": "g01-gal8-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal8.jpg",
+      "source_git_blob_sha1": "a5647e4853b45acfd760da5e479183b9928629d8",
+      "source_sha256": "0e289ac9594e9e6d9201ce5112282a70679e3856c07c02ad2b3b12fa88fd2b48",
+      "source_bytes": 115588,
+      "source_dimensions": [
+        720,
+        576
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        720,
+        576
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal8-jpg/62bad5c8bc8cfceb7ce7a5c846119d301bb786375f1807ebdcff878c3f52ee81-720.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal8-jpg/62bad5c8bc8cfceb7ce7a5c846119d301bb786375f1807ebdcff878c3f52ee81-720.webp",
+          "width": 720,
+          "height": 576,
+          "bytes": 368846,
+          "sha256": "62bad5c8bc8cfceb7ce7a5c846119d301bb786375f1807ebdcff878c3f52ee81"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal8-jpg/54126686a31f37e176faf9f414658a094e23d7ad4d0fd135bef75b5dfd6be515-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal8-jpg/54126686a31f37e176faf9f414658a094e23d7ad4d0fd135bef75b5dfd6be515-640.webp",
+          "width": 640,
+          "height": 512,
+          "bytes": 325690,
+          "sha256": "54126686a31f37e176faf9f414658a094e23d7ad4d0fd135bef75b5dfd6be515"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal81.jpg",
+      "source_id": "g01-gal81-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal81.jpg",
+      "source_git_blob_sha1": "8a52def467e1117781a63caddb46346f4d231b40",
+      "source_sha256": "466ade770c02574c55ad111f163a3efaebb8d771ddd6b89d4c7939d1613dbd7e",
+      "source_bytes": 1402752,
+      "source_dimensions": [
+        1899,
+        2626
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1899,
+        2626
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal81-jpg/576fdbb75accb0a519eadbf8dcd7300cf63d5c72ac613ce3933665828079c371-1388.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal81-jpg/576fdbb75accb0a519eadbf8dcd7300cf63d5c72ac613ce3933665828079c371-1388.webp",
+          "width": 1388,
+          "height": 1920,
+          "bytes": 2879658,
+          "sha256": "576fdbb75accb0a519eadbf8dcd7300cf63d5c72ac613ce3933665828079c371"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal81-jpg/adda991f4ab86198aa3c1ac4fee31d832ace12d3391932f995f36dc50612e859-463.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal81-jpg/adda991f4ab86198aa3c1ac4fee31d832ace12d3391932f995f36dc50612e859-463.webp",
+          "width": 463,
+          "height": 640,
+          "bytes": 449304,
+          "sha256": "adda991f4ab86198aa3c1ac4fee31d832ace12d3391932f995f36dc50612e859"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal82.jpg",
+      "source_id": "g01-gal82-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal82.jpg",
+      "source_git_blob_sha1": "f8785fb15820ac4e570e44c0d16cf56284c432c6",
+      "source_sha256": "00ecc0af7b5b821ab45e42cfa30e61555049e448494c66bece9cb80bae62a8c0",
+      "source_bytes": 1259114,
+      "source_dimensions": [
+        1765,
+        2551
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1765,
+        2551
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal82-jpg/8ef083098ce1ad7e52700e6100bb7b603424b50a9989b66e8c8d94dc60bc4565-1328.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal82-jpg/8ef083098ce1ad7e52700e6100bb7b603424b50a9989b66e8c8d94dc60bc4565-1328.webp",
+          "width": 1328,
+          "height": 1920,
+          "bytes": 2816180,
+          "sha256": "8ef083098ce1ad7e52700e6100bb7b603424b50a9989b66e8c8d94dc60bc4565"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal82-jpg/e10c2bc6732b4a8f0fcb8bcd27e8d764ca620f660a634832cc2b9f39e1d6d667-443.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal82-jpg/e10c2bc6732b4a8f0fcb8bcd27e8d764ca620f660a634832cc2b9f39e1d6d667-443.webp",
+          "width": 443,
+          "height": 640,
+          "bytes": 447502,
+          "sha256": "e10c2bc6732b4a8f0fcb8bcd27e8d764ca620f660a634832cc2b9f39e1d6d667"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal83.jpg",
+      "source_id": "g01-gal83-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal83.jpg",
+      "source_git_blob_sha1": "1d252de559b5a7dbda11f4871d7782555494c297",
+      "source_sha256": "da87e813e9276cabae7f9c43c38f6eeaae05b73e585ca2d8ea4de946d46ca2fe",
+      "source_bytes": 1231077,
+      "source_dimensions": [
+        1776,
+        2526
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1776,
+        2526
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal83-jpg/0cfa7f476462013d8b0a49539a58f1eb2d613e76028c7ed3a10b7d45e6fd1d73-1350.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal83-jpg/0cfa7f476462013d8b0a49539a58f1eb2d613e76028c7ed3a10b7d45e6fd1d73-1350.webp",
+          "width": 1350,
+          "height": 1920,
+          "bytes": 2642574,
+          "sha256": "0cfa7f476462013d8b0a49539a58f1eb2d613e76028c7ed3a10b7d45e6fd1d73"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal83-jpg/87544a70a8cfb0d6f814719271911d85f8e894c669c034da25c8bfaa43dfe57e-450.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal83-jpg/87544a70a8cfb0d6f814719271911d85f8e894c669c034da25c8bfaa43dfe57e-450.webp",
+          "width": 450,
+          "height": 640,
+          "bytes": 416382,
+          "sha256": "87544a70a8cfb0d6f814719271911d85f8e894c669c034da25c8bfaa43dfe57e"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal84.jpg",
+      "source_id": "g01-gal84-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal84.jpg",
+      "source_git_blob_sha1": "45412d3543f92ad1f7e357f3c2dea25f8b78adaa",
+      "source_sha256": "95b18c96c85da5bd8de259d889b0acc3b35b016d7a740b9966c2c5f29b39325c",
+      "source_bytes": 1515327,
+      "source_dimensions": [
+        1969,
+        2756
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1969,
+        2756
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal84-jpg/de4d00994f55aae55acdca58e54c46d773cedb5a5c11228828da43ef897e8eb1-1372.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal84-jpg/de4d00994f55aae55acdca58e54c46d773cedb5a5c11228828da43ef897e8eb1-1372.webp",
+          "width": 1372,
+          "height": 1920,
+          "bytes": 2885184,
+          "sha256": "de4d00994f55aae55acdca58e54c46d773cedb5a5c11228828da43ef897e8eb1"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal84-jpg/8b6d8dfb640a9f3d86029e5a36e98e41ad1f1ffb3d68dfbcdbaf8c97488054d5-457.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal84-jpg/8b6d8dfb640a9f3d86029e5a36e98e41ad1f1ffb3d68dfbcdbaf8c97488054d5-457.webp",
+          "width": 457,
+          "height": 640,
+          "bytes": 453578,
+          "sha256": "8b6d8dfb640a9f3d86029e5a36e98e41ad1f1ffb3d68dfbcdbaf8c97488054d5"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal85.jpg",
+      "source_id": "g01-gal85-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal85.jpg",
+      "source_git_blob_sha1": "405c4252ad43f4bc5eb8fabae3b50e18b6bd501a",
+      "source_sha256": "e177cb71a9c46ea39be77a157f38308944d9d0fd8e93cb9adfa5364fe05d7e6c",
+      "source_bytes": 1131051,
+      "source_dimensions": [
+        1560,
+        2210
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1560,
+        2210
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal85-jpg/3664889af51a8f853c11af5ff225723de945b8bf45cde45d16f6abcc21f08288-1355.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal85-jpg/3664889af51a8f853c11af5ff225723de945b8bf45cde45d16f6abcc21f08288-1355.webp",
+          "width": 1355,
+          "height": 1920,
+          "bytes": 3003676,
+          "sha256": "3664889af51a8f853c11af5ff225723de945b8bf45cde45d16f6abcc21f08288"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal85-jpg/0dcbe57b4746cee8cb75d53003ff39519e87e9868c40449a92edebbc3904604b-452.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal85-jpg/0dcbe57b4746cee8cb75d53003ff39519e87e9868c40449a92edebbc3904604b-452.webp",
+          "width": 452,
+          "height": 640,
+          "bytes": 475120,
+          "sha256": "0dcbe57b4746cee8cb75d53003ff39519e87e9868c40449a92edebbc3904604b"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal86.jpg",
+      "source_id": "g01-gal86-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal86.jpg",
+      "source_git_blob_sha1": "3b7160b8490cb80943fd93aca1a07b1217250c70",
+      "source_sha256": "6219710a99912587dda63865c8399f7d7d10274707e6aa04719e14bc5d2a2c06",
+      "source_bytes": 1627003,
+      "source_dimensions": [
+        1932,
+        2837
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1932,
+        2837
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal86-jpg/57823372e51e17472a9b2b3cce9e81c8e695dd4df756355acf68c6dc2303e9aa-1308.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal86-jpg/57823372e51e17472a9b2b3cce9e81c8e695dd4df756355acf68c6dc2303e9aa-1308.webp",
+          "width": 1308,
+          "height": 1920,
+          "bytes": 2960184,
+          "sha256": "57823372e51e17472a9b2b3cce9e81c8e695dd4df756355acf68c6dc2303e9aa"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal86-jpg/0aa16387e8411925991121a53e10109ed0bf199c72f508dde81c67e25d17df0a-436.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal86-jpg/0aa16387e8411925991121a53e10109ed0bf199c72f508dde81c67e25d17df0a-436.webp",
+          "width": 436,
+          "height": 640,
+          "bytes": 455462,
+          "sha256": "0aa16387e8411925991121a53e10109ed0bf199c72f508dde81c67e25d17df0a"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal87.jpg",
+      "source_id": "g01-gal87-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal87.jpg",
+      "source_git_blob_sha1": "6fb6100d22cecf522549c9e8496592ab33df71fc",
+      "source_sha256": "46518a748df2637b7887ed4ca2446c198b22cd58baa26b8c7532d811630ec533",
+      "source_bytes": 1442476,
+      "source_dimensions": [
+        1843,
+        2638
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1843,
+        2638
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal87-jpg/e4ad582c9e16e1b9a66fa856633f5c6178d8e66971dec3ed0f0bf3ce84b5fabf-1341.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal87-jpg/e4ad582c9e16e1b9a66fa856633f5c6178d8e66971dec3ed0f0bf3ce84b5fabf-1341.webp",
+          "width": 1341,
+          "height": 1920,
+          "bytes": 2887508,
+          "sha256": "e4ad582c9e16e1b9a66fa856633f5c6178d8e66971dec3ed0f0bf3ce84b5fabf"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal87-jpg/0255c706d718d1eec4fb927c21dfb0ace023eadcffe702ea6ae5a643b8084a2b-447.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal87-jpg/0255c706d718d1eec4fb927c21dfb0ace023eadcffe702ea6ae5a643b8084a2b-447.webp",
+          "width": 447,
+          "height": 640,
+          "bytes": 454716,
+          "sha256": "0255c706d718d1eec4fb927c21dfb0ace023eadcffe702ea6ae5a643b8084a2b"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal88.jpg",
+      "source_id": "g01-gal88-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal88.jpg",
+      "source_git_blob_sha1": "02e26a4783ded3861d7785c81d0fa18f237884ae",
+      "source_sha256": "a36065b2395e91e72a090d6d42ae71edca9d22c68b112749528973ed5c7204aa",
+      "source_bytes": 1357102,
+      "source_dimensions": [
+        1850,
+        2648
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1850,
+        2648
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal88-jpg/14921451432686b80aefdcaeffdd869377c0fb9cc7c42592d57a536e12143693-1341.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal88-jpg/14921451432686b80aefdcaeffdd869377c0fb9cc7c42592d57a536e12143693-1341.webp",
+          "width": 1341,
+          "height": 1920,
+          "bytes": 2491264,
+          "sha256": "14921451432686b80aefdcaeffdd869377c0fb9cc7c42592d57a536e12143693"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal88-jpg/895e8ab94465101da3ee7cd5357cce818a6c8767ada483cc705ae997f49dfec0-447.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal88-jpg/895e8ab94465101da3ee7cd5357cce818a6c8767ada483cc705ae997f49dfec0-447.webp",
+          "width": 447,
+          "height": 640,
+          "bytes": 376054,
+          "sha256": "895e8ab94465101da3ee7cd5357cce818a6c8767ada483cc705ae997f49dfec0"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal89.jpg",
+      "source_id": "g01-gal89-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal89.jpg",
+      "source_git_blob_sha1": "1432caf6b300a6d31a15afd2871c02b8327ba46a",
+      "source_sha256": "98afef447a72bc746de60b1a1b38b770a5acb638553e5d08fd3b195492493ed7",
+      "source_bytes": 1897556,
+      "source_dimensions": [
+        2340,
+        3275
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        2340,
+        3275
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal89-jpg/1933b5317d579d7ecb3134e215a57f54f561d130bdf842c249a64180a27e803c-1372.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal89-jpg/1933b5317d579d7ecb3134e215a57f54f561d130bdf842c249a64180a27e803c-1372.webp",
+          "width": 1372,
+          "height": 1920,
+          "bytes": 2828602,
+          "sha256": "1933b5317d579d7ecb3134e215a57f54f561d130bdf842c249a64180a27e803c"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal89-jpg/5228c23d882dd22d96a89d329e07c3f8ee2a3c797fb7041514157aa3d43ca60f-457.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal89-jpg/5228c23d882dd22d96a89d329e07c3f8ee2a3c797fb7041514157aa3d43ca60f-457.webp",
+          "width": 457,
+          "height": 640,
+          "bytes": 429480,
+          "sha256": "5228c23d882dd22d96a89d329e07c3f8ee2a3c797fb7041514157aa3d43ca60f"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal9.jpg",
+      "source_id": "g01-gal9-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal9.jpg",
+      "source_git_blob_sha1": "37a1d994790199ae43544bd9a697ebca51f20d55",
+      "source_sha256": "93f338a60e9b27f968ac81a6f22b3c593fa594de3cb0417957f8d04ea47032fe",
+      "source_bytes": 2319748,
+      "source_dimensions": [
+        2707,
+        4000
+      ],
+      "exif_orientation": 0,
+      "oriented_dimensions": [
+        2707,
+        4000
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal9-jpg/bbee398fe413898d2fc015564f029bf4dc0b65917ad1c30f1ebd67d938e8ca7b-1299.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal9-jpg/bbee398fe413898d2fc015564f029bf4dc0b65917ad1c30f1ebd67d938e8ca7b-1299.webp",
+          "width": 1299,
+          "height": 1920,
+          "bytes": 3358474,
+          "sha256": "bbee398fe413898d2fc015564f029bf4dc0b65917ad1c30f1ebd67d938e8ca7b"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal9-jpg/8a658c7dff939617f149092929e8a98e3da2e3e84765865835a834aca8242602-433.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal9-jpg/8a658c7dff939617f149092929e8a98e3da2e3e84765865835a834aca8242602-433.webp",
+          "width": 433,
+          "height": 640,
+          "bytes": 461474,
+          "sha256": "8a658c7dff939617f149092929e8a98e3da2e3e84765865835a834aca8242602"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal90.jpg",
+      "source_id": "g01-gal90-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal90.jpg",
+      "source_git_blob_sha1": "067bea96ca39b66b31ad5c76ae1b0c4f9a803694",
+      "source_sha256": "d834e41249b9508d54c1e64c92c1a6186d6c32e004a40fc618b17bbd5fcf330d",
+      "source_bytes": 1312756,
+      "source_dimensions": [
+        1864,
+        2747
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1864,
+        2747
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal90-jpg/3e4a0174700047554d03f6095d72f36ea9ac47a47cc35a944152c0accc0aeab7-1303.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal90-jpg/3e4a0174700047554d03f6095d72f36ea9ac47a47cc35a944152c0accc0aeab7-1303.webp",
+          "width": 1303,
+          "height": 1920,
+          "bytes": 2488248,
+          "sha256": "3e4a0174700047554d03f6095d72f36ea9ac47a47cc35a944152c0accc0aeab7"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal90-jpg/0d829fa8d0bec7987a8afff7b11649786c75bc8021178e1b43fac4420aab065e-434.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal90-jpg/0d829fa8d0bec7987a8afff7b11649786c75bc8021178e1b43fac4420aab065e-434.webp",
+          "width": 434,
+          "height": 640,
+          "bytes": 377194,
+          "sha256": "0d829fa8d0bec7987a8afff7b11649786c75bc8021178e1b43fac4420aab065e"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal91.jpg",
+      "source_id": "g01-gal91-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal91.jpg",
+      "source_git_blob_sha1": "761773ef8f3ab734a13a409036a8ec96dad0f3e7",
+      "source_sha256": "b3f3f552423fdace428c751930497516e9ba8f78360c4ac74469720cd2226c51",
+      "source_bytes": 1679553,
+      "source_dimensions": [
+        1743,
+        2525
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1743,
+        2525
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal91-jpg/d11d78321334669dc5d6e2b59ef31512c4ef1ebb280e767b1697f40d4bc18bc0-1325.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal91-jpg/d11d78321334669dc5d6e2b59ef31512c4ef1ebb280e767b1697f40d4bc18bc0-1325.webp",
+          "width": 1325,
+          "height": 1920,
+          "bytes": 3288992,
+          "sha256": "d11d78321334669dc5d6e2b59ef31512c4ef1ebb280e767b1697f40d4bc18bc0"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal91-jpg/e368f99e7a2a00499a18ce1d30b4d113a9361517a4bf9cbd627212c84d7c36ca-442.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal91-jpg/e368f99e7a2a00499a18ce1d30b4d113a9361517a4bf9cbd627212c84d7c36ca-442.webp",
+          "width": 442,
+          "height": 640,
+          "bytes": 508550,
+          "sha256": "e368f99e7a2a00499a18ce1d30b4d113a9361517a4bf9cbd627212c84d7c36ca"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal92.jpg",
+      "source_id": "g01-gal92-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal92.jpg",
+      "source_git_blob_sha1": "59e50f9df8cf5e63a34a993e1c4217ed99eb8ecb",
+      "source_sha256": "b54c7f0f1f3a2d5c6fd88f34d16587fa8b1b4eaed8784062a54db4bcf448a86c",
+      "source_bytes": 1213970,
+      "source_dimensions": [
+        1825,
+        2657
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1825,
+        2657
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal92-jpg/d44b06fa95c9242deebb18d87347eee66f5071222e851a284a6706bf2d0f39b1-1319.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal92-jpg/d44b06fa95c9242deebb18d87347eee66f5071222e851a284a6706bf2d0f39b1-1319.webp",
+          "width": 1319,
+          "height": 1920,
+          "bytes": 2460430,
+          "sha256": "d44b06fa95c9242deebb18d87347eee66f5071222e851a284a6706bf2d0f39b1"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal92-jpg/5c9e19fe40daabf5e056d7fb6ddbed9cfbfb76d0ccfefe9533568fec2040d147-440.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal92-jpg/5c9e19fe40daabf5e056d7fb6ddbed9cfbfb76d0ccfefe9533568fec2040d147-440.webp",
+          "width": 440,
+          "height": 640,
+          "bytes": 380230,
+          "sha256": "5c9e19fe40daabf5e056d7fb6ddbed9cfbfb76d0ccfefe9533568fec2040d147"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal93.jpg",
+      "source_id": "g01-gal93-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal93.jpg",
+      "source_git_blob_sha1": "9e44d4789e23a017517036a43bf2d89f84c999a8",
+      "source_sha256": "0babba27520f6cd2f055edda791462f0df92e4a7e3301e28f66cfff56bc8e004",
+      "source_bytes": 1709950,
+      "source_dimensions": [
+        2075,
+        3027
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        2075,
+        3027
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal93-jpg/f1bcaebefd296ae4077dc420a0bd6789c165c3cd7d5cbe34e0e6fc00da6c0e07-1316.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal93-jpg/f1bcaebefd296ae4077dc420a0bd6789c165c3cd7d5cbe34e0e6fc00da6c0e07-1316.webp",
+          "width": 1316,
+          "height": 1920,
+          "bytes": 2843710,
+          "sha256": "f1bcaebefd296ae4077dc420a0bd6789c165c3cd7d5cbe34e0e6fc00da6c0e07"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal93-jpg/d219d273ffcaa7ac90cef65805e5fffdf2f6701e5fa2196550992bee8dea3e9f-439.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal93-jpg/d219d273ffcaa7ac90cef65805e5fffdf2f6701e5fa2196550992bee8dea3e9f-439.webp",
+          "width": 439,
+          "height": 640,
+          "bytes": 445338,
+          "sha256": "d219d273ffcaa7ac90cef65805e5fffdf2f6701e5fa2196550992bee8dea3e9f"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal94.jpg",
+      "source_id": "g01-gal94-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal94.jpg",
+      "source_git_blob_sha1": "b336a146581c08e59bdb45398528021860f5a893",
+      "source_sha256": "89183759025b6400edbecd25a182fc4c801077edbb716b3b32e40a66cc0cad20",
+      "source_bytes": 1512116,
+      "source_dimensions": [
+        2085,
+        3002
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        2085,
+        3002
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal94-jpg/07cd79928db127fdbd71edb73713140bfebe9a93373ba97e7edaa464f98ec3a6-1334.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal94-jpg/07cd79928db127fdbd71edb73713140bfebe9a93373ba97e7edaa464f98ec3a6-1334.webp",
+          "width": 1334,
+          "height": 1920,
+          "bytes": 2723800,
+          "sha256": "07cd79928db127fdbd71edb73713140bfebe9a93373ba97e7edaa464f98ec3a6"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal94-jpg/766b20c4916ada2980fc8e1fc6cf363d945a5c2f3590176fe4a644027ec53101-445.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal94-jpg/766b20c4916ada2980fc8e1fc6cf363d945a5c2f3590176fe4a644027ec53101-445.webp",
+          "width": 445,
+          "height": 640,
+          "bytes": 419982,
+          "sha256": "766b20c4916ada2980fc8e1fc6cf363d945a5c2f3590176fe4a644027ec53101"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal95.jpg",
+      "source_id": "g01-gal95-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal95.jpg",
+      "source_git_blob_sha1": "8a5fde56d5493fb80290b27791eb8ffcac29c01f",
+      "source_sha256": "90776021c176e33e4b4a8d157c02c37b87af9735b2663bc6d1b9b9ea9546a98c",
+      "source_bytes": 1571497,
+      "source_dimensions": [
+        2016,
+        2872
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        2016,
+        2872
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal95-jpg/1f20dd2082e5452c46812fe3251333786695e15e916ab03c48de186052b8a9f6-1348.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal95-jpg/1f20dd2082e5452c46812fe3251333786695e15e916ab03c48de186052b8a9f6-1348.webp",
+          "width": 1348,
+          "height": 1920,
+          "bytes": 2361178,
+          "sha256": "1f20dd2082e5452c46812fe3251333786695e15e916ab03c48de186052b8a9f6"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal95-jpg/a206bfbe03237883274f91405ea28ebc9df8a097da442f5981fb87804ccdb044-449.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal95-jpg/a206bfbe03237883274f91405ea28ebc9df8a097da442f5981fb87804ccdb044-449.webp",
+          "width": 449,
+          "height": 640,
+          "bytes": 364630,
+          "sha256": "a206bfbe03237883274f91405ea28ebc9df8a097da442f5981fb87804ccdb044"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal96.jpg",
+      "source_id": "g01-gal96-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal96.jpg",
+      "source_git_blob_sha1": "c1eeb01dc463110a5258070e31b043d4252bdb17",
+      "source_sha256": "3bb6dee1a9d805ae250102db6d11ad7a06a03a35c57e11ebeca70c30896acbf0",
+      "source_bytes": 2810363,
+      "source_dimensions": [
+        1800,
+        2683
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1800,
+        2683
+      ],
+      "icc_converted_to_srgb": true,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal96-jpg/08b9deb97cf5c92c3b9322974eaa9965f86d35164320789c99aa0841341c96d0-1288.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal96-jpg/08b9deb97cf5c92c3b9322974eaa9965f86d35164320789c99aa0841341c96d0-1288.webp",
+          "width": 1288,
+          "height": 1920,
+          "bytes": 3070874,
+          "sha256": "08b9deb97cf5c92c3b9322974eaa9965f86d35164320789c99aa0841341c96d0"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal96-jpg/b4a29b2809af1154994aca10bd0307b7af22bdac46ff19dffc95c455817f27ae-429.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal96-jpg/b4a29b2809af1154994aca10bd0307b7af22bdac46ff19dffc95c455817f27ae-429.webp",
+          "width": 429,
+          "height": 640,
+          "bytes": 432512,
+          "sha256": "b4a29b2809af1154994aca10bd0307b7af22bdac46ff19dffc95c455817f27ae"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal97.jpg",
+      "source_id": "g01-gal97-jpg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal97.jpg",
+      "source_git_blob_sha1": "3a81331a6410ed672b6d09f32893a5b3bf043183",
+      "source_sha256": "18e596da7d2a2e1b8c0cb8bfc9332e260b29adab99e03a11f6b4c2e1ddb0fdbe",
+      "source_bytes": 1069588,
+      "source_dimensions": [
+        1730,
+        2476
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1730,
+        2476
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal97-jpg/3fa05fd638bdc0c7dfe38b0a768e3e7905d17cbe9c989d5f9b06ce8ccc3963fa-1342.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal97-jpg/3fa05fd638bdc0c7dfe38b0a768e3e7905d17cbe9c989d5f9b06ce8ccc3963fa-1342.webp",
+          "width": 1342,
+          "height": 1920,
+          "bytes": 2299804,
+          "sha256": "3fa05fd638bdc0c7dfe38b0a768e3e7905d17cbe9c989d5f9b06ce8ccc3963fa"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal97-jpg/d298439b5e21018ca69bf420363191b7416d33d8d18b6527c09f93f05e455920-447.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal97-jpg/d298439b5e21018ca69bf420363191b7416d33d8d18b6527c09f93f05e455920-447.webp",
+          "width": 447,
+          "height": 640,
+          "bytes": 345084,
+          "sha256": "d298439b5e21018ca69bf420363191b7416d33d8d18b6527c09f93f05e455920"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal98.jpeg",
+      "source_id": "g01-gal98-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal98.jpeg",
+      "source_git_blob_sha1": "7129f00e597ba92844f6fe5f4f1afbf186e1abbf",
+      "source_sha256": "5f4d99837688cd76268ff1380fd15532caa72ac80e4d55cd7325a60b04f490b7",
+      "source_bytes": 296964,
+      "source_dimensions": [
+        1562,
+        1600
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1562,
+        1600
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal98-jpeg/1bd08cadced97d6fb923ce5a5bc6f155f8e23c87476e28e6d17ddc856cb598e7-1562.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal98-jpeg/1bd08cadced97d6fb923ce5a5bc6f155f8e23c87476e28e6d17ddc856cb598e7-1562.webp",
+          "width": 1562,
+          "height": 1600,
+          "bytes": 1957796,
+          "sha256": "1bd08cadced97d6fb923ce5a5bc6f155f8e23c87476e28e6d17ddc856cb598e7"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal98-jpeg/b389f4b532ef5dc7ec5daa8720c293b2c8a1f32763c31dba2b9b0e3ca5f2eb7c-625.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal98-jpeg/b389f4b532ef5dc7ec5daa8720c293b2c8a1f32763c31dba2b9b0e3ca5f2eb7c-625.webp",
+          "width": 625,
+          "height": 640,
+          "bytes": 488798,
+          "sha256": "b389f4b532ef5dc7ec5daa8720c293b2c8a1f32763c31dba2b9b0e3ca5f2eb7c"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g01/gal99.jpeg",
+      "source_id": "g01-gal99-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g01/gal99.jpeg",
+      "source_git_blob_sha1": "6036c0218207aa4f14c8e0e536ed055a59b2d9a6",
+      "source_sha256": "6f3cccf789ebb665bc9cabc0856a41282878f37725ffd2489163a1df507fc4c8",
+      "source_bytes": 192812,
+      "source_dimensions": [
+        1600,
+        1385
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1600,
+        1385
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal99-jpeg/045c663fdad4bf1cfd55843f319c57ed2d72935527c784c4e80b14b6f6b24740-1600.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal99-jpeg/045c663fdad4bf1cfd55843f319c57ed2d72935527c784c4e80b14b6f6b24740-1600.webp",
+          "width": 1600,
+          "height": 1385,
+          "bytes": 1136000,
+          "sha256": "045c663fdad4bf1cfd55843f319c57ed2d72935527c784c4e80b14b6f6b24740"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g01-gal99-jpeg/1300c83787761e3df698902d464e552b903ddf6a19413f1c8c6286ccb3d29b48-640.webp",
+          "object_key": "sharmila/artworks/legacy/g01-gal99-jpeg/1300c83787761e3df698902d464e552b903ddf6a19413f1c8c6286ccb3d29b48-640.webp",
+          "width": 640,
+          "height": 554,
+          "bytes": 263718,
+          "sha256": "1300c83787761e3df698902d464e552b903ddf6a19413f1c8c6286ccb3d29b48"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g02/gal1.jpeg",
+      "source_id": "g02-gal1-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g02/gal1.jpeg",
+      "source_git_blob_sha1": "fa3aad6bfc8e5a9b0ffcd276aa01a90672b435ea",
+      "source_sha256": "ab24886dcf2b3aa6347f93fca390c13aa4cb0ea11c30e4ad704b938312e7ccd2",
+      "source_bytes": 270275,
+      "source_dimensions": [
+        1560,
+        1365
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1560,
+        1365
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g02-gal1-jpeg/712cd72849355da309374d8d9c4d72c86d2cec439a860de0557b8e6dd319b752-1560.webp",
+          "object_key": "sharmila/artworks/legacy/g02-gal1-jpeg/712cd72849355da309374d8d9c4d72c86d2cec439a860de0557b8e6dd319b752-1560.webp",
+          "width": 1560,
+          "height": 1365,
+          "bytes": 1328198,
+          "sha256": "712cd72849355da309374d8d9c4d72c86d2cec439a860de0557b8e6dd319b752"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g02-gal1-jpeg/48f0c32527fc62fc821a535e99d933d2669ca1f2bee2cdc8d61895489d83c554-640.webp",
+          "object_key": "sharmila/artworks/legacy/g02-gal1-jpeg/48f0c32527fc62fc821a535e99d933d2669ca1f2bee2cdc8d61895489d83c554-640.webp",
+          "width": 640,
+          "height": 560,
+          "bytes": 309784,
+          "sha256": "48f0c32527fc62fc821a535e99d933d2669ca1f2bee2cdc8d61895489d83c554"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g02/gal2.jpeg",
+      "source_id": "g02-gal2-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g02/gal2.jpeg",
+      "source_git_blob_sha1": "0ffcba9d8b8d7aef42b32766fba580d672abd276",
+      "source_sha256": "314be53f25c6206d5441272c8819ba1d841beba852bd6be12629efe669c55624",
+      "source_bytes": 301540,
+      "source_dimensions": [
+        1200,
+        1600
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1200,
+        1600
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g02-gal2-jpeg/ca008a030a0126e9f19a86e65fbe78b394877f6737266b7e6fb0e7e8481c00f5-1200.webp",
+          "object_key": "sharmila/artworks/legacy/g02-gal2-jpeg/ca008a030a0126e9f19a86e65fbe78b394877f6737266b7e6fb0e7e8481c00f5-1200.webp",
+          "width": 1200,
+          "height": 1600,
+          "bytes": 1289514,
+          "sha256": "ca008a030a0126e9f19a86e65fbe78b394877f6737266b7e6fb0e7e8481c00f5"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g02-gal2-jpeg/4d6cee1cedfd224b72c41539becd84d6d68755861316d9a4e9fe25dcf7611612-480.webp",
+          "object_key": "sharmila/artworks/legacy/g02-gal2-jpeg/4d6cee1cedfd224b72c41539becd84d6d68755861316d9a4e9fe25dcf7611612-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 301788,
+          "sha256": "4d6cee1cedfd224b72c41539becd84d6d68755861316d9a4e9fe25dcf7611612"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g02/gal3.jpeg",
+      "source_id": "g02-gal3-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g02/gal3.jpeg",
+      "source_git_blob_sha1": "5c6f308adc6f99f0b8ad562be4ca061367811b2f",
+      "source_sha256": "bbe83c0cb498e4039bc365fd5f894da48e3297dd8f54dbebdb969183b6a204d4",
+      "source_bytes": 184971,
+      "source_dimensions": [
+        1302,
+        1600
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1302,
+        1600
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g02-gal3-jpeg/3aec6ae8141c54e9a694878c28ce451afaaae9209a7c4283e366e64c1c126503-1302.webp",
+          "object_key": "sharmila/artworks/legacy/g02-gal3-jpeg/3aec6ae8141c54e9a694878c28ce451afaaae9209a7c4283e366e64c1c126503-1302.webp",
+          "width": 1302,
+          "height": 1600,
+          "bytes": 919362,
+          "sha256": "3aec6ae8141c54e9a694878c28ce451afaaae9209a7c4283e366e64c1c126503"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g02-gal3-jpeg/02ef395b8c594ac737d69c51b143cfc72b78decf22a8ca5f36d99b7a977fc933-521.webp",
+          "object_key": "sharmila/artworks/legacy/g02-gal3-jpeg/02ef395b8c594ac737d69c51b143cfc72b78decf22a8ca5f36d99b7a977fc933-521.webp",
+          "width": 521,
+          "height": 640,
+          "bytes": 283292,
+          "sha256": "02ef395b8c594ac737d69c51b143cfc72b78decf22a8ca5f36d99b7a977fc933"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g02/gal4.jpeg",
+      "source_id": "g02-gal4-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g02/gal4.jpeg",
+      "source_git_blob_sha1": "cdd7a1f0b9902d6b04e7bcb2a3d73df27885ab02",
+      "source_sha256": "a0f77a29fc54d72feacea8706f212f6bdd23d36b205f53219d2199d369bb675f",
+      "source_bytes": 155910,
+      "source_dimensions": [
+        1200,
+        1600
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1200,
+        1600
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g02-gal4-jpeg/82232e173a56a5a14b54f3aa30f522dc319dac6393fafc8a9014bd19009d4f76-1200.webp",
+          "object_key": "sharmila/artworks/legacy/g02-gal4-jpeg/82232e173a56a5a14b54f3aa30f522dc319dac6393fafc8a9014bd19009d4f76-1200.webp",
+          "width": 1200,
+          "height": 1600,
+          "bytes": 738098,
+          "sha256": "82232e173a56a5a14b54f3aa30f522dc319dac6393fafc8a9014bd19009d4f76"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g02-gal4-jpeg/98519a50e365445932e2a4f5eff871efefe1ba1fa254f667979557ea2143fecf-480.webp",
+          "object_key": "sharmila/artworks/legacy/g02-gal4-jpeg/98519a50e365445932e2a4f5eff871efefe1ba1fa254f667979557ea2143fecf-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 223732,
+          "sha256": "98519a50e365445932e2a4f5eff871efefe1ba1fa254f667979557ea2143fecf"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g02/gal5.jpeg",
+      "source_id": "g02-gal5-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g02/gal5.jpeg",
+      "source_git_blob_sha1": "e6c69ffdfbea46403f2f299e84e4f2603e974a52",
+      "source_sha256": "6499c50ba9b43019fbb21af470c38f7af4c4eb485e88d18efb73b0e5d1ad1625",
+      "source_bytes": 219899,
+      "source_dimensions": [
+        1599,
+        1218
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1599,
+        1218
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g02-gal5-jpeg/a1d7c09bee673fb5656b7d62f58f4b73401091423d93e47263e3a63aa602c902-1599.webp",
+          "object_key": "sharmila/artworks/legacy/g02-gal5-jpeg/a1d7c09bee673fb5656b7d62f58f4b73401091423d93e47263e3a63aa602c902-1599.webp",
+          "width": 1599,
+          "height": 1218,
+          "bytes": 1445254,
+          "sha256": "a1d7c09bee673fb5656b7d62f58f4b73401091423d93e47263e3a63aa602c902"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g02-gal5-jpeg/d53d4d74055360e453ec05943be9ff2be41ca30e959a08bcf6dae134ebb24563-640.webp",
+          "object_key": "sharmila/artworks/legacy/g02-gal5-jpeg/d53d4d74055360e453ec05943be9ff2be41ca30e959a08bcf6dae134ebb24563-640.webp",
+          "width": 640,
+          "height": 488,
+          "bytes": 354662,
+          "sha256": "d53d4d74055360e453ec05943be9ff2be41ca30e959a08bcf6dae134ebb24563"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g02/gal6.jpeg",
+      "source_id": "g02-gal6-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g02/gal6.jpeg",
+      "source_git_blob_sha1": "ccb2d4bb5370ad9a18277b47e432da3ac19639fd",
+      "source_sha256": "ff456e44047b54f5ff5d7374a523ca587ef280301ae4024ba7af74807612f548",
+      "source_bytes": 241986,
+      "source_dimensions": [
+        1200,
+        1600
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        1200,
+        1600
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g02-gal6-jpeg/7020c51fb26b2d54b826bb00d134047c4afcb3407d92c98ca641c4dcdb6ddafd-1200.webp",
+          "object_key": "sharmila/artworks/legacy/g02-gal6-jpeg/7020c51fb26b2d54b826bb00d134047c4afcb3407d92c98ca641c4dcdb6ddafd-1200.webp",
+          "width": 1200,
+          "height": 1600,
+          "bytes": 1189150,
+          "sha256": "7020c51fb26b2d54b826bb00d134047c4afcb3407d92c98ca641c4dcdb6ddafd"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g02-gal6-jpeg/d2bd8e8948fbffd944466560a0fe489df5101cdc9870f6587b90a1c5fdb5afad-480.webp",
+          "object_key": "sharmila/artworks/legacy/g02-gal6-jpeg/d2bd8e8948fbffd944466560a0fe489df5101cdc9870f6587b90a1c5fdb5afad-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 334760,
+          "sha256": "d2bd8e8948fbffd944466560a0fe489df5101cdc9870f6587b90a1c5fdb5afad"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g03/gal1.jpeg",
+      "source_id": "g03-gal1-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g03/gal1.jpeg",
+      "source_git_blob_sha1": "5fe0162b49dd950f04f9797a91e06015d59064be",
+      "source_sha256": "eabeeae51770bafb465ee2ce12cc8f8d6ad774c1fa48845e6c9279d0715f9e0b",
+      "source_bytes": 86269,
+      "source_dimensions": [
+        900,
+        1600
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        900,
+        1600
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g03-gal1-jpeg/171d1a8714fd975fe8d3f86db9b4061ce5297fd30c0a23090408d91521aa9246-900.webp",
+          "object_key": "sharmila/artworks/legacy/g03-gal1-jpeg/171d1a8714fd975fe8d3f86db9b4061ce5297fd30c0a23090408d91521aa9246-900.webp",
+          "width": 900,
+          "height": 1600,
+          "bytes": 756338,
+          "sha256": "171d1a8714fd975fe8d3f86db9b4061ce5297fd30c0a23090408d91521aa9246"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g03-gal1-jpeg/d10492c8bc6df296cc494e4dbb86027d0f2e98f8615b7e8abd06df0685d7e388-360.webp",
+          "object_key": "sharmila/artworks/legacy/g03-gal1-jpeg/d10492c8bc6df296cc494e4dbb86027d0f2e98f8615b7e8abd06df0685d7e388-360.webp",
+          "width": 360,
+          "height": 640,
+          "bytes": 196546,
+          "sha256": "d10492c8bc6df296cc494e4dbb86027d0f2e98f8615b7e8abd06df0685d7e388"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g03/gal2.jpeg",
+      "source_id": "g03-gal2-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g03/gal2.jpeg",
+      "source_git_blob_sha1": "0652cc88a9a907a5e3837db075cda3a3c3683b8e",
+      "source_sha256": "261fb0ac7e1594bde23939d1f8548233c706709081f532759f1645f694547959",
+      "source_bytes": 148226,
+      "source_dimensions": [
+        900,
+        1600
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        900,
+        1600
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g03-gal2-jpeg/92ea8cfc03ed2ce141b284df16bf89688d8b98277e6d490730fd4a82e894dcbf-900.webp",
+          "object_key": "sharmila/artworks/legacy/g03-gal2-jpeg/92ea8cfc03ed2ce141b284df16bf89688d8b98277e6d490730fd4a82e894dcbf-900.webp",
+          "width": 900,
+          "height": 1600,
+          "bytes": 1109892,
+          "sha256": "92ea8cfc03ed2ce141b284df16bf89688d8b98277e6d490730fd4a82e894dcbf"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g03-gal2-jpeg/71ad4dc646232fd98bbe97f03348aa50d58ab0545f8a632ee383a7a0d87d10c5-360.webp",
+          "object_key": "sharmila/artworks/legacy/g03-gal2-jpeg/71ad4dc646232fd98bbe97f03348aa50d58ab0545f8a632ee383a7a0d87d10c5-360.webp",
+          "width": 360,
+          "height": 640,
+          "bytes": 271166,
+          "sha256": "71ad4dc646232fd98bbe97f03348aa50d58ab0545f8a632ee383a7a0d87d10c5"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g03/gal3.jpeg",
+      "source_id": "g03-gal3-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g03/gal3.jpeg",
+      "source_git_blob_sha1": "b8fdda27c42c3a8b8c2d0bc4ae2ca79bd010b52d",
+      "source_sha256": "02fa8501b936f4571fa4117f3039deafe6f2103a7303c7d3026320e4196f4093",
+      "source_bytes": 121956,
+      "source_dimensions": [
+        900,
+        1600
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        900,
+        1600
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g03-gal3-jpeg/dcc5a4664a12bedacba4ac8d28471cf6f73a7d907b7a2ea4c45ab3bada4ce313-900.webp",
+          "object_key": "sharmila/artworks/legacy/g03-gal3-jpeg/dcc5a4664a12bedacba4ac8d28471cf6f73a7d907b7a2ea4c45ab3bada4ce313-900.webp",
+          "width": 900,
+          "height": 1600,
+          "bytes": 794992,
+          "sha256": "dcc5a4664a12bedacba4ac8d28471cf6f73a7d907b7a2ea4c45ab3bada4ce313"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g03-gal3-jpeg/c6edcb7e7e9510097c1bfde57d18cf59f485036916b63ff7d77d0bc70cd4fc4c-360.webp",
+          "object_key": "sharmila/artworks/legacy/g03-gal3-jpeg/c6edcb7e7e9510097c1bfde57d18cf59f485036916b63ff7d77d0bc70cd4fc4c-360.webp",
+          "width": 360,
+          "height": 640,
+          "bytes": 232242,
+          "sha256": "c6edcb7e7e9510097c1bfde57d18cf59f485036916b63ff7d77d0bc70cd4fc4c"
+        }
+      ]
+    },
+    {
+      "source_path": "gallery/archive/g03/gal4.jpeg",
+      "source_id": "g03-gal4-jpeg",
+      "source_url": "https://raw.githubusercontent.com/shashank-sharma/sharmila-sharma.github.io/1d2afe60eb79eee5496f8217e3f4ef2ccfb500d0/gallery/archive/g03/gal4.jpeg",
+      "source_git_blob_sha1": "ddb143129e7f24531458372dd777ba51d1ef69dd",
+      "source_sha256": "bfdf7c106e7f3a3df9bc323d6a8c709937694fb51270fae3bd59c37827c295e0",
+      "source_bytes": 127544,
+      "source_dimensions": [
+        900,
+        1600
+      ],
+      "exif_orientation": 1,
+      "oriented_dimensions": [
+        900,
+        1600
+      ],
+      "icc_converted_to_srgb": false,
+      "derivatives": [
+        {
+          "role": "web",
+          "max_edge": 1920,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g03-gal4-jpeg/01a7623181c11eccd99ebdd4edbbb6904e44b439c8d40d7b6acdeb509188f09e-900.webp",
+          "object_key": "sharmila/artworks/legacy/g03-gal4-jpeg/01a7623181c11eccd99ebdd4edbbb6904e44b439c8d40d7b6acdeb509188f09e-900.webp",
+          "width": 900,
+          "height": 1600,
+          "bytes": 744464,
+          "sha256": "01a7623181c11eccd99ebdd4edbbb6904e44b439c8d40d7b6acdeb509188f09e"
+        },
+        {
+          "role": "catalogue",
+          "max_edge": 640,
+          "url": "https://images.vipul.xyz/sharmila/artworks/legacy/g03-gal4-jpeg/da40f40772e9d14647b75258ddc471ce5f63df077ba696d0dc61d5ab9e389551-360.webp",
+          "object_key": "sharmila/artworks/legacy/g03-gal4-jpeg/da40f40772e9d14647b75258ddc471ce5f63df077ba696d0dc61d5ab9e389551-360.webp",
+          "width": 360,
+          "height": 640,
+          "bytes": 221628,
+          "sha256": "da40f40772e9d14647b75258ddc471ce5f63df077ba696d0dc61d5ab9e389551"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "all_source_paths_accounted_for": true,
+    "r2_head_verified_image_objects": 215,
+    "public_http_200_sha256_verified_image_objects": 215,
+    "prefix_list_image_object_count": 215,
+    "expected_image_keys_present": true
+  }
+}

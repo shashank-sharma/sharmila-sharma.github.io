@@ -198,7 +198,7 @@
     $("editor-images").innerHTML = state.current.images
       .map(
         (im, i) =>
-          `<div class="editor-image"><img src="${esc(im.url)}" alt="${esc(im.alt)}"><label for="alt-${i}">Photo description</label><input id="alt-${i}" data-alt-index="${i}" value="${esc(im.alt)}" placeholder="Describe what this photograph shows"><div class="image-actions"><span class="secondary">${i === 0 ? "Cover photograph" : "Photograph " + (i + 1)}</span><div>${i ? `<button type="button" data-cover="${i}">Make cover</button><button type="button" data-up="${i}" aria-label="Move photograph ${i + 1} earlier">Move up</button>` : ""}<button type="button" data-replace="${i}">Replace</button><button type="button" data-remove="${i}">Remove</button></div></div></div>`,
+          `<div class="editor-image"><img src="${esc(im.url)}" alt="${esc(im.alt)}"><div class="image-actions"><span class="secondary">${i === 0 ? "Cover photograph" : "Photograph " + (i + 1)}</span><div>${i ? `<button type="button" data-cover="${i}">Make cover</button><button type="button" data-up="${i}" aria-label="Move photograph ${i + 1} earlier">Move up</button>` : ""}<button type="button" data-replace="${i}">Replace</button><button type="button" data-remove="${i}">Remove</button></div></div></div>`,
       )
       .join("");
   }
@@ -344,13 +344,6 @@
     uploadPhotos(event);
   });
   $("replace-input").addEventListener("change", uploadPhotos);
-  $("editor-images").addEventListener("input", (event) => {
-    if (event.target.dataset.altIndex !== undefined) {
-      state.current.images[Number(event.target.dataset.altIndex)].alt =
-        event.target.value;
-      dirty();
-    }
-  });
   $("editor-images").addEventListener("click", (event) => {
     const remove = event.target.closest("[data-remove]");
     const cover = event.target.closest("[data-cover]");

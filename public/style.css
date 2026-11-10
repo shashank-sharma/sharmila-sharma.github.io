@@ -371,7 +371,7 @@ main {
   text-underline-offset: 4px;
 }
 .back-link {
-  margin: 28px 0 26px;
+  margin: 20px 0 12px;
 }
 .painting-detail {
   display: grid;
@@ -528,10 +528,11 @@ main {
   max-width: 450px;
 }
 .series-heading {
-  padding-top: 15px;
+  padding: 0 0 20px;
 }
 .series-heading .result-count {
   display: block;
+  margin: 8px 0 0;
 }
 .about-layout {
   max-width: 680px;
@@ -1265,7 +1266,7 @@ dialog::backdrop {
     margin: 20px 0 23px;
   }
   .back-link {
-    margin: 19px 0 20px;
+    margin: 16px 0 8px;
     font-size: 13px;
   }
   .painting-detail {
@@ -1304,7 +1305,7 @@ dialog::backdrop {
     padding: 23px;
   }
   .series-heading {
-    padding-top: 0;
+    padding: 0 0 20px;
   }
   .contact-layout {
     grid-template-columns: 1fr;

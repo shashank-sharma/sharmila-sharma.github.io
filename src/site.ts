@@ -24,9 +24,9 @@ app.get("/", async (c) => {
   const featured = artworks.filter((a) => a.featured);
   const selected = (featured.length ? featured : artworks).slice(0, 6);
   const hero = selected[0];
-  const content = `<section class="home-intro"><div><p class="eyebrow">The artist’s catalogue</p><h1>Sharmila Sharma</h1><p class="intro-line">Paintings in acrylic and watercolour.</p></div><div class="intro-bio"><p>An artist from Gwalior.<br>Browse individual paintings and related series.</p><a class="text-link" href="/about">About the artist <span aria-hidden="true">↗</span></a></div></section>${hero ? `<figure class="hero-work"><a href="/works/${e(hero.slug)}" aria-label="View ${e(hero.title)}">${image(hero, "", true)}</a><figcaption><span>${e(hero.title)} <span class="caption-divider">/</span> ${e(preview ? "From the archive" : [hero.medium, hero.year].filter(Boolean).join(", "))}</span><a href="/works/${e(hero.slug)}">View painting ↗</a></figcaption></figure>` : '<section class="empty-state"><h2>The catalogue is being prepared.</h2><p>A selection of paintings will appear here soon.</p><a href="/contact">Enquire about available work</a></section>'}${
+  const content = `<section class="home-intro"><div><h1>Sharmila Sharma</h1><p class="intro-line">Paintings in acrylic and watercolour.</p></div><div class="intro-bio"><p>An artist from Gwalior.<br>Browse individual paintings and related series.</p><a class="text-link" href="/about">About the artist <span aria-hidden="true">↗</span></a></div></section>${hero ? `<figure class="hero-work"><a href="/works/${e(hero.slug)}" aria-label="View ${e(hero.title)}">${image(hero, "", true)}</a><figcaption><span>${e(hero.title)} <span class="caption-divider">/</span> ${e(preview ? "From the archive" : [hero.medium, hero.year].filter(Boolean).join(", "))}</span><a href="/works/${e(hero.slug)}">View painting ↗</a></figcaption></figure>` : '<section class="empty-state"><h2>The catalogue is being prepared.</h2><p>A selection of paintings will appear here soon.</p><a href="/contact">Enquire about available work</a></section>'}${
     selected.length > 1
-      ? `<section class="selected-section"><div class="section-heading"><div><p class="eyebrow">From the studio</p><h2>Selected works</h2></div><a class="text-link" href="/works">View all works ↗</a></div><div class="works-grid">${selected
+      ? `<section class="selected-section"><div class="section-heading"><h2>Selected works</h2><a class="text-link" href="/works">View all works ↗</a></div><div class="works-grid">${selected
           .slice(1)
           .map((a) => artworkCard(a, series, preview))
           .join("")}</div></section>`
@@ -38,7 +38,7 @@ app.get("/works", async (c) => {
   const { artworks, series, preview } = await catalogue(c.env);
   // Pages serves the same HTML for every query string; filtering runs over this complete snapshot.
   const shown = artworks;
-  const content = `<section class="page-heading"><p class="eyebrow">The catalogue</p><h1>Works</h1><p>Explore the paintings, together and individually.</p></section><form class="catalogue-filters" method="get"><div class="filter-links"><a href="/works" aria-current="page">All works</a>${series.map((s) => `<a href="/works?series=${e(s.id)}">${e(s.name)}</a>`).join("")}<a href="/works?series=standalone">Standalone</a></div><div class="availability-filter"><label><input type="checkbox" name="availability" value="available"> Available works</label><button type="submit" class="text-button">Apply</button></div></form><p class="result-count" aria-live="polite">${shown.length} ${shown.length === 1 ? "work" : "works"}${preview ? " from the archive" : ""}</p><div class="works-grid catalogue-grid">${shown.map((a) => artworkCard(a, series, preview)).join("")}</div>${!shown.length ? '<div class="empty-state"><h2>No works here just yet.</h2><p>Try another selection or visit again as the catalogue grows.</p><a href="/works">See all works</a></div>' : ""}`;
+  const content = `<section class="page-heading"><h1>Works</h1><p>Explore the paintings, together and individually.</p></section><form class="catalogue-filters" method="get"><div class="filter-links"><a href="/works" aria-current="page">All works</a>${series.map((s) => `<a href="/works?series=${e(s.id)}">${e(s.name)}</a>`).join("")}<a href="/works?series=standalone">Standalone</a></div><div class="availability-filter"><label><input type="checkbox" name="availability" value="available"> Available works</label><button type="submit" class="text-button">Apply</button></div></form><p class="result-count" aria-live="polite">${shown.length} ${shown.length === 1 ? "work" : "works"}${preview ? " from the archive" : ""}</p><div class="works-grid catalogue-grid">${shown.map((a) => artworkCard(a, series, preview)).join("")}</div>${!shown.length ? '<div class="empty-state"><h2>No works here just yet.</h2><p>Try another selection or visit again as the catalogue grows.</p><a href="/works">See all works</a></div>' : ""}`;
   return c.html(
     layout(
       "Works",
@@ -75,7 +75,7 @@ app.get("/works/:slug", async (c) => {
     )
     .join(
       "",
-    )}</div><div class="painting-info">${group ? `<a class="eyebrow" href="/series/${e(group.slug)}">${e(group.name)}</a>` : '<p class="eyebrow">An original work</p>'}<h1>${e(a.title)}</h1>${preview ? '<p class="secondary">Title and painting details awaiting the artist’s review.</p>' : `<p class="painting-medium">${e([a.medium, a.year].filter(Boolean).join(", "))}</p>`}<div class="painting-description">${
+    )}</div><div class="painting-info">${group ? `<a class="text-link" href="/series/${e(group.slug)}">${e(group.name)}</a>` : ""}<h1>${e(a.title)}</h1>${preview ? '<p class="secondary">Title and painting details awaiting the artist’s review.</p>' : `<p class="painting-medium">${e([a.medium, a.year].filter(Boolean).join(", "))}</p>`}<div class="painting-description">${
     a.description
       ? a.description
           .split("\n")
@@ -101,7 +101,7 @@ app.get("/series", async (c) => {
   const populated = series.filter((s) =>
     artworks.some((a) => a.seriesId === s.id),
   );
-  const content = `<section class="page-heading"><p class="eyebrow">Bodies of work</p><h1>Series</h1><p>Paintings connected by a shared idea, subject, or story.</p></section><div class="series-grid">${populated
+  const content = `<section class="page-heading"><h1>Series</h1><p>Paintings connected by a shared idea, subject, or story.</p></section><div class="series-grid">${populated
     .map((s) => {
       const works = artworks.filter((a) => a.seriesId === s.id);
       const cover = works.find((a) => a.id === s.coverArtworkId) || works[0];
@@ -122,7 +122,7 @@ app.get("/series/:slug", async (c) => {
   return c.html(
     layout(
       s.name,
-      `<a class="back-link text-link" href="/series">← All series</a><section class="page-heading series-heading"><p class="eyebrow">A series by Sharmila Sharma</p><h1>${e(s.name)}</h1><p>${e(s.description)}</p><span class="result-count">${works.length} works</span></section><div class="works-grid">${works.map((a) => artworkCard(a, series, preview)).join("")}</div>${!works.length ? '<p class="empty-state">Paintings in this series will appear here once published.</p>' : ""}`,
+      `<a class="back-link text-link" href="/series">← All series</a><section class="page-heading series-heading"><h1>${e(s.name)}</h1><p>${e(s.description)}</p><span class="result-count">${works.length} works</span></section><div class="works-grid">${works.map((a) => artworkCard(a, series, preview)).join("")}</div>${!works.length ? '<p class="empty-state">Paintings in this series will appear here once published.</p>' : ""}`,
       { active: "series", preview, path: `/series/${s.slug}` },
     ),
   );
@@ -131,7 +131,7 @@ app.get("/about", (c) =>
   c.html(
     layout(
       "About the artist",
-      `<section class="page-heading"><p class="eyebrow">About the artist</p><h1>Sharmila Sharma</h1><p>Contemporary Artist</p></section><div class="about-layout prose"><p>Sharmila Sharma is a Delhi-based contemporary artist with over 25 years of experience in the field of visual arts. She holds a Bachelor’s degree and a Master’s degree in Painting from Jiwaji University, Gwalior, and a <strong>Five-Year National Diploma in Fine Arts (Painting)</strong> from the Madhya Pradesh Board of Technical Education, Bhopal.</p><p>Her artistic practice explores diverse themes through acrylics, watercolours and mixed media. She enjoys working in series, blending creativity, vibrant colours and emotions to express stories through her art. Her works have been showcased in several prestigious national and group exhibitions.</p><a href="/works" class="text-link">Explore the paintings ↗</a></div>`,
+      `<section class="page-heading"><h1>Sharmila Sharma</h1><p>Contemporary Artist</p></section><div class="about-layout prose"><p>Sharmila Sharma is a Delhi-based contemporary artist with over 25 years of experience in the field of visual arts. She holds a Bachelor’s degree and a Master’s degree in Painting from Jiwaji University, Gwalior, and a <strong>Five-Year National Diploma in Fine Arts (Painting)</strong> from the Madhya Pradesh Board of Technical Education, Bhopal.</p><p>Her artistic practice explores diverse themes through acrylics, watercolours and mixed media. She enjoys working in series, blending creativity, vibrant colours and emotions to express stories through her art. Her works have been showcased in several prestigious national and group exhibitions.</p><a href="/works" class="text-link">Explore the paintings ↗</a></div>`,
       { active: "about", path: "/about" },
     ),
   ),
@@ -140,7 +140,7 @@ app.get("/contact", (c) =>
   c.html(
     layout(
       "Contact",
-      `<section class="page-heading"><p class="eyebrow">Get in touch</p><h1>Contact Sharmila</h1><p>For enquiries about original works, availability, or further photographs.</p></section><section class="contact-layout"><div><h2>Write to Sharmila</h2><a class="contact-email" href="mailto:sharmila.sharma31@gmail.com">sharmila.sharma31@gmail.com ↗</a><p>Please include the painting’s title or catalogue number if you have a particular work in mind.</p></div><div><h2>Follow the studio</h2><a href="https://www.instagram.com/sharmila.sharma31/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><p>See more from the artist’s practice.</p></div></section>`,
+      `<section class="page-heading"><h1>Contact Sharmila</h1><p>For enquiries about original works, availability, or further photographs.</p></section><section class="contact-layout"><div><h2>Write to Sharmila</h2><a class="contact-email" href="mailto:sharmila.sharma31@gmail.com">sharmila.sharma31@gmail.com ↗</a><p>Please include the painting’s title or catalogue number if you have a particular work in mind.</p></div><div><h2>Follow the studio</h2><a href="https://www.instagram.com/sharmila.sharma31/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><p>See more from the artist’s practice.</p></div></section>`,
       { active: "contact", path: "/contact" },
     ),
   ),

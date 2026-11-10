@@ -164,7 +164,7 @@ main {
 .home-intro {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   gap: 50px;
   padding: 26px 0 24px;
 }
@@ -535,7 +535,14 @@ main {
   margin: 8px 0 0;
 }
 .about-layout {
-  max-width: 680px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  align-items: start;
+  gap: 40px;
+}
+.artist-portrait {
+  width: 100%;
+  height: auto;
 }
 .prose h2 {
   margin-bottom: 24px;
@@ -1242,6 +1249,13 @@ dialog::backdrop {
   .page-heading > p:last-child,
   .page-heading > div > p:last-child {
     font-size: 14px;
+  }
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .artist-portrait {
+    max-width: 320px;
   }
   .catalogue-filters {
     align-items: flex-start;

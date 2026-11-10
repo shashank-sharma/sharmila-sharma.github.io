@@ -141,13 +141,6 @@ main {
   font: 500 22px/1.2 var(--serif);
   letter-spacing: -0.025em;
 }
-.wordmark span {
-  display: block;
-  font: 11px/1.4 var(--sans);
-  color: var(--secondary);
-  letter-spacing: 0.02em;
-  margin-top: 2px;
-}
 .site-header nav {
   display: flex;
   flex-wrap: wrap;

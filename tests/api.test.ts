@@ -443,7 +443,11 @@ describe("GitHub Pages rebuilds", () => {
     local.GITHUB_PAGES_TOKEN = crypto.randomUUID();
     const fetcher = vi
       .spyOn(globalThis, "fetch")
-      .mockResolvedValue(new Response(null, { status: 204 }));
+      .mockImplementation(async (input, init) => {
+        // Cloudflare validates fetch options when constructing the request.
+        new Request(input, init);
+        return new Response(null, { status: 204 });
+      });
     expect(
       (await request("/studio/rebuild", json("POST", {}, false))).status,
     ).toBe(401);
@@ -463,7 +467,7 @@ describe("GitHub Pages rebuilds", () => {
           Accept: "application/vnd.github+json",
         }),
         body: JSON.stringify({ ref: "master" }),
-        redirect: "error",
+        redirect: "manual",
         signal: expect.any(AbortSignal),
       }),
     );
@@ -633,8 +637,15 @@ describe("GitHub Pages rebuilds", () => {
   it("does not report queued for unexpected acknowledgements or GitHub error statuses", async () => {
     local.GITHUB_PAGES_TOKEN = crypto.randomUUID();
     const fetcher = vi.spyOn(globalThis, "fetch");
-    for (const status of [200, 202, 401, 403, 404, 422, 429, 500]) {
-      fetcher.mockResolvedValue(new Response("GitHub details", { status }));
+    for (const status of [
+      200, 202, 301, 302, 307, 308, 401, 403, 404, 422, 429, 500,
+    ]) {
+      fetcher.mockResolvedValue(
+        new Response("GitHub details", {
+          status,
+          headers: { Location: "https://other.example/" },
+        }),
+      );
       expect(
         await (await request("/studio/rebuild", json("POST"))).json(),
       ).toEqual({ siteUpdate: { status: "failed", httpStatus: status } });

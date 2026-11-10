@@ -122,7 +122,8 @@ async function rebuildSite(env: Bindings): Promise<{
           },
           body: JSON.stringify({ ref: "master" }),
           signal: controller.signal,
-          redirect: "error",
+          // Workers supports manual/follow only; never forward the token on redirects.
+          redirect: "manual",
         },
       ),
       new Promise<never>((_, reject) => {

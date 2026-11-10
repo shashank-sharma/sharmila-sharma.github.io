@@ -6,6 +6,7 @@ import { Hono } from "hono";
 import { exportJWK, generateKeyPair, SignJWT } from "jose";
 import api, { type Artwork, type Bindings, type Series } from "../src/api";
 import website from "../src/site";
+import studio from "../src/index";
 
 const bindings = env as unknown as Bindings & {
   TEST_MIGRATIONS: D1Migration[];
@@ -93,6 +94,27 @@ beforeEach(async () => {
 afterEach(() => vi.restoreAllMocks());
 
 describe("authentication and request boundaries", () => {
+  it("advertises Studio installation only on the private Studio page", async () => {
+    const page = await website.request(
+      "https://catalogue.test/",
+      {},
+      {
+        CATALOGUE: { artworks: [], series: [], preview: false },
+        STUDIO_URL: "https://studio.test/studio",
+      },
+    );
+    expect(await page.text()).not.toContain('rel="manifest"');
+    const editor = await studio.request(
+      "https://studio.test/studio",
+      {},
+      local,
+    );
+    expect(editor.status).toBe(200);
+    expect(await editor.text()).toContain(
+      '<link rel="manifest" href="/manifest.webmanifest">',
+    );
+  });
+
   it("denies all studio endpoints without authentication and fails closed without configuration", async () => {
     for (const [path, method] of [
       ["/studio/artworks", "GET"],

@@ -90,13 +90,7 @@ for (const s of catalogue.series) {
 // Build in an isolated output folder. Never copy repository data, secrets, Worker code or original photos.
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
-for (const asset of [
-  "style.css",
-  "site.js",
-  "mark.svg",
-  "manifest.webmanifest",
-  "fonts",
-])
+for (const asset of ["style.css", "site.js", "mark.svg", "fonts"])
   await cp(resolve(root, "public", asset), resolve(output, asset), {
     recursive: true,
   });

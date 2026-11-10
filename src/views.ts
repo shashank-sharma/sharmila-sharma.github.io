@@ -97,6 +97,14 @@ export function studioMarkup() {
       </form>
     </section>
     <section id="studio-list" hidden>
+      <div class="studio-actions" role="group" aria-label="Inventory actions">
+        <button class="text-button" id="manage-series">Manage series</button
+        ><button class="text-button" id="manage-images">Image library</button
+        ><button class="text-button" id="update-website">Update website</button
+        ><a href="/api/studio/export" download="sharmila-inventory.json"
+          >Export inventory</a
+        ><button class="text-button" id="sign-out">Sign out</button>
+      </div>
       <div class="studio-toolbar">
         <label class="search-label"
           ><span class="sr-only">Search paintings</span
@@ -116,14 +124,6 @@ export function studioMarkup() {
         ><button data-filter="trash" aria-pressed="false">Trash</button>
       </div>
       <div id="inventory" class="inventory-list"></div>
-      <div class="studio-bottom">
-        <a href="/api/studio/export" download="sharmila-inventory.json"
-          >Export inventory</a
-        ><button class="text-button" id="manage-series">Manage series</button
-        ><button class="text-button" id="manage-images">Image library</button
-        ><button class="text-button" id="update-website">Update website</button
-        ><button class="text-button" id="sign-out">Sign out</button>
-      </div>
     </section>
     <section id="studio-editor" hidden>
       <button class="text-button back-link" id="back-to-inventory">

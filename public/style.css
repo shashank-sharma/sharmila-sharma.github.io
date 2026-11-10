@@ -813,15 +813,19 @@ dialog::backdrop {
 .inventory-row .text-button {
   padding-inline: 15px;
 }
-.studio-bottom {
+.studio-actions {
   display: flex;
-  gap: 30px;
+  flex-wrap: wrap;
+  gap: 10px 25px;
   align-items: center;
-  margin-top: 25px;
+  margin-bottom: 25px;
   font-size: 13px;
 }
-.studio-bottom a {
+.studio-actions a {
   color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 .editor-heading {
   display: flex;
@@ -1441,10 +1445,6 @@ dialog::backdrop {
   .inventory-row .text-button {
     padding: 0;
     min-width: 44px;
-  }
-  .studio-bottom {
-    flex-wrap: wrap;
-    gap: 10px 25px;
   }
   .editor-heading {
     align-items: flex-start;

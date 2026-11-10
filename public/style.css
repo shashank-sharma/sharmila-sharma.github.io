@@ -94,9 +94,22 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  border: 1px solid #000;
 }
 button {
   background: none;
+  border: 0;
+}
+.hero-work > a,
+.work-image,
+.painting-enlarge,
+.series-image {
+  border: 1px solid #000;
+}
+.hero-work img,
+.work-image img,
+.painting-enlarge img,
+.series-image img {
   border: 0;
 }
 a:focus-visible,

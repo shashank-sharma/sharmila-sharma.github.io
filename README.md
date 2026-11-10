@@ -61,7 +61,7 @@ npm test
 npm run build:studio
 ```
 
-`build:studio` is a Worker dry run, not a deployment. A local, not-yet-committed recovery update adds browser regression tests using the real Studio HTML/JavaScript with a mocked API, without changing live paintings. Once that update lands, run:
+`build:studio` is a Worker dry run, not a deployment. The deployed recovery update includes browser regression tests using the real Studio HTML/JavaScript with a mocked API, without changing live paintings. Run them separately:
 
 ```sh
 npx playwright install chromium
@@ -77,6 +77,8 @@ GitHub **Settings → Pages → Source** must be **GitHub Actions**, not the leg
 Automatic Studio publishing also requires an **encrypted, deployed Cloudflare Worker secret** named `GITHUB_PAGES_TOKEN`. Use a fine-grained token owned by the repository owner, restricted to this repository, with **Actions: read and write**. An Amp secret named `GH_KEY` does not automatically create the Cloudflare secret. A pending Text variable is not a deployed Secret.
 
 Install it through **Cloudflare → Workers & Pages → sharmila-catalogue → Settings → Variables and Secrets**, choose type **Secret**, and **Save and deploy**. Keep credentials out of Git, screenshots, logs and chat. After setup, **Update website** retries a rebuild without modifying inventory. Confirm the workflow and actual public pages; a queued rebuild is not a completed deployment.
+
+**Current incident, 10 November 2026:** the publishing secret is active and Pages Source is correct, but the owner's earlier Studio rebuild attempt failed without creating a workflow run. Recovery and safe publishing diagnostics are now deployed at 100% traffic, preserving all secrets, inventory and unrelated content. The diagnostics distinguish GitHub rejection from a timeout or request error; the underlying failure remains unverified until a signed-in owner retries **Update website**. Save any open form before reloading Studio to load the update. No further secret installation is pending. See the session record before changing production configuration.
 
 See [CATALOGUE.md](CATALOGUE.md) for Access configuration, deployment boundaries, recovery behavior and the dated implementation/deployment record.
 

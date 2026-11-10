@@ -621,7 +621,9 @@ describe("GitHub Pages rebuilds", () => {
     });
     expect((await catalogue()).artworks).toEqual([]);
     const failed = await request("/studio/rebuild", json("POST"));
-    expect(await failed.json()).toEqual({ siteUpdate: { status: "failed" } });
+    expect(await failed.json()).toEqual({
+      siteUpdate: { status: "failed", reason: "request-error" },
+    });
     fetcher.mockResolvedValue(new Response(null, { status: 204 }));
     expect(
       await (await request("/studio/rebuild", json("POST"))).json(),
@@ -631,11 +633,11 @@ describe("GitHub Pages rebuilds", () => {
   it("does not report queued for unexpected acknowledgements or GitHub error statuses", async () => {
     local.GITHUB_PAGES_TOKEN = crypto.randomUUID();
     const fetcher = vi.spyOn(globalThis, "fetch");
-    for (const status of [200, 202, 401, 404, 422, 429, 500]) {
+    for (const status of [200, 202, 401, 403, 404, 422, 429, 500]) {
       fetcher.mockResolvedValue(new Response("GitHub details", { status }));
       expect(
         await (await request("/studio/rebuild", json("POST"))).json(),
-      ).toEqual({ siteUpdate: { status: "failed" } });
+      ).toEqual({ siteUpdate: { status: "failed", httpStatus: status } });
     }
   });
 
@@ -652,7 +654,7 @@ describe("GitHub Pages rebuilds", () => {
       const response = await pending;
       expect(response.status).toBe(200);
       expect(await response.json()).toEqual({
-        siteUpdate: { status: "failed" },
+        siteUpdate: { status: "failed", reason: "timeout" },
       });
       expect(fetcher.mock.calls[0][1]?.signal?.aborted).toBe(true);
     } finally {

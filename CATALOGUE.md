@@ -43,11 +43,11 @@ Studio's upload optimization runs on the device, not through Hermes: orientation
 
 Series names and introductions are managed separately and are included in the next build. Painting titles can change without breaking their URLs. Export inventory downloads current drafts, publications, series and image metadata as JSON; photos remain in R2 and need their own backup. The public header and footer do not link to Studio; use the installed shortcut or private Studio URL.
 
-### Draft recovery update — deployment pending
+### Draft recovery — deployed 10 November 2026
 
-The local recovery change in this working tree has not yet been committed, pushed or deployed. The live Studio still requires **Save draft** to protect unsaved work against a phone killing the page.
+Recovery is deployed to the live Studio, with source and tests included in this update. Save any form still open in the old Studio, then reload to load the update; unsaved edits made before the update cannot be recovered retroactively.
 
-After this update is deployed, painting edits are kept in a single current recovery draft per signed-in account, in that browser's local storage. Text is captured as it is edited, with an additional checkpoint when the page is hidden. Reopening Studio after a reload or page termination restores the form after authentication, including completed photo uploads and painting options. It does not publish anything or retain previous versions.
+Painting edits are kept in a single current recovery draft per signed-in account, in that browser's local storage. Text is captured as it is edited, with an additional checkpoint when the page is hidden. Reopening Studio after a reload or page termination restores the form after authentication, including completed photo uploads and painting options. It does not publish anything or retain previous versions.
 
 **Save draft**, confirmed discard, successful unpublish/delete and sign-out clear the recovery draft. A deleted painting is not recreated from recovery. If the server painting changed since the local edits, Studio asks before restoring them over the newer draft. Another signed-in account does not see the saved form.
 
@@ -74,7 +74,7 @@ npm test
 npm run build:studio
 ```
 
-The pending recovery update includes browser tests using the real Studio markup and JavaScript with a mocked API; they do not mutate production inventory. These tests are still local and are not included in the documentation-only commit. Once the recovery code is committed, run:
+The deployed recovery update includes browser tests using the real Studio markup and JavaScript with a mocked API; they do not mutate production inventory. Run them separately from the API tests:
 
 ```sh
 npx playwright install chromium
@@ -117,19 +117,44 @@ Two independent problems delayed paintings appearing publicly: the legacy Pages 
 - The owner added `GH_KEY` in Amp, then handled Cloudflare installation manually. Automated installation attempts stopped without changing the Worker; no secret values were logged or committed.
 - The supplied token successfully dispatched `pages.yml` with HTTP 204. [Verification run 42839684108](https://github.com/shashank-sharma/sharmila-sharma.github.io/actions/runs/42839684108) completed successfully. The public Works listing and Three Puppet detail page were checked HTTP 200 with the title present.
 - At 14:59 UTC the token was only a pending plain-text setting. The owner changed it to **Secret** and deployed it. At 15:03 UTC, the active deployment `4ebe2f44-c8fd-4a43-abb3-e1d664d1ee69` was verified to include the publishing secret: version `55db66c8-b9cb-4808-8dc4-57cac5b924f9`, serving 100% of traffic. There is no remaining token-deployment step. No secret value is included in this record.
-- **Final integration check remains with the signed-in owner:** tap Studio's **Update website**, expect **Website rebuild queued**, then confirm the resulting GitHub workflow and live catalogue. Hermes has no authenticated Studio browser session. Token permission and active secret configuration were verified separately; an authenticated request through the Studio rebuild endpoint was not exercised.
+- **The owner's subsequent integration check failed:** Studio's **Update website** returned the generic retry message, and no newer `workflow_dispatch` run appeared. Token permission and active secret configuration were verified separately; they do not prove that the deployed Studio can dispatch successfully. Hermes has no authenticated Studio browser session.
+- Read-only Hermes investigation `66622135-d46d-4afd-8567-4d8c2a2406a1`, completed at 15:09 UTC, confirmed deployed code sends the untrimmed token to `pages.yml` on `master`, waits at most five seconds and collapses every non-204 response or exception into `failed`. Worker observability is unset, Logpush is disabled, there are no tail consumers, and telemetry searches returned no rebuild events or traces. There is no retained GitHub status or exception to diagnose the actual attempt. Cloudflare secret metadata cannot establish the stored value or compare it with the independently validated token. Token mismatch, GitHub rejection, timeout and transport failure remain hypotheses.
+- The diagnostic update, now deployed with the owner's authorization, returns only a safe GitHub HTTP status or `timeout`/`request-error` category and gives a non-circular Studio message. It trims surrounding token whitespace as a precaution, **not a verified fix**. It exposes no raw response bodies, exception strings or credentials and adds no public diagnostic endpoint. A signed-in owner retry must still be correlated with GitHub Actions before claiming publishing is fixed. No secret installation or Hermes job remains pending.
 
 ### Recovery work in this checkout
 
 The reported app-switching data loss is reproducible as lost unsaved form state after reloading Studio: previously only JavaScript memory and a desktop unload warning protected edits. The phone's exact suspension behavior was not observed on a real device.
 
-Implemented local painting-draft recovery in `public/studio.js`, with browser regressions in `tests/studio.spec.ts`. The recovery code and tests remain **local, uncommitted and undeployed**. The owner authorized committing and pushing the README and this session guide separately; that documentation-only delivery does not include the recovery implementation.
+Implemented painting-draft recovery in `public/studio.js`, with browser regressions in `tests/studio.spec.ts`. Recovery is now **deployed**. The earlier documentation-only delivery did not include the recovery implementation. The owner separately authorized deploying recovery and diagnostics during this continuation, then requested “commit push deploy” to deliver the source, tests and updated records as well.
 
 Verification:
 
 - The regression failed on unchanged code because the editor was hidden and the unsaved form was lost after reload.
-- All three browser regression scenarios passed after the change, including forced Chromium renderer termination, recovery of text/options/completed photo metadata, save/discard cleanup, expired sessions, account isolation and explicit confirmation when server versions differ.
+- All four browser regression scenarios passed after the change, including forced Chromium renderer termination, recovery of text/options/completed photo metadata, save/discard cleanup, expired sessions, account isolation, explicit confirmation when server versions differ and actionable rebuild errors.
 - All 34 API tests, TypeScript, JavaScript syntax, formatting, diff checks and the Worker dry run passed. Browser tests use mocked API responses, not live inventory writes.
 - Desktop reload and touch-enabled Pixel 7 Chromium simulation were exercised and recorded. The simulation is not a real Android-device test. A separate storage-denied probe displayed the explicit Save draft warning.
 
-Remaining delivery: obtain commit/push/deploy authorization for recovery, preserve active Cloudflare secrets during deployment, update this pending status after delivery, and verify the live Studio without creating or deleting real paintings.
+Remaining integration check: verify an authenticated live Studio rebuild without creating or deleting real paintings. Deployment and secret-preservation checks are complete below; committing and pushing the source, tests and updated records is now authorized.
+
+### Continuation handoff and verification
+
+Continuation: [publishing diagnosis and draft recovery](https://ampcode.com/threads/T-01a1c606-2cf4-7412-9391-93f2925f87ed). The receiving checkout started clean at documentation commit [5fb64ad](https://github.com/shashank-sharma/sharmila-sharma.github.io/commit/5fb64ad46ee9b0aca87baf3fcdce88038ddb0042). The exact 19,485-byte patch was downloaded from the source thread, inspected and applied after `git apply --check` passed. It changes only `public/studio.js`, `src/api.ts`, `tests/api.test.ts` and the new `tests/studio.spec.ts`; existing biography, homepage, portrait and frame work is preserved.
+
+The receiving orb reran `npm run check`, `npm test` (34 passed), `npm run build:studio` (dry run only), Prettier and `git diff --check` successfully. Using installed Chromium, `npx playwright test tests/studio.spec.ts --workers=1 --reporter=line` passed all four scenarios. These browser tests use mocked API responses; they do not verify a live GitHub dispatch. The terminal Hermes investigation result above was also retrieved directly and checked. No production writes, rebuild requests, authentication changes or deployments were performed during the initial handoff verification.
+
+### Authorized recovery and diagnostics deployment
+
+The owner then explicitly authorized: “Deploy recovery and diagnostics, preserving all existing secrets and inventory.” Hermes completed deployment job `f5cc7463-8914-4acf-9ff5-f1c91a7acc22` at 15:48 UTC (21:18 IST). Active deployment `f112bccb-c81a-40ee-85e1-7f2c54237d12` serves version `a5572259-c698-4d9f-b8d6-30b772610cee` at **100% traffic**.
+
+The first artifact download was inaccessible centrally and stopped without changes. A scoped orb portal transferred the credential-free artifact successfully. Comparison found that the repository bundle also contained earlier portrait/frame/About-page changes absent from the live Worker; that attempt also stopped without changes. To preserve unrelated production content, Hermes exported the live Worker module and public assets. The orb changed only the compiled `rebuildSite` function and `public/studio.js`. All remaining module bytes and asset hashes matched production exactly. Existing repository and public Pages biography/homepage/portrait/frame work was left untouched.
+
+The scoped function exactly matched the locally compiled and tested source. Additional artifact probes passed for missing configuration, whitespace trimming and HTTP 204, eight non-204 statuses, transport failure and the real five-second timeout. All four browser scenarios passed again. Hermes uploaded the scoped module without bundling, preserving active settings, bindings and secrets. No migrations, inventory/R2 data writes, secret replacements, Access changes, independent workflow dispatches, Pages deployments or Git pushes were performed.
+
+Verification:
+
+- Deployed module fetched through `/content/v2` matched SHA256 `e6918c3a89d56542e585e0334672e0e0a5facd335e864e34b33982bc3ae440e8`.
+- Served `studio.js` matched SHA256 `58e256ad8b6dd6c69455839605401f6f6df1d7366abaf0d286b5142dd8141fd7`; all nine served assets matched the scoped artifact. The orb independently checked all nine live hashes.
+- `GITHUB_PAGES_TOKEN` and `ACCESS_EMAILS` remain `secret_text`, with existing values retained without reading or reinstalling them. All plain variables and bindings, including D1, R2 and ASSETS, were preserved. Access policies, asset-serving behavior and disabled workers.dev/previews were unchanged.
+- Hermes and the orb independently checked `/studio`, `/api/session` and `/api/studio/artworks` redirect to Access (HTTP 302), while `/api/catalogue` and `sharmila.me` return HTTP 200. The catalogue contained seven published paintings at verification; artist uploads remain active.
+
+The owner subsequently requested committing and pushing recovery, publishing diagnostics, browser tests and these record corrections. The push to `master` triggers the existing Pages workflow; it is not evidence that Studio's authenticated dispatch works. Production Worker deployment is complete, but **publishing through Studio is not yet confirmed fixed**. The owner should save any open form, reload Studio and tap **Update website** once, then report the exact new message. Confirm a resulting GitHub workflow and actual public catalogue before closing the incident. Do not reset inventory or replace secrets speculatively.

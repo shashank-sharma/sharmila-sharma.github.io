@@ -63,19 +63,28 @@
       return " Website rebuild queued. GitHub Pages will update after the build finishes, usually in a few minutes.";
     if (data.siteUpdate.status === "not-configured")
       return " Saved to inventory. Website publishing has not been configured yet.";
-    return " Saved to inventory, but the website rebuild could not be confirmed. Use ‘Update website’ in the inventory to try again.";
+    if (data.siteUpdate.httpStatus === 401)
+      return " GitHub rejected the publishing token (HTTP 401). Check the deployed GITHUB_PAGES_TOKEN secret. Your paintings remain saved in Studio.";
+    if ([403, 404].includes(data.siteUpdate.httpStatus))
+      return ` GitHub could not authorize the rebuild (HTTP ${data.siteUpdate.httpStatus}). Check the token's repository access, Actions read/write permission, workflow and GitHub rate limits. Your paintings remain saved in Studio.`;
+    if (data.siteUpdate.reason === "timeout")
+      return " GitHub did not acknowledge the rebuild within five seconds. It may still have started; check GitHub Actions before retrying. Your paintings remain saved in Studio.";
+    if (data.siteUpdate.reason === "request-error")
+      return " Studio's request to GitHub failed before an acknowledgement. Check the deployed token's format and connectivity. Your paintings remain saved in Studio.";
+    return ` Website rebuild could not be confirmed${data.siteUpdate.httpStatus ? ` (GitHub HTTP ${data.siteUpdate.httpStatus})` : ""}. Check GitHub Actions and the publishing configuration. Your paintings remain saved in Studio.`;
   }
   function show(name) {
     ["studio-login", "studio-list", "studio-editor"].forEach(
       (id) => ($(id).hidden = id !== name),
     );
   }
-  async function loadInventory() {
+  async function loadInventory(recover = false) {
     const data = await request("/studio/artworks");
     state.artworks = data.artworks;
     state.series = data.series;
     renderInventory();
     show("studio-list");
+    if (recover) await recoverDraft();
   }
   function renderInventory() {
     const query = $("studio-search").value.toLowerCase();
@@ -204,7 +213,66 @@
   }
   function dirty() {
     state.dirty = true;
-    $("save-state").textContent = "You have unsaved changes.";
+    keepDraft();
+  }
+  function recoveryKey() {
+    return "studio-work-in-progress:" + state.email;
+  }
+  function clearRecovery() {
+    try {
+      localStorage.removeItem(recoveryKey());
+    } catch {
+      // Storage may be unavailable in private browsing.
+    }
+  }
+  function keepDraft() {
+    if (!state.email || !state.current || !state.dirty) return;
+    try {
+      const artwork = readForm();
+      // Preserve unfinished text exactly; normal saves still trim it.
+      for (const key of ["title", "description", "medium"])
+        artwork[key] = $("artwork-form").elements.namedItem(key).value;
+      localStorage.setItem(recoveryKey(), JSON.stringify(artwork));
+      $("save-state").textContent =
+        "Unsaved changes kept on this device. Choose Save draft to save to Studio.";
+    } catch {
+      $("save-state").textContent =
+        "This device cannot keep your changes. Choose Save draft before leaving Studio.";
+    }
+  }
+  async function recoverDraft() {
+    let artwork;
+    try {
+      artwork = JSON.parse(localStorage.getItem(recoveryKey()) || "null");
+    } catch {
+      return;
+    }
+    if (!artwork) return;
+    let data = {};
+    if (artwork.id) {
+      if (!state.artworks.some((a) => a.id === artwork.id)) {
+        clearRecovery();
+        return;
+      }
+      data = await request(
+        "/studio/artworks/" + encodeURIComponent(artwork.id),
+      );
+      if (data.artwork.version !== artwork.version) {
+        if (
+          !confirm(
+            "This painting changed since you left Studio. Restore your unsaved edits over the latest draft? Cancel keeps the latest saved painting. Nothing is published automatically.",
+          )
+        ) {
+          clearRecovery();
+          populateEditor(data.artwork, data);
+          return;
+        }
+        artwork.version = data.artwork.version;
+      }
+    }
+    populateEditor(artwork, data);
+    dirty();
+    message("Your unsaved painting edits have been restored on this device.");
   }
   function updatePrice() {
     const listed = $("art-price-mode").value === "listed";
@@ -239,6 +307,7 @@
       );
       state.current = saved.artwork || saved;
       state.dirty = false;
+      clearRecovery();
       if (publish) {
         const published = await request(
           "/studio/artworks/" +
@@ -380,13 +449,14 @@
     const button = event.submitter;
     button.disabled = true;
     try {
-      await request("/session", {
+      const session = await request("/session", {
         method: "POST",
         body: JSON.stringify({ password: $("password").value }),
       });
+      state.email = session.email || null;
       $("password").value = "";
       message("");
-      await loadInventory();
+      await loadInventory(true);
     } catch (error) {
       message(error.message, true);
     } finally {
@@ -429,6 +499,7 @@
       return message("Please wait until the upload finishes.", true);
     if (state.dirty && !confirm("Leave without saving your changes?")) return;
     state.dirty = false;
+    clearRecovery();
     message("");
     try {
       await loadInventory();
@@ -442,14 +513,20 @@
       event.returnValue = "";
     }
   });
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") keepDraft();
+  });
+  window.addEventListener("pagehide", keepDraft);
   $("sign-out").addEventListener("click", async () => {
     try {
       await request("/session", { method: "DELETE" });
+      clearRecovery();
+      state.dirty = false;
+      state.current = null;
       if (state.email && state.email !== "local-studio") {
         location.assign("/cdn-cgi/access/logout");
         return;
       }
-      state.current = null;
       state.artworks = [];
       show("studio-login");
       message("Signed out.");
@@ -512,6 +589,7 @@
           body: JSON.stringify({ version: state.current.version }),
         },
       );
+      clearRecovery();
       populateEditor(unpublished.artwork, unpublished);
       message(
         "Painting unpublished. Kept as a draft in your inventory." +
@@ -559,6 +637,7 @@
         },
       );
       state.dirty = false;
+      clearRecovery();
       await loadInventory();
       message("Painting permanently deleted." + siteUpdateMessage(removed));
     } catch (error) {
@@ -652,7 +731,7 @@
     try {
       const session = await request("/session");
       state.email = session.email || null;
-      if (session.authenticated) await loadInventory();
+      if (session.authenticated) await loadInventory(true);
       else show("studio-login");
     } catch (error) {
       show("studio-login");

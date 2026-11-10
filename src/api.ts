@@ -99,9 +99,11 @@ type ArtworkRow = {
 type Environment = { Bindings: Bindings; Variables: { email: string } };
 const rowColumns = "id, slug, draft_json, published_json, version";
 
-async function rebuildSite(
-  env: Bindings,
-): Promise<{ status: "queued" | "not-configured" | "failed" }> {
+async function rebuildSite(env: Bindings): Promise<{
+  status: "queued" | "not-configured" | "failed";
+  httpStatus?: number;
+  reason?: "timeout" | "request-error";
+}> {
   if (!env.GITHUB_PAGES_TOKEN) return { status: "not-configured" };
   const controller = new AbortController();
   let timer: ReturnType<typeof setTimeout> | undefined;
@@ -112,7 +114,7 @@ async function rebuildSite(
         {
           method: "POST",
           headers: {
-            Authorization: `Bearer ${env.GITHUB_PAGES_TOKEN}`,
+            Authorization: `Bearer ${env.GITHUB_PAGES_TOKEN.trim()}`,
             Accept: "application/vnd.github+json",
             "Content-Type": "application/json",
             "X-GitHub-Api-Version": "2022-11-28",
@@ -131,10 +133,15 @@ async function rebuildSite(
       }),
     ]);
     // GitHub acknowledges workflow_dispatch with 204, not a completed deployment.
-    return { status: response.status === 204 ? "queued" : "failed" };
+    return response.status === 204
+      ? { status: "queued" }
+      : { status: "failed", httpStatus: response.status };
   } catch {
-    // The catalogue mutation is already durable. Do not leak GitHub errors or secrets.
-    return { status: "failed" };
+    // Return only safe categories, never raw GitHub bodies, exceptions or secrets.
+    return {
+      status: "failed",
+      reason: controller.signal.aborted ? "timeout" : "request-error",
+    };
   } finally {
     clearTimeout(timer);
   }

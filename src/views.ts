@@ -27,7 +27,11 @@ export const image = (a: Artwork, className = "", eager = false) => {
   return `<img class="${className}" src="${escape(original.url)}" alt="${escape(original.alt || a.title)}" width="${original.width}" height="${original.height}" loading="${eager ? "eager" : "lazy"}" decoding="async">`;
 };
 export function artworkCard(a: Artwork, series: Series[], preview: boolean) {
-  return `<article class="work" data-series="${escape(a.seriesId || "standalone")}" data-availability="${preview ? "unconfirmed" : escape(a.availability)}"><a class="work-image" href="/works/${escape(a.slug)}">${image(a)}</a><div class="work-caption"><div><a class="work-title" href="/works/${escape(a.slug)}">${escape(a.title || a.id)}</a><p>${escape(preview ? "From the studio archive" : [a.medium, a.year].filter(Boolean).join(", "))}</p></div><span class="work-status">${preview ? escape(a.id) : escape(a.availability === "available" ? series.find((s) => s.id === a.seriesId)?.name || "" : price(a))}</span></div></article>`;
+  const soldBanner =
+    !preview && a.availability === "sold"
+      ? '<span class="work-sold-banner">Sold</span>'
+      : "";
+  return `<article class="work" data-series="${escape(a.seriesId || "standalone")}" data-availability="${preview ? "unconfirmed" : escape(a.availability)}"><a class="work-image" href="/works/${escape(a.slug)}">${image(a)}${soldBanner}</a><div class="work-caption"><div><a class="work-title" href="/works/${escape(a.slug)}">${escape(a.title || a.id)}</a><p>${escape(preview ? "From the studio archive" : [a.medium, a.year].filter(Boolean).join(", "))}</p></div><span class="work-status">${preview ? escape(a.id) : escape(a.availability === "available" ? series.find((s) => s.id === a.seriesId)?.name || "" : price(a))}</span></div></article>`;
 }
 export function layout(
   title: string,

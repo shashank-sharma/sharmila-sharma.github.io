@@ -9,16 +9,16 @@ export const escape = (value: unknown) =>
       ]!,
   );
 export const price = (a: Artwork) =>
-  a.availability === "sold"
-    ? "Sold"
-    : a.availability === "reserved"
-      ? "Reserved"
-      : a.priceMode === "listed" && a.price !== null
-        ? new Intl.NumberFormat("en-IN", {
-            style: "currency",
-            currency: "INR",
-            maximumFractionDigits: 0,
-          }).format(a.price)
+  a.priceMode === "listed" && a.price !== null
+    ? new Intl.NumberFormat("en-IN", {
+        style: "currency",
+        currency: "INR",
+        maximumFractionDigits: 0,
+      }).format(a.price)
+    : a.availability === "sold"
+      ? "Sold"
+      : a.availability === "reserved"
+        ? "Reserved"
         : "Price on request";
 export const image = (a: Artwork, className = "", eager = false) => {
   const original = a.images[0];
@@ -26,12 +26,12 @@ export const image = (a: Artwork, className = "", eager = false) => {
     return '<div class="image-placeholder">Photograph to follow</div>';
   return `<img class="${className}" src="${escape(original.url)}" alt="${escape(original.alt || a.title)}" width="${original.width}" height="${original.height}" loading="${eager ? "eager" : "lazy"}" decoding="async">`;
 };
-export function artworkCard(a: Artwork, series: Series[], preview: boolean) {
+export function artworkCard(a: Artwork, _series: Series[], preview: boolean) {
   const soldBanner =
     !preview && a.availability === "sold"
       ? '<span class="work-sold-banner">Sold</span>'
       : "";
-  return `<article class="work" data-series="${escape(a.seriesId || "standalone")}" data-availability="${preview ? "unconfirmed" : escape(a.availability)}"><a class="work-image" href="/works/${escape(a.slug)}">${image(a)}${soldBanner}</a><div class="work-caption"><div><a class="work-title" href="/works/${escape(a.slug)}">${escape(a.title || a.id)}</a><p>${escape(preview ? "From the studio archive" : [a.medium, a.year].filter(Boolean).join(", "))}</p></div><span class="work-status">${preview ? escape(a.id) : escape(a.availability === "available" ? series.find((s) => s.id === a.seriesId)?.name || "" : price(a))}</span></div></article>`;
+  return `<article class="work" data-series="${escape(a.seriesId || "standalone")}" data-availability="${preview ? "unconfirmed" : escape(a.availability)}"><a class="work-image" href="/works/${escape(a.slug)}">${image(a)}${soldBanner}</a><div class="work-caption"><div><a class="work-title" href="/works/${escape(a.slug)}">${escape(a.title || a.id)}</a><p>${escape(preview ? "From the studio archive" : [a.medium, a.year].filter(Boolean).join(", "))}</p></div><span class="work-status">${preview ? escape(a.id) : escape(a.availability === "sold" ? "Sold" : a.availability === "reserved" ? "Reserved" : "")}</span></div></article>`;
 }
 export function layout(
   title: string,

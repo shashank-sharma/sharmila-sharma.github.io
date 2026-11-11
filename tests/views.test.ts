@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { artworkCard, type Artwork } from "../src/views";
+import { artworkCard, price, type Artwork } from "../src/views";
 
 const artwork = {
   id: "painting-1",
@@ -31,13 +31,21 @@ const artwork = {
 } satisfies Artwork;
 
 describe("artworkCard", () => {
-  it("adds a sold banner to published sold-work thumbnails only", () => {
-    expect(artworkCard(artwork, [], false)).toContain(
+  it("adds a sold banner without rendering the series name", () => {
+    const card = artworkCard(artwork, [{ id: "puppet", name: "Puppet" }], false);
+    expect(card).toContain(
       '<span class="work-sold-banner">Sold</span>',
     );
+    expect(card).not.toContain("Puppet");
     expect(artworkCard(artwork, [], true)).not.toContain("work-sold-banner");
     expect(
       artworkCard({ ...artwork, availability: "available" }, [], false),
     ).not.toContain("work-sold-banner");
+  });
+
+  it("keeps a listed price visible for sold paintings", () => {
+    expect(price({ ...artwork, priceMode: "listed", price: 25000 })).toBe(
+      "₹25,000",
+    );
   });
 });

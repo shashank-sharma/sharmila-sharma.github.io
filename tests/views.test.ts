@@ -74,10 +74,10 @@ describe("artworkCard", () => {
 describe("analytics", () => {
   it("tracks the public site but not the private Studio or preview", () => {
     expect(layout("Sharmila Sharma", "")).toContain(
-      '<script defer data-domain="sharmila.me" src="https://plausible.io/js/script.js"></script>',
+      '<script defer data-domain="sharmila.me" src="https://plausible.vipul.xyz/js/script.js"></script>',
     );
-    expect(layout("Studio", "", { studio: true })).not.toContain("plausible.io");
-    expect(layout("Preview", "", { preview: true })).not.toContain("plausible.io");
+    expect(layout("Studio", "", { studio: true })).not.toContain("plausible.vipul.xyz");
+    expect(layout("Preview", "", { preview: true })).not.toContain("plausible.vipul.xyz");
   });
 });
 

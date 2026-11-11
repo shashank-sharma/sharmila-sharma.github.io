@@ -471,6 +471,19 @@ main {
 .painting-purchase {
   margin-top: 27px;
 }
+.painting-availability {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--text);
+  color: var(--bg);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
 .painting-price {
   font: 500 25px/1.3 var(--serif);
   margin-bottom: 10px;

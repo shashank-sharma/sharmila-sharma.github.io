@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import website from "../src/site";
 import { artworkCard, price, type Artwork } from "../src/views";
 
 const artwork = {
@@ -32,10 +33,12 @@ const artwork = {
 
 describe("artworkCard", () => {
   it("adds a sold banner without rendering the series name", () => {
-    const card = artworkCard(artwork, [{ id: "puppet", name: "Puppet" }], false);
-    expect(card).toContain(
-      '<span class="work-sold-banner">Sold</span>',
+    const card = artworkCard(
+      artwork,
+      [{ id: "puppet", name: "Puppet" }],
+      false,
     );
+    expect(card).toContain('<span class="work-sold-banner">Sold</span>');
     expect(card).not.toContain("Puppet");
     expect(artworkCard(artwork, [], true)).not.toContain("work-sold-banner");
     expect(
@@ -47,5 +50,23 @@ describe("artworkCard", () => {
     expect(price({ ...artwork, priceMode: "listed", price: 25000 })).toBe(
       "₹25,000",
     );
+  });
+
+  it("shows sold status alongside the listed price on a painting page", async () => {
+    const response = await website.request(
+      "https://catalogue.test/works/painting-1",
+      {},
+      {
+        CATALOGUE: {
+          artworks: [{ ...artwork, priceMode: "listed", price: 25000 }],
+          series: [],
+          preview: false,
+        },
+        STUDIO_URL: "https://studio.test",
+      },
+    );
+    const html = await response.text();
+    expect(html).toContain('<p class="painting-availability">Sold</p>');
+    expect(html).toContain('<p class="painting-price">₹25,000</p>');
   });
 });

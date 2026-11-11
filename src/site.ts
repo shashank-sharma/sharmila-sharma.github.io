@@ -17,7 +17,22 @@ export type Catalogue = {
 export type SiteBindings = { CATALOGUE: Catalogue; STUDIO_URL: string };
 const app = new Hono<{ Bindings: SiteBindings }>();
 function catalogue(env: SiteBindings) {
-  return env.CATALOGUE;
+  const { artworks, series, preview } = env.CATALOGUE;
+  return {
+    artworks: artworks.map((a) => ({ ...a, seriesId: a.seriesId || "others" })),
+    series: [
+      ...series,
+      {
+        id: "others",
+        slug: "others",
+        name: "Others",
+        description: "Paintings beyond the named series.",
+        sortOrder: 0,
+        coverArtworkId: null,
+      },
+    ],
+    preview,
+  };
 }
 app.get("/", async (c) => {
   const { artworks, series, preview } = await catalogue(c.env);
@@ -38,7 +53,7 @@ app.get("/works", async (c) => {
   const { artworks, series, preview } = await catalogue(c.env);
   // Pages serves the same HTML for every query string; filtering runs over this complete snapshot.
   const shown = artworks;
-  const content = `<section class="page-heading"><h1>Works</h1><p>Explore the paintings, together and individually.</p></section><form class="catalogue-filters" method="get"><div class="filter-links"><a href="/works" aria-current="page">All works</a>${series.map((s) => `<a href="/works?series=${e(s.id)}">${e(s.name)}</a>`).join("")}<a href="/works?series=standalone">Standalone</a></div><div class="availability-filter"><label><input type="checkbox" name="availability" value="available"> Available works</label><button type="submit" class="text-button">Apply</button></div></form><p class="result-count" aria-live="polite">${shown.length} ${shown.length === 1 ? "work" : "works"}${preview ? " from the archive" : ""}</p><div class="works-grid catalogue-grid">${shown.map((a) => artworkCard(a, series, preview)).join("")}</div>${!shown.length ? '<div class="empty-state"><h2>No works here just yet.</h2><p>Try another selection or visit again as the catalogue grows.</p><a href="/works">See all works</a></div>' : ""}`;
+  const content = `<section class="page-heading"><h1>Works</h1><p>Explore the paintings, together and individually.</p></section><form class="catalogue-filters" method="get"><div class="filter-links"><a href="/works" aria-current="page">All works</a>${series.map((s) => `<a href="/works?series=${e(s.id)}">${e(s.name)}</a>`).join("")}</div><div class="availability-filter"><label><input type="checkbox" name="availability" value="available"> Available works</label><button type="submit" class="text-button">Apply</button></div></form><p class="result-count" aria-live="polite">${shown.length} ${shown.length === 1 ? "work" : "works"}${preview ? " from the archive" : ""}</p><div class="works-grid catalogue-grid">${shown.map((a) => artworkCard(a, series, preview)).join("")}</div>${!shown.length ? '<div class="empty-state"><h2>No works here just yet.</h2><p>Try another selection or visit again as the catalogue grows.</p><a href="/works">See all works</a></div>' : ""}`;
   return c.html(
     layout(
       "Works",

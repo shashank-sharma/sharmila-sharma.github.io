@@ -43,6 +43,7 @@ const paths = [
   "/",
   "/works",
   "/series",
+  "/series/others",
   "/about",
   "/contact",
   "/studio",

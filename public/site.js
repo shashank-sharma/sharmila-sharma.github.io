@@ -30,7 +30,9 @@
     const archive = Boolean(document.querySelector(".preview-note"));
     function applyFilters() {
       const query = new URLSearchParams(location.search);
-      const series = query.get("series") || "";
+      // Keep bookmarked links to the former Standalone selection working.
+      const selection = query.get("series") || "";
+      const series = selection === "standalone" ? "others" : selection;
       available.checked = query.get("availability") === "available";
       let visible = 0;
       cards.forEach((card) => {

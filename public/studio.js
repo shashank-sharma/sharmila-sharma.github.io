@@ -132,7 +132,7 @@
     state.dirty = false;
     $("artwork-form").reset();
     $("art-series").innerHTML =
-      '<option value="">Standalone</option>' +
+      '<option value="">Others</option>' +
       state.series
         .map((s) => `<option value="${esc(s.id)}">${esc(s.name)}</option>`)
         .join("");

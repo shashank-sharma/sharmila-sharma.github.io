@@ -151,8 +151,40 @@ main {
   border-bottom: 1px solid var(--border);
 }
 .wordmark {
+  display: grid;
   font: 500 22px/1.2 var(--serif);
   letter-spacing: -0.025em;
+}
+.wordmark::before {
+  content: "Sharmila Sharma";
+  visibility: hidden;
+  grid-area: 1 / 1;
+  white-space: nowrap;
+}
+.wordmark-name {
+  grid-area: 1 / 1;
+  justify-self: start;
+  display: flex;
+  white-space: nowrap;
+}
+.wordmark-tail {
+  display: grid;
+  grid-template-columns: 1fr;
+  animation: wordmark-reveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.65s both;
+}
+.wordmark-tail > span {
+  min-width: 0;
+  overflow: hidden;
+}
+@keyframes wordmark-reveal {
+  from {
+    grid-template-columns: 0fr;
+    opacity: 0;
+  }
+  to {
+    grid-template-columns: 1fr;
+    opacity: 1;
+  }
 }
 .site-header nav {
   display: flex;

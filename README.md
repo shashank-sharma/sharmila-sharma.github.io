@@ -1,6 +1,6 @@
 # Sharmila Sharma
 
-A painting catalogue for Sharmila Sharma, a Delhi-based contemporary artist. Visitors can explore standalone paintings and series, open a painting for its description, dimensions, availability and price, and enquire directly with the artist.
+A painting catalogue for Sharmila Sharma, a Delhi-based contemporary artist. Visitors can explore paintings by series, including Others, open a painting for its description, dimensions, availability and price, and enquire directly with the artist.
 
 - **Website:** [sharmila.me](https://sharmila.me)
 - **Private inventory:** [Sharmila Studio](https://studio-sharmila.vipul.xyz/studio)
@@ -15,7 +15,7 @@ The private, phone-friendly Studio runs on a **Cloudflare Worker**, with **D1** 
 ### Inventory
 
 - Create a painting with title, one description, photographs, price, availability, medium, dimensions and year.
-- Assign a series, create one through **Manage series**, or keep a painting standalone.
+- Assign a series, create one through **Manage series**, or choose **Others**. Paintings without a named series appear automatically in **Others**, always last on the Series page once populated.
 - Multiple uploaded photographs belong to **one painting**. Batch creation of separate paintings is not implemented.
 - **Save draft** is private. **Publish painting** saves the public snapshot and requests a website rebuild. The site changes only after that build deploys successfully.
 - **Unpublish** keeps the painting as a draft. **Delete permanently** has no Trash or revision history. Unused photos can be deleted separately from **Image library**.

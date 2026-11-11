@@ -1,4 +1,11 @@
 {
+  const heroPool = document.getElementById("home-hero-pool");
+  if (heroPool) {
+    const paintings = heroPool.content.children;
+    const chosen = paintings[Math.floor(Math.random() * paintings.length)];
+    document.querySelector(".hero-work").replaceWith(chosen.cloneNode(true));
+  }
+
   const viewer = document.getElementById("image-viewer");
   const target = document.getElementById("viewer-image");
   document.querySelectorAll("[data-enlarge]").forEach((button) =>

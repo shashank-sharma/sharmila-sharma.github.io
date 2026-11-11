@@ -38,8 +38,12 @@ app.get("/", async (c) => {
   const { artworks, series, preview } = await catalogue(c.env);
   const featured = artworks.filter((a) => a.featured);
   const selected = (featured.length ? featured : artworks).slice(0, 6);
-  const hero = selected[0];
-  const content = `<section class="home-intro"><div><h1>Sharmila Sharma</h1><p class="intro-line">Contemporary artist</p></div><div class="intro-bio"><p>A Delhi-based artist with over 25 years of experience.<br>Working in acrylics, watercolours and mixed media.</p><a class="text-link" href="/about">About the artist <span aria-hidden="true">↗</span></a></div></section>${hero ? `<figure class="hero-work"><a href="/works/${e(hero.slug)}" aria-label="View ${e(hero.title)}">${image(hero, "", true)}</a><figcaption><span>${e(hero.title)} <span class="caption-divider">/</span> ${e(preview ? "From the archive" : [hero.medium, hero.year].filter(Boolean).join(", "))}</span><a href="/works/${e(hero.slug)}">View painting ↗</a></figcaption></figure>` : '<section class="empty-state"><h2>The catalogue is being prepared.</h2><p>A selection of paintings will appear here soon.</p><a href="/contact">Enquire about available work</a></section>'}${
+  const heroPool = artworks.filter(
+    (a) => a.seriesId !== "others" && series.some((s) => s.id === a.seriesId),
+  );
+  const renderHero = (hero: Artwork) =>
+    `<figure class="hero-work"><a href="/works/${e(hero.slug)}" aria-label="View ${e(hero.title)}">${image(hero, "", true)}</a><figcaption><span>${e(hero.title)} <span class="caption-divider">/</span> ${e(preview ? "From the archive" : [hero.medium, hero.year].filter(Boolean).join(", "))}</span><a href="/works/${e(hero.slug)}">View painting ↗</a></figcaption></figure>`;
+  const content = `<section class="home-intro"><div><h1>Sharmila Sharma</h1><p class="intro-line">Contemporary artist</p></div><div class="intro-bio"><p>A Delhi-based artist with over 25 years of experience.<br>Working in acrylics, watercolours and mixed media.</p><a class="text-link" href="/about">About the artist <span aria-hidden="true">↗</span></a></div></section>${heroPool.length ? `${renderHero(heroPool[0])}<template id="home-hero-pool">${heroPool.map(renderHero).join("")}</template>` : artworks.length ? "" : '<section class="empty-state"><h2>The catalogue is being prepared.</h2><p>A selection of paintings will appear here soon.</p><a href="/contact">Enquire about available work</a></section>'}${
     selected.length > 1
       ? `<section class="selected-section"><div class="section-heading"><h2>Selected works</h2><a class="text-link" href="/works">View all works ↗</a></div><div class="works-grid">${selected
           .slice(1)

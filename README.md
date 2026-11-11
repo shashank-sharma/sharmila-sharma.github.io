@@ -19,7 +19,7 @@ The private, phone-friendly Studio runs on a **Cloudflare Worker**, with **D1** 
 - Multiple uploaded photographs belong to **one painting**. Batch creation of separate paintings is not implemented.
 - **Save draft** is private. **Publish painting** saves the public snapshot and requests a website rebuild. The site changes only after that build deploys successfully.
 - **Unpublish** keeps the painting as a draft. **Delete permanently** has no Trash or revision history. Unused photos can be deleted separately from **Image library**.
-- Homepage selection displays the first featured painting as a hero and up to five more below it, not a carousel. Catalogue order controls selection order; all published paintings remain in Works.
+- The homepage hero is chosen randomly on each page load from all published paintings in named series, excluding Others, regardless of featured status. Random choices can repeat; without JavaScript, the first eligible painting is shown. Up to five selected works below it retain their featured/catalogue order; all published paintings remain in Works.
 
 Studio prepares uploads in the browser: orientation-aware resize to a maximum of 1920px and a single WebP at quality 0.88. This is not the separate Hermes image-optimization workflow.
 

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import website from "../src/site";
-import { artworkCard, price, type Artwork } from "../src/views";
+import { artworkCard, layout, price, type Artwork } from "../src/views";
 
 const artwork = {
   id: "painting-1",
@@ -68,6 +68,16 @@ describe("artworkCard", () => {
     const html = await response.text();
     expect(html).toContain('<p class="painting-availability">Sold</p>');
     expect(html).toContain('<p class="painting-price">₹25,000</p>');
+  });
+});
+
+describe("analytics", () => {
+  it("tracks the public site but not the private Studio or preview", () => {
+    expect(layout("Sharmila Sharma", "")).toContain(
+      '<script defer data-domain="sharmila.me" src="https://plausible.io/js/script.js"></script>',
+    );
+    expect(layout("Studio", "", { studio: true })).not.toContain("plausible.io");
+    expect(layout("Preview", "", { preview: true })).not.toContain("plausible.io");
   });
 });
 
